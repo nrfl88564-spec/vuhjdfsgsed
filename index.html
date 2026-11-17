@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ฝึกข้อสอบ O-NET ม.3 V37</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;800&family=Prompt:wght@500;600;700&family=Sarabun:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f6fb;--grid:#dbe4f3;--fg:#14213d;--mut:#5b6a86;--card:#fff;--bd:#c9d5ea;--ac:#1b4dd8;--acfg:#fff;--ok:#1b7a3e;--bad:#c0262d;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1626;--grid:#1a2540;--fg:#e8eefc;--mut:#98a6c6;--card:#17213a;--bd:#2c3a5e;--ac:#7aa2ff;--acfg:#0f1626;--ok:#5fd18a;--bad:#ff8087;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1626;--grid:#1a2540;--fg:#e8eefc;--mut:#98a6c6;--card:#17213a;--bd:#2c3a5e;--ac:#7aa2ff;--acfg:#0f1626;--ok:#5fd18a;--bad:#ff8087;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Noto Sans Thai",system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.7;
+background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px}
+#app{max-width:680px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:1.7rem;font-weight:800;line-height:1.3;margin:12px 0 4px}
+h2{font-size:1.1rem;margin:0 0 8px}
+.m{color:var(--mut);margin:0 0 20px}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.c{font:inherit;text-align:left;background:var(--card);color:var(--fg);border:2px solid var(--bd);border-radius:10px;padding:16px;cursor:pointer;display:flex;flex-direction:column}
+.c:hover,.c:focus-visible{border-color:var(--ac);outline:none}
+.c span{color:var(--mut);font-size:.9rem}
+.card{background:var(--card);border:2px solid var(--bd);border-radius:10px;padding:18px;margin-bottom:14px}
+.top{display:flex;justify-content:space-between;color:var(--mut);font-size:.9rem;margin-bottom:8px}
+.bar{height:6px;background:var(--bd);border-radius:3px;margin-bottom:14px}.bar i{display:block;height:100%;background:var(--ac);border-radius:3px}
+.q{font-size:1.1rem;margin:0 0 14px}
+.o{display:block;width:100%;font:inherit;text-align:left;background:transparent;color:var(--fg);border:2px solid var(--bd);border-radius:8px;padding:10px 12px;margin-bottom:8px;cursor:pointer}
+.o.s{border-color:var(--ac);background:var(--grid)}
+.f{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.f label{min-width:6.5em;color:var(--mut)}
+input{flex:1;font:inherit;font-size:1.1rem;padding:9px 12px;border:2px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--fg);min-width:0}
+input:focus{outline:none;border-color:var(--ac)}
+.k{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 4px}
+.k button{font:inherit;font-size:1.05rem;min-width:44px;height:40px;border:2px solid var(--bd);border-radius:8px;background:var(--card);color:var(--fg);cursor:pointer}
+.k button:active{background:var(--grid)}
+.p{font:inherit;font-weight:600;background:var(--ac);color:var(--acfg);border:0;border-radius:8px;padding:12px 22px;cursor:pointer;margin-top:10px}
+.p.l{background:transparent;color:var(--ac);border:2px solid var(--ac)}
+.r{border-left:5px solid var(--bd);padding:10px 14px;margin-bottom:12px;background:var(--card);border-radius:0 8px 8px 0}
+.r.y{border-color:var(--ok)}.r.n{border-color:var(--bad)}
+.r b.y{color:var(--ok)}.r b.n{color:var(--bad)}
+.sc{font-size:3rem;font-weight:800;line-height:1.1}
+.t{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--bd)}
+
+#app{max-width:none;padding:14px clamp(14px,3vw,40px) 24px}
+#rot{position:fixed;inset:0;background:var(--bg);display:none;place-items:center;text-align:center;padding:24px;z-index:9;font-weight:600}
+@media (orientation:portrait) and (max-width:900px){#rot{display:grid}}
+.rail{display:flex;gap:14px;overflow-x:auto;padding-bottom:8px}
+.rail .c{flex:1 0 clamp(200px,26vw,320px);min-height:clamp(120px,34vh,260px);justify-content:flex-end;gap:4px}
+.rail .c b{font-size:1.2rem}
+.c.soon{opacity:.5;cursor:not-allowed;border-style:dashed}
+.row{display:flex;gap:16px;align-items:flex-start}.row>*{flex:1;min-width:0}
+.ex{display:flex;gap:20px;align-items:flex-start}.ex .qa{flex:1.2;min-width:0}.ex .an{flex:1;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chips .o{width:auto;margin:0;border-radius:999px;padding:7px 16px}
+@media (max-height:480px){h1{font-size:1.3rem;margin:4px 0}.m{margin-bottom:8px}.rail .c{min-height:96px}.card{padding:12px}}
+
+/* ---- visual skin: navigation windows only ---- */
+
+#app.nv{padding:0;display:flex;flex-direction:column;height:100vh;overflow:hidden}
+#app.nv .stp{display:flex;gap:6px;align-items:center;padding:10px clamp(14px,3vw,40px);overflow-x:auto;flex:none}
+#app.nv .stp button{font:inherit;font-size:.9rem;border:1.5px solid var(--bd);background:var(--card);color:var(--mut);border-radius:999px;padding:3px 14px;cursor:pointer;white-space:nowrap}
+#app.nv .stp button.on{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+#app.nv .stp button:disabled{opacity:.45;cursor:default}
+#app.nv .stp i{width:14px;height:1.5px;background:var(--bd);flex:none}
+#app.nv .vp{flex:1;min-height:0;overflow:hidden}
+#app.nv .trk{display:flex;height:100%;transition:transform .45s cubic-bezier(.65,0,.25,1)}
+#app.nv .pn{flex:0 0 100%;height:100%;overflow:auto;padding:4px clamp(14px,3vw,40px) 24px;visibility:hidden;transition:visibility 0s .45s}
+#app.nv .pn.on{visibility:visible;transition-delay:0s}
+#app.nv .login{min-height:100%}
+@media (prefers-reduced-motion:reduce){#app.nv .trk{transition:none}}
+#app:not(.nv){max-width:1100px}
+#app.nv{--bg:#E8EDF1;--grid:#DCE4EA;--fg:#12202B;--mut:#5A6B78;--card:#fff;--bd:#C9D3DB;--ac:#1F4FD8;--acfg:#fff;--ok:#2F7D6B;--bad:#C0262D;--gold:#F2B632;--sage:#2F7D6B;--soon:#D9E0E6;background:var(--bg);color:var(--fg);min-height:100vh;font-family:"Sarabun","Noto Sans Thai",system-ui,sans-serif;line-height:1.55}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) #app.nv{--bg:#0F1A22;--grid:#22333D;--fg:#E8EEF2;--mut:#9AABB7;--card:#18262F;--bd:#2C3E49;--ac:#6C8CFF;--acfg:#0F1A22;--ok:#5CC4A9;--bad:#FF8087;--sage:#5CC4A9;--soon:#22333D}}
+:root[data-theme="dark"] #app.nv{--bg:#0F1A22;--grid:#22333D;--fg:#E8EEF2;--mut:#9AABB7;--card:#18262F;--bd:#2C3E49;--ac:#6C8CFF;--acfg:#0F1A22;--ok:#5CC4A9;--bad:#FF8087;--sage:#5CC4A9;--soon:#22333D}
+#app.nv h1,#app.nv h2,#app.nv .sc,#app.nv .ttl{font-family:"Prompt","Sarabun",sans-serif}
+#app.nv h1{font-size:clamp(1.4rem,4.5vh,2.2rem);font-weight:700;line-height:1.2;margin:0 0 4px}
+#app.nv h2{font-size:1.05rem;font-weight:600}
+#app.nv :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+#app.nv .card{border:1.5px solid var(--bd);border-radius:18px;padding:clamp(14px,3vh,26px)}
+#app.nv .p{background:var(--fg);color:var(--bg);border-radius:12px;padding:11px 26px}
+#app.nv .p.l{background:transparent;color:var(--fg);border:1.5px solid var(--bd)}
+#app.nv .p:disabled{opacity:.35;cursor:not-allowed}
+#app.nv .o{border:1.5px solid var(--bd);border-radius:12px}
+#app.nv .o.s{background:var(--ac);border-color:var(--ac);color:var(--acfg)}
+#app.nv .k button,#app.nv input{border-width:1.5px;border-radius:10px}
+#app.nv .top{align-items:center;gap:12px;min-height:44px;border-bottom:1.5px solid var(--bd);padding-bottom:8px}
+#app.nv .bar{height:6px;background:var(--bd)}.bar i{background:var(--gold)}
+#app.nv .r{border-radius:0 12px 12px 0}
+#app.nv .hd{display:flex;align-items:center;gap:14px;min-height:44px;margin-bottom:clamp(8px,2vh,18px)}
+#app.nv .hd .sp{margin-left:auto;color:var(--mut)}
+#app.nv .bk{font:inherit;color:var(--fg);border:1.5px solid var(--bd);background:var(--card);border-radius:10px;padding:6px 14px;cursor:pointer}
+#app.nv .sub{color:var(--mut);margin:2px 0 0}
+#app.nv .rail .c{position:relative;border-radius:18px;padding:clamp(14px,3vh,24px);transition:transform .15s,border-color .15s}
+#app.nv .rail .c:hover:not(.soon){transform:translateY(-3px);border-color:var(--ac)}
+#app.nv .rail .c.soon{background:var(--soon);border-style:dashed}
+#app.nv .c .ic{position:absolute;top:clamp(12px,3vh,22px);left:clamp(14px,3vh,24px);width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:1.6rem;background:var(--ac);color:var(--acfg)}
+#app.nv .c.sci .ic{background:var(--sage);color:#fff}.c.soon .ic{background:var(--mut);color:var(--bg)}
+#app.nv .tag{align-self:flex-start;background:var(--gold);color:#12202B!important;font-weight:600;font-size:.85rem;padding:2px 12px;border-radius:999px}
+#app.nv .bars{display:flex;gap:5px;margin-bottom:auto;padding-top:60px}.bars i{width:28px;height:10px;border-radius:5px;background:var(--bd)}.bars i.f{background:var(--gold)}
+#app.nv .login{display:flex;gap:clamp(16px,4vw,56px);align-items:stretch;min-height:calc(100vh - 40px)}
+#app.nv .login .lead{flex:1;display:flex;flex-direction:column;justify-content:center}
+#app.nv .login .lead h1{font-size:clamp(2rem,8vh,3.4rem)}.login .lead p{color:var(--mut);max-width:30ch;margin-top:10px}
+#app.nv .mark{width:56px;height:6px;background:var(--gold);border-radius:3px;margin-bottom:18px}
+#app.nv .login .card{flex:1.25;display:flex;flex-direction:column;justify-content:center;gap:clamp(10px,2.4vh,20px)}
+#app.nv .seg{display:grid;grid-template-columns:1fr 1fr;gap:10px}.seg .o,.chips .o{margin:0}
+#app.nv .login .p{align-self:flex-end}
+@media (max-height:430px){#app.nv .login .lead p{display:none}#app.nv .rail .c span:not(.ic):not(.tag){display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.kv{display:flex;gap:10px;margin-top:8px;align-items:flex-start}.kv>span{flex:0 0 7.5em;color:var(--mut);font-size:.9rem}.kv>div,.kv>b{flex:1;min-width:0}.r svg{max-width:340px;margin:8px 0}
+.fr{display:inline-block;vertical-align:middle;text-align:center;margin:0 2px;line-height:1.25}.fr>span{display:block;padding:0 3px}.fr>span:first-child{border-bottom:1.5px solid currentColor}
+.sl ol{margin:4px 0 6px 22px;padding:0}.sl li{margin:3px 0;line-height:1.9}.sl.ez{background:var(--grid);border-radius:10px;padding:8px 12px;margin-top:8px;line-height:1.9}
+/* ---- V37: พื้นที่สำหรับกราฟ ---- */
+.gt{display:inline-block;width:150px;vertical-align:middle}.gt svg{width:100%;height:auto;margin:0}
+.ex.big{flex-direction:column;align-items:stretch}.ex.big .qa,.ex.big .an{flex:none;width:100%}
+.ex.big .qa svg{max-width:640px;width:100%;height:auto}.ex.big .qa table{font-size:1rem}
+.an.gc{display:grid;grid-template-columns:1fr 1fr;gap:12px}.an.gc>.k{grid-column:1/-1}
+.an.gc .o{margin:0;text-align:center;padding:10px}.an.gc .o .gt{display:block;width:100%;max-width:300px;margin:6px auto 0}
+@media (max-width:560px){.an.gc{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="rot">กรุณาหมุนจอเป็นแนวนอน</div><div id="app"></div>
+<script>
+
+const NAV={role:'',purpose:'',subj:'',sn:'',ab:'math'};
+const PU={student:['ฝึกทำข้อสอบ','เตรียมสอบ O-NET','ทบทวนบทเรียน','วัดระดับความรู้'],teacher:['หาข้อสอบให้นักเรียน','ตรวจเนื้อหาข้อสอบ','ติดตามผลนักเรียน','เตรียมสื่อการสอน']};
+const hd=(t,sub,back,right)=>`<div class="hd">${back?`<button class="bk" onclick="${back}">‹ กลับ</button>`:''}<div><h1>${t}</h1>${sub?`<p class="sub">${sub}</p>`:''}</div>${right||''}</div>`;
+const tile=(cls,ic,t,d,on,soon)=>`<${soon?'div':'button'} class="c ${cls||''}${soon?' soon':''}" ${on?`onclick="${on}"`:''}><span class="ic" aria-hidden="true">${ic}</span><b>${t}</b>${soon?'<span class="tag">เร็วๆ นี้</span>':`<span>${d||''}</span>`}</${soon?'div':'button'}>`;
+const LB=['เข้าสู่ระบบ','เมนูหลัก','เลือกวิชา','เลือกระดับ','ตั้งค่าสอบ'];
+function pane(i,h){let t=document.getElementById('trk'),fresh=!t;
+  if(fresh){app.className='nv';app.innerHTML='<nav class="stp" id="stp"></nav><div class="vp"><div class="trk" id="trk">'+LB.map((x,k)=>`<section class="pn" id="pn${k}" aria-label="${x}"></section>`).join('')+'</div></div>';t=document.getElementById('trk');t.style.transition='none'}
+  document.getElementById('pn'+i).innerHTML=h;NAV.i=i;
+  t.style.transform=`translateX(${-i*100}%)`;
+  if(fresh){void t.offsetWidth;t.style.transition=''}
+  document.querySelectorAll('.pn').forEach((e,k)=>{e.classList.toggle('on',k===i);e.inert=k!==i});
+  const F=[login,hub,subjects,levels,start],st=document.getElementById('stp');
+  st.innerHTML=LB.map((x,k)=>`${k?'<i></i>':''}<button class="${k===i?'on':''}" ${k>i?'disabled':''} onclick="NAV.fn(${k})">${x}</button>`).join('');
+  NAV.fn=k=>{if(k<NAV.i||k===NAV.i)[login,hub,subjects,levels,start][k]()};
+  const b=document.querySelector('#pn'+i+' button:not(:disabled)');if(b&&!fresh)b.focus({preventScroll:true})}
+let sx=null;document.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+document.addEventListener('touchend',e=>{if(sx===null||!document.getElementById('trk'))return;const d=e.changedTouches[0].clientX-sx;sx=null;if(d>90&&NAV.i>=2)NAV.fn(NAV.i-1)},{passive:true});
+function home(){clearInterval(T);NAV.role?hub():login()}
+function login(){NAV.fresh='';const ch=(k,v,t)=>`<button class="o${NAV[k]===v?' s':''}" onclick="NAV.${k}='${v}';${k==='role'?"NAV.purpose='';":''}login()">${t}</button>`;
+pane(0,`<div class="login"><div class="lead"><div class="mark"></div><h1>คลังข้อสอบ<br>วิชาสามัญ</h1><p>เลือกว่าคุณเป็นใคร และเข้ามาเพื่ออะไร แล้วเริ่มได้เลย</p></div><div class="card"><div><h2>คุณเป็น</h2><div class="seg" style="margin-top:8px">${ch('role','student','นักเรียน')}${ch('role','teacher','อาจารย์')}</div></div><div><h2>จุดประสงค์ที่เข้ามา</h2><div class="chips" style="margin-top:8px">${NAV.role?PU[NAV.role].map(p=>ch('purpose',p,p)).join(''):'<span class="sub">เลือกบทบาทก่อน</span>'}</div></div><button class="p" ${NAV.role&&NAV.purpose?'':'disabled'} onclick="hub()">เข้าสู่ระบบ</button><button class="p l" style="align-self:flex-start;padding:5px 12px;font-size:.85rem;margin:0" onclick="NAV.role='';admin()">ผู้ดูแลระบบ</button></div></div>`)}
+function hub(){if(!NAV.role)return login();pane(1,hd('เมนูหลัก',NAV.purpose,'',`<span class="sp">${NAV.role==='teacher'?'อาจารย์':'นักเรียน'}</span><button class="bk" onclick="NAV.role='';login()">ออก</button>`)+`<div class="rail">${tile('','✎','ทำข้อสอบ','เลือกวิชาและระดับ แล้วเริ่มทำ','subjects()')}${tile('','≡','ดูรายละเอียด','',0,1)}${tile('','✉','ข้อมูลจากแอดมิน','',0,1)}</div>`)}
+function subjects(){pane(2,hd('เลือกวิชา','วิชาสามัญ 5 วิชา','hub()')+`<div class="rail">${tile('','∑','คณิตศาสตร์','พร้อมใช้งาน',"NAV.subj='math';NAV.sn='คณิตศาสตร์';levels()")}${tile('sci','⚗','วิทยาศาสตร์','พร้อมใช้งาน',"NAV.subj='sci';NAV.sn='วิทยาศาสตร์';levels()")}${[['ก','ภาษาไทย'],['A','ภาษาอังกฤษ'],['⌂','สังคมศึกษา']].map(x=>tile('',x[0],x[1],'',0,1)).join('')}</div>`)}
+function levels(){const lv=[['โรงเรียนทั่วไป','พื้นฐาน เหมาะกับการเริ่มต้นและทบทวน',1,0],['โรงเรียนประจำเมือง (O-NET)','ระดับ O-NET ตามมาตรฐานข้อสอบจริง',2,1],['โรงเรียนประจำจังหวัด','ยากสุด ใกล้เคียงระดับจุฬาฯ',3,0]];
+pane(3,hd('เลือกระดับ · '+NAV.sn,'ระบบจะสุ่มโจทย์ใหม่ให้ทุกครั้งที่ทำ','subjects()')+`<div class="rail">${lv.map(([t,d,n,on])=>`<${on?'button':'div'} class="c${on?'':' soon'}" ${on?'onclick="start()"':''}><div class="bars">${[1,2,3].map(i=>`<i class="${i<=n?'f':''}"></i>`).join('')}</div><b>${t}</b>${on?`<span>${d}</span>`:'<span class="tag">เร็วๆ นี้</span>'}</${on?'button':'div'}>`).join('')}</div>`)}
+const Q=[
+{s:1,tp:'อัตราส่วน',q:'พ่อค้าบอกว่าอัตราส่วนจำนวนหมูต่อจำนวนไก่เป็น 3 : 5 ถ้าฟาร์มมีไก่ 1,000,000 ตัว ตามอัตราส่วนนี้ควรมีหมูกี่ตัว',a:[600000],sol:'หมู = 3/5 × 1,000,000 = 600,000 ตัว'},
+{s:1,tp:'สมการกำลังสอง',q:'จงแก้สมการ x² − 9x + 14 = 0',l:['รากที่น้อยกว่า','รากที่มากกว่า'],a:[2,7],sol:'แยกตัวประกอบ (x − 2)(x − 7) = 0 จึงได้ x = 2 และ x = 7'},
+{s:1,tp:'พื้นที่และปริมาตร',q:'วงกลมรัศมี 6 เซนติเมตร มีพื้นที่กี่ตารางเซนติเมตร',a:[36*Math.PI],d:'36π',sol:'พื้นที่ = πr² = π × 6² = 36π'},
+{s:1,tp:'พีทาโกรัส',q:'สามเหลี่ยมมุมฉากมีด้านประกอบมุมฉากยาว 9 และ 12 หน่วย ด้านตรงข้ามมุมฉากยาวเท่าใด',o:['13','14','15','16'],a:2,sol:'√(9² + 12²) = √225 = 15'},
+{s:1,tp:'ร้อยละ',q:'สินค้าราคา 800 บาท ลดราคา 15% แล้วลดเพิ่มอีก 10% จากราคาที่ลดแล้ว ราคาสุดท้ายกี่บาท',a:[612],sol:'800 × 0.85 = 680 แล้ว 680 × 0.90 = 612 บาท'},
+{s:2,tp:'ความน่าจะเป็น',q:'ในถุงมีลูกบอลสีแดง 3 ลูก สีเขียว 5 ลูก สีน้ำเงิน 2 ลูก หยิบมา 1 ลูกโดยสุ่ม ความน่าจะเป็นที่ได้สีเขียวเป็นเท่าใด',a:[0.5],d:'1/2',sol:'ลูกบอลทั้งหมด 10 ลูก สีเขียว 5 ลูก ความน่าจะเป็น = 5/10 = 1/2'},
+{s:2,tp:'ระบบสมการ',q:'x + y = 12 และ x − y = 2 จงหาค่า x และ y',l:['x =','y ='],a:[7,5],sol:'บวกสองสมการ 2x = 14 ได้ x = 7 แล้ว y = 12 − 7 = 5'},
+{s:2,tp:'พื้นที่และปริมาตร',q:'ทรงกระบอกรัศมีฐาน 3 เซนติเมตร สูง 10 เซนติเมตร มีปริมาตรกี่ลูกบาศก์เซนติเมตร',a:[90*Math.PI],d:'90π',sol:'V = πr²h = π × 3² × 10 = 90π'},
+{s:2,tp:'สถิติ',q:'ข้อมูลชุดหนึ่งคือ 4, 8, 6, 10, 12 ค่าเฉลี่ยเลขคณิตเป็นเท่าใด',o:['7','8','9','10'],a:1,sol:'(4 + 8 + 6 + 10 + 12) ÷ 5 = 40 ÷ 5 = 8'},
+{s:2,tp:'อัตราส่วน',q:'ปลากับหมูในตลาดมีน้ำหนักอัตราส่วน 4 : 7 ถ้าปลามี 28 กิโลกรัม น้ำหนักปลาและหมูรวมกันกี่กิโลกรัม',a:[77],sol:'ส่วนละ 28 ÷ 4 = 7 กก. หมู = 7 × 7 = 49 กก. รวม 28 + 49 = 77 กก.'},
+{s:3,tp:'เลขยกกำลัง',q:'จงหาค่าของ (2⁵ × 2³) ÷ 2⁶',a:[4],sol:'2⁵⁺³⁻⁶ = 2² = 4'},
+{s:3,tp:'ร้อยละ',q:'ร้านรับซื้อปลาในราคา 60 บาทต่อกิโลกรัม แล้วขายต่อโดยบวกกำไร 25% ขายราคากิโลกรัมละกี่บาท',a:[75],sol:'60 × 1.25 = 75 บาท'},
+{s:3,tp:'เส้นตรง',q:'เส้นตรงผ่านจุด (1, 3) และ (3, 7) จงหาความชัน m และจุดตัดแกน y คือ b',l:['m =','b ='],a:[2,1],sol:'m = (7 − 3)/(3 − 1) = 2 แล้ว 3 = 2(1) + b ได้ b = 1'},
+{s:3,tp:'ตรีโกณมิติ',q:'ค่าของ sin 30° เท่ากับข้อใด',o:['1/2','√3/2','1','√2/2'],a:0,sol:'sin 30° = 1/2'},
+{s:3,tp:'พื้นที่และปริมาตร',q:'กรวยกลมรัศมีฐาน 3 เซนติเมตร สูง 4 เซนติเมตร มีปริมาตรกี่ลูกบาศก์เซนติเมตร',a:[12*Math.PI],d:'12π',sol:'V = (1/3)πr²h = (1/3) × π × 9 × 4 = 12π'},
+{s:1,tp:'สมการเชิงเส้น',q:'ซื้อปลา 3 ตัว รวมค่าส่ง 20 บาท จ่ายทั้งหมด 110 บาท ปลาราคาตัวละกี่บาท',a:[30],sol:'3x + 20 = 110 ได้ 3x = 90 จึง x = 30 บาท'},
+{s:1,tp:'อสมการ',q:'มีจำนวนเต็มบวกกี่จำนวนที่ทำให้ 2x − 5 < 9',a:[6],sol:'2x < 14 ได้ x < 7 จำนวนเต็มบวกคือ 1, 2, 3, 4, 5, 6 รวม 6 จำนวน'},
+{s:1,tp:'สถิติ',q:'มัธยฐานของข้อมูล 3, 9, 4, 12, 7 เท่ากับข้อใด',o:['4','7','9','12'],a:1,sol:'เรียงข้อมูล 3, 4, 7, 9, 12 ค่ากลางคือ 7'},
+{s:1,tp:'ความน่าจะเป็น',q:'ทอยลูกเต๋า 1 ลูก 1 ครั้ง ความน่าจะเป็นที่ได้แต้มมากกว่า 4 เป็นเท่าใด',a:[1/3],d:'1/3',sol:'แต้มที่มากกว่า 4 คือ 5 และ 6 ความน่าจะเป็น = 2/6 = 1/3'},
+{s:1,tp:'สามเหลี่ยมคล้าย',q:'สามเหลี่ยมสองรูปคล้ายกัน ด้านที่สมนัยกันยาว 6 และ 15 หน่วย ถ้าสามเหลี่ยมรูปเล็กมีอีกด้านยาว 8 หน่วย ด้านที่สมนัยกันในรูปใหญ่ยาวกี่หน่วย',a:[20],sol:'อัตราส่วน 15/6 = 2.5 ดังนั้น 8 × 2.5 = 20'},
+{s:2,tp:'พื้นที่และปริมาตร',q:'สี่เหลี่ยมคางหมูมีด้านคู่ขนานยาว 7 และ 13 เซนติเมตร สูง 5 เซนติเมตร มีพื้นที่กี่ตารางเซนติเมตร',a:[50],sol:'พื้นที่ = (7 + 13)/2 × 5 = 50'},
+{s:2,tp:'พื้นที่และปริมาตร',q:'ทรงกลมรัศมี 3 เซนติเมตร มีปริมาตรกี่ลูกบาศก์เซนติเมตร',a:[36*Math.PI],d:'36π',sol:'V = (4/3)πr³ = (4/3) × π × 27 = 36π'},
+{s:2,tp:'ระบบสมการ',q:'ซื้อปลา 2 กก. กับหมู 1 กก. จ่าย 240 บาท ซื้อปลา 1 กก. กับหมู 3 กก. จ่าย 380 บาท ปลาและหมูราคากิโลกรัมละกี่บาท',l:['ปลา','หมู'],a:[68,104],sol:'2p + m = 240 และ p + 3m = 380 แทน m = 240 − 2p ได้ p = 68 แล้ว m = 104'},
+{s:2,tp:'เลขยกกำลัง',q:'จงหาค่าของ 2⁻³',a:[0.125],d:'1/8',sol:'2⁻³ = 1/2³ = 1/8'},
+{s:2,tp:'ร้อยละ',q:'ฝากเงิน 20,000 บาท ดอกเบี้ยเชิงเดี่ยวร้อยละ 3 ต่อปี เมื่อครบ 2 ปี ได้ดอกเบี้ยกี่บาท',a:[1200],sol:'20,000 × 0.03 × 2 = 1,200 บาท'},
+{s:3,tp:'ตรีโกณมิติ',q:'สามเหลี่ยมมุมฉากมีด้านตรงข้ามมุม A ยาว 5 และด้านตรงข้ามมุมฉากยาว 13 ค่า sin A เท่ากับข้อใด',o:['5/13','12/13','5/12','13/5'],a:0,sol:'sin A = ด้านตรงข้าม/ด้านตรงข้ามมุมฉาก = 5/13'},
+{s:3,tp:'ลำดับและอนุกรม',q:'ลำดับเลขคณิตมีพจน์แรก 4 และผลต่างร่วม 3 พจน์ที่ 20 เป็นเท่าใด',a:[61],sol:'a₂₀ = 4 + 19 × 3 = 61'},
+{s:3,tp:'สถิติ',q:'ข้อมูล 5 จำนวนมีค่าเฉลี่ย 12 เมื่อเพิ่มข้อมูลอีก 1 จำนวน ค่าเฉลี่ยเป็น 14 จำนวนที่เพิ่มคือเท่าใด',a:[24],sol:'ผลรวมเดิม 60 ผลรวมใหม่ 6 × 14 = 84 จำนวนที่เพิ่ม = 84 − 60 = 24'},
+{s:3,tp:'ความน่าจะเป็น',q:'สุ่มหยิบบัตรหมายเลข 1 ถึง 20 มา 1 ใบ ความน่าจะเป็นที่ได้จำนวนที่หารด้วย 5 ลงตัวเป็นเท่าใด',a:[0.2],d:'1/5',sol:'ได้ 5, 10, 15, 20 รวม 4 ใบ ความน่าจะเป็น = 4/20 = 1/5'},
+{s:3,tp:'พีทาโกรัส',q:'สี่เหลี่ยมจัตุรัสมีด้านยาว 5 เซนติเมตร เส้นทแยงมุมยาวกี่เซนติเมตร',a:[5*Math.sqrt(2)],d:'5√2',sol:'√(5² + 5²) = √50 = 5√2'}
+];
+const app=document.getElementById('app');let S=null,T=null,focusEl=null;
+const sh=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+function ev(s){s=(s||'').replace(/,/g,'').replace(/−/g,'-').replace(/×/g,'*').replace(/÷/g,'/');
+if(!s.trim()||!/^[0-9+\-*\/().^√π\s]*$/.test(s))return null;
+s=s.replace(/√(\d+\.?\d*)/g,'Math.sqrt($1)').replace(/√\(/g,'Math.sqrt(').replace(/π/g,'(Math.PI)').replace(/\^/g,'**').replace(/(\d|\))\s*(Math|\()/g,'$1*$2');
+try{const v=Function('"use strict";return ('+s+')')();return isFinite(v)?v:null}catch(e){return null}}
+function ok(q,a){if(q.o)return a===q.a;return q.a.every((v,k)=>{const x=ev(a&&a[k]);return x!==null&&Math.abs(x-v)<1e-6*Math.max(1,Math.abs(v))})}
+function homeLegacy20008(){clearInterval(T);app.innerHTML=`<h1>ฝึกข้อสอบคณิตศาสตร์ ม.3</h1><p class="m">โจทย์ต้นแบบที่เขียนใหม่ทั้งหมด เลือกชุดข้อสอบ หรือสุ่มผสมจากทุกชุด</p><div class="g">${[1,2,3].map(n=>`<button class="c" onclick="start(${n})"><b>ชุดที่ ${n}</b><span>5 ข้อ</span></button>`).join('')}<button class="c" onclick="start(0)"><b>สุ่มผสม</b><span>สุ่ม 5 ข้อจากทุกชุด</span></button></div>`}
+function start(n){S={qs:n?Q.filter(x=>x.s===n):sh(Q).slice(0,5),i:0,ans:[],sel:null,t0:Date.now()};
+S.title=n?'ชุดที่ '+n:'สุ่มผสม';show();clearInterval(T);T=setInterval(()=>{const e=document.getElementById('tm');if(e){const t=Math.floor((Date.now()-S.t0)/1000);e.textContent=String(Math.floor(t/60)).padStart(2,'0')+':'+String(t%60).padStart(2,'0')}},500)}
+function show(){const q=S.qs[S.i],n=S.qs.length;S.sel=null;
+const body=q.o?q.o.map((t,k)=>`<button class="o" onclick="pick(${k},this)">${'กขคง'[k]}. ${t}</button>`).join(''):
+`${q.a.map((_,k)=>`<div class="f">${q.l?`<label>${q.l[k]}</label>`:''}<input inputmode="text" autocomplete="off" aria-label="คำตอบ" onfocus="focusEl=this"></div>`).join('')}
+<div class="k">${['π','√','^','/','(',')','−','⌫'].map(c=>`<button type="button" onmousedown="event.preventDefault()" onclick="ins('${c}')">${c}</button>`).join('')}</div>`;
+app.innerHTML=`<div class="top"><span>${S.title} · ข้อ ${S.i+1}/${n}</span><span id="tm">00:00</span></div><div class="bar"><i style="width:${S.i/n*100}%"></i></div>
+<div class="card"><p class="q">${q.q}</p>${body}</div></div><button class="p" onclick="next()">${S.i+1<n?'ข้อต่อไป':'ส่งและดูผล'}</button>`;
+if(!q.o){const f=app.querySelector('input');f.focus()}}
+function pick(k,el){S.sel=k;app.querySelectorAll('.o').forEach(b=>b.classList.remove('s'));el.classList.add('s')}
+function ins(c){const e=focusEl||app.querySelector('input');if(!e)return;e.focus();const a=e.selectionStart,b=e.selectionEnd,v=e.value;
+if(c==='⌫'){if(a!==b){e.value=v.slice(0,a)+v.slice(b);e.setSelectionRange(a,a)}else if(a>0){e.value=v.slice(0,a-1)+v.slice(a);e.setSelectionRange(a-1,a-1)}}
+else{e.value=v.slice(0,a)+c+v.slice(b);e.setSelectionRange(a+1,a+1)}}
+function next(){const q=S.qs[S.i];S.ans[S.i]=q.o?S.sel:[...app.querySelectorAll('input')].map(i=>i.value);S.i++;S.i<S.qs.length?show():result()}
+function disp(q,a){if(q.o)return a===null||a===undefined?'ไม่ได้ตอบ':q.o[a];return (a||[]).map(x=>x||'-').join(' , ')}
+function result(){clearInterval(T);const sec=Math.floor((Date.now()-S.t0)/1000),tp={};let sc=0;
+S.qs.forEach((q,i)=>{const r=ok(q,S.ans[i]);if(r)sc++;tp[q.tp]=tp[q.tp]||[0,0];tp[q.tp][1]++;if(r)tp[q.tp][0]++});
+app.innerHTML=`<h1>ผลการทำข้อสอบ</h1><div class="card"><div class="sc">${sc}/${S.qs.length}</div><p class="m">ใช้เวลา ${Math.floor(sec/60)} นาที ${sec%60} วินาที</p>
+<h2>คะแนนแยกตามหัวข้อ</h2>${Object.entries(tp).map(([k,v])=>`<div class="t"><span>${k}</span><b style="color:var(--${v[0]===v[1]?'ok':v[0]?'mut':'bad'})">${v[0]}/${v[1]}</b></div>`).join('')}</div>
+<h2>เฉลยละเอียด</h2>${S.qs.map((q,i)=>{const r=ok(q,S.ans[i]);return `<div class="r ${r?'y':'n'}"><b class="${r?'y':'n'}">ข้อ ${i+1} ${r?'ถูก':'ผิด'}</b> · ${q.tp}<br>${q.q}<br>คำตอบของคุณ: ${disp(q,S.ans[i])}<br>คำตอบที่ถูก: ${q.o?q.o[q.a]:(q.d||q.a.join(' , '))}<br><span style="color:var(--mut)">วิธีทำ: ${q.sol}</span></div>`}).join('')}
+<button class="p" onclick="start(${S.title==='สุ่มผสม'?0:S.qs[0].s})">ทำอีกครั้ง</button> <button class="p l" onclick="home()">กลับหน้าหลัก</button>`}
+const N=Math.min(30,Q.length);
+function homeOld(){const lv=[];
+app.innerHTML=`<h1>ฝึกข้อสอบคณิตศาสตร์ ม.3</h1><p class="m">เลือกระดับข้อสอบ ระบบจะสุ่มโจทย์จากทุกชุดมาให้ ${N} ข้อ</p><div class="g">${lv.map(([t,on])=>`<div class="c" style="${on?'border-color:var(--ac)':'opacity:.5'}"><b>${t}</b><span>${on?'เลือกอยู่':'เร็วๆ นี้'}</span></div>`).join('')}</div><button class="p" onclick="start()">เริ่มทำข้อสอบ ${N} ข้อ</button>`}
+function start(){clearInterval(T);S={qs:sh(Q).slice(0,N),i:0,ans:[],sel:null,t0:Date.now(),title:NAV.sn+' · O-NET ม.3'};show();
+T=setInterval(()=>{const e=document.getElementById('tm');if(e){const t=Math.floor((Date.now()-S.t0)/1000);e.textContent=String(Math.floor(t/60)).padStart(2,'0')+':'+String(t%60).padStart(2,'0')}},500)}
+const R=(a,b)=>a+Math.floor(Math.random()*(b-a+1)),P=a=>a[R(0,a.length-1)];
+const f=v=>typeof v==='string'?v.replace(/⟦g:\d+⟧/g,m=>'<span class="gt">'+(GR[m]||'')+'</span>'):(Math.abs(v)>=1e9?fs(v):String(Math.round(v*100)/100)).replace('-','−'),sg=v=>v<0?'− '+(-v):'+ '+v;
+const fr=(n,d)=>`<span class="fr"><span>${n}</span><span>${d}</span></span>`;
+const SL=(st,ez)=>`<div class="sl"><b>① ตามสูตรและวิธีทำ</b><ol>${st.map(x=>`<li>${x}</li>`).join('')}</ol></div><div class="sl ez"><b>② เข้าใจง่ายๆ</b><div>${ez}</div></div>`;
+const sv=b=>`<svg viewBox="-20 -26 340 242" style="overflow:visible;width:100%;max-width:380px;display:block;margin:0 auto 12px;font:12px sans-serif"><g stroke="currentColor" fill="none" stroke-width="1.5">${b}</g></svg>`;
+const tx=(x,y,t,a)=>`<text fill="currentColor" stroke="none" x="${x}" y="${y}" text-anchor="${a||'middle'}">${t}</text>`;
+const gPara=(k,r,c)=>{const x0=k-r-1,x1=k+r+1,y0=-2*r-2,y1=r*r+2,X=x=>(x-x0)/(x1-x0)*300,Y=y=>190-(y-y0)/(y1-y0)*190;let p='';for(let i=0;i<=60;i++){const x=x0+(x1-x0)*i/60;p+=(i?'L':'M')+X(x).toFixed(1)+' '+Y(r*r-(x-k)*(x-k)).toFixed(1)}
+return sv(`<line x1="0" x2="300" y1="${Y(0)}" y2="${Y(0)}"/><line y1="0" y2="190" x1="${X(0)}" x2="${X(0)}"/><path d="${p}" stroke="var(--ac)" stroke-width="2.5"/><circle cx="${X(0)}" cy="${Y(c)}" r="3.5" fill="currentColor"/>`+tx(X(k),Y(r*r)-6,`(k, ${r*r})`)+tx(X(k-r),Y(0)+15,`k − ${r}`)+tx(X(k+r),Y(0)+15,`k + ${r}`)+tx(X(0)-7,Y(c)+14,`(0, ${c})`,'end'))};
+const gRect=(k,m,A)=>{const h=Math.max(70,Math.min(140,220*k/(k+m)));return sv(`<rect x="30" y="25" width="220" height="${h}" stroke="var(--ac)" stroke-width="2.5"/>`+tx(140,18,`ยาว k + ${m}`)+tx(256,25+h/2,'กว้าง k','start')+tx(140,25+h/2+4,`พื้นที่ ${A}`))};
+const gTri=(b,h,L)=>{const s=130/Math.max(b,h),Lb=b*s,Lh=h*s;return sv(`<path d="M60 170 L${60+Lb} 170 L60 ${170-Lh} Z" stroke="var(--ac)" stroke-width="2.5"/>`+tx(60+Lb/2,186,`${b} ม.`)+tx(60+Lb/2+10,170-Lh/2-6,`${L} ม.`,'start')+tx(54,170-Lh/2,'h = ?','end'))};
+function mk(tp,q,a,w,sol,svg,cr){const seen=new Set([a]),ws=[];for(const x of w){const v=Math.round(x[0]*100)/100;if(isFinite(v)&&!seen.has(v)){seen.add(v);ws.push(x)}}
+let j=1;while(ws.length<3){const v=a+j++;if(!seen.has(v)){seen.add(v);ws.push([v,'คิดเลขคลาดเคลื่อน','คิดเลขพลาด'])}}
+return{tp,q,svg,a:[a],w:ws.slice(0,3),sol,care:cr}}
+const G=[
+()=>{const r=P([4,5,6]),k=R(1,3),c=r*r-k*k;return mk('พาราโบลา',`พาราโบลาในรูปตัดแกน x ที่ x = k − ${r} และ k + ${r} มีจุดยอด (k, ${r*r}) และตัดแกน y ที่ (0, ${c}) โดย k > 0 จงหาค่า k`,k,[[k*k,'ลืมถอดรากที่สอง','ใช้สูตรผิด'],[-k,'ไม่ใช้เงื่อนไข k > 0','เครื่องหมาย'],[r-k,'สลับค่าที่ต้องลบ','คิดเลขพลาด'],[c,'ตอบค่าที่โจทย์ให้มา','อ่านโจทย์']],SL([`พาราโบลาคว่ำที่มีจุดยอด (k, ${r*r}) เขียนได้เป็น y = −(x − k)² + ${r*r}`,`กราฟผ่านจุด (0, ${c}) จึงแทน x = 0 และ y = ${c}: ${c} = −(0 − k)² + ${r*r}`,`ได้ ${c} = ${r*r} − k² ดังนั้น k² = ${r*r} − ${c} = ${k*k}`,`โจทย์บอก k > 0 จึงได้ k = ${k}`],`จุดยอดคือ "ยอดภูเขา" ถ้ารู้ยอดภูเขาและอีกหนึ่งจุดที่กราฟผ่าน ก็แทนจุดนั้นลงสมการแล้วหา k ได้ ตรวจ: จุดตัดแกน x อยู่ห่างจาก k ไปซ้ายและขวาข้างละ ${r} หน่วย คือ k − ${r} กับ k + ${r}`),gPara(k,r,c))},
+()=>{const k=R(3,7),m=P([2,3,4]),A=k*(k+m);return mk('พื้นที่และสมการ',`สี่เหลี่ยมผืนผ้ากว้าง k ยาว k + ${m} หน่วย มีพื้นที่ ${A} ตารางหน่วย จงหาค่า k`,k,[[k+m,'ตอบความยาวแทนความกว้าง','อ่านโจทย์'],[A/m,'หารพื้นที่ด้วยส่วนต่างโดยตรง','ใช้สูตรผิด'],[k-1,'แยกตัวประกอบคลาดเคลื่อน','คิดเลขพลาด'],[-(k+m),'ไม่ตัดรากที่ติดลบ','เครื่องหมาย']],SL([`ความกว้าง = k ความยาว = k + ${m} และ พื้นที่ = กว้าง × ยาว`,`k(k + ${m}) = ${A} ได้ k² + ${m}k − ${A} = 0`,`หาสองจำนวนที่คูณกันได้ −${A} และบวกกันได้ ${m} คือ ${k+m} กับ −${k} จึงแยกได้ (k + ${k+m})(k − ${k}) = 0`,`k = −${k+m} หรือ k = ${k} แต่ความยาวต้องเป็นบวก จึงตอบ k = ${k}`],`เปลี่ยนเรื่องราวในรูปให้เป็นสมการ แล้วแก้สมการกำลังสอง คำตอบที่ติดลบทิ้งไป เพราะความยาวติดลบไม่ได้ ตรวจ: ${k} × ${k+m} = ${A}`),gRect(k,m,A))},
+()=>{const s=R(3,6);return mk('พีชคณิต',`ถ้า x + 1/x = ${s} แล้ว x² + 1/x² มีค่าเท่าใด`,s*s-2,[[s*s,'ลืมลบ 2','ลืมขั้นตอน'],[s*s+2,'เครื่องหมายของ 2 ผิด','เครื่องหมาย'],[2*s,'คูณ 2 แทนการยกกำลังสอง','ใช้สูตรผิด'],[s*s-1,'คิดเลขคลาดเคลื่อน','คิดเลขพลาด']],SL([`ยกกำลังสองทั้งสองข้างของ x + ${fr(1,'x')} = ${s}`,`(x + ${fr(1,'x')})² = x² + 2·x·${fr(1,'x')} + ${fr(1,'x²')} = x² + 2 + ${fr(1,'x²')}`,`จึงได้ x² + 2 + ${fr(1,'x²')} = ${s*s}`,`ดังนั้น x² + ${fr(1,'x²')} = ${s*s} − 2 = ${s*s-2}`],`อยากได้ "ผลบวกของกำลังสอง" ให้ยกกำลังสองทั้งสองข้าง แล้วย้ายตัวกลาง 2 ไปลบ (ตัวกลางมาจาก x × ${fr(1,'x')} = 1 เสมอ จึงเป็น 2·1 = 2)`))},
+()=>{const a=R(2,5),d=R(2,4),n=P([10,12,14,20]),S1=n/2*(2*a+(n-1)*d);return mk('ลำดับและอนุกรม',`ลำดับเลขคณิตมีพจน์แรก ${a} ผลต่างร่วม ${d} จงหาผลบวก ${n} พจน์แรก`,S1,[[n/2*(2*a+n*d),'ใช้ n แทน n − 1 ในสูตร','ใช้สูตรผิด'],[a+(n-1)*d,'ตอบพจน์สุดท้ายแทนผลบวก','อ่านโจทย์'],[n*(2*a+(n-1)*d),'ลืมหารด้วย 2','ลืมขั้นตอน']],SL([`สูตรผลบวก n พจน์แรกของลำดับเลขคณิต: Sₙ = ${fr('n',2)} × [2a + (n − 1)d]`,`แทน a = ${a}, d = ${d}, n = ${n}`,`S = ${fr(n,2)} × [2(${a}) + (${n} − 1)(${d})] = ${fr(n,2)} × [${2*a} + ${(n-1)*d}]`,`S = ${n/2} × ${2*a+(n-1)*d} = ${S1}`],`พจน์หน้าสุดจับคู่กับพจน์หลังสุด ผลบวกของแต่ละคู่เท่ากันหมดคือ ${2*a+(n-1)*d} มีทั้งหมด ${n/2} คู่ จึงเอา ${n/2} × ${2*a+(n-1)*d} = ${S1}`))},
+()=>{const[p,q]=P([[3,5],[2,7],[4,5]]),u=P([12,15,20,25]),T0=(p+q)*u;return mk('อัตราส่วน',`ผู้ขายบอกว่าอัตราส่วนหมูต่อไก่เป็น ${p} : ${q} และมีหมูกับไก่รวมกัน ${T0} ตัว ตามอัตราส่วนนี้มีไก่กี่ตัว`,q*u,[[p*u,'ตอบจำนวนหมูแทนไก่','อ่านโจทย์'],[T0/q,'หารด้วยส่วนของไก่แทนผลรวมส่วน','ใช้สูตรผิด'],[T0-q,'ลบอัตราส่วนออกจากผลรวมโดยตรง','ลืมขั้นตอน']],`รวม ${p+q} ส่วน ส่วนละ ${T0} ÷ ${p+q} = ${u} ตัว ไก่ ${q} ส่วน = ${q*u} ตัว`)},
+()=>{const[x,y,z]=P([[3,4,5],[5,12,13],[8,15,17]]),m=P([1,2]),b=x*m,h=y*m,L=z*m;return mk('พีทาโกรัส',`บันไดยาว ${L} เมตร พิงกำแพง ปลายล่างอยู่ห่างกำแพง ${b} เมตร ปลายบนของบันไดสูงจากพื้นกี่เมตร`,h,[[L-b,'ลบความยาวโดยตรง','ลืมขั้นตอน'],[Math.sqrt(L*L+b*b),'บวกกำลังสองแทนการลบ','เครื่องหมาย'],[L+b,'บวกความยาวโดยตรง','ใช้สูตรผิด']],SL([`บันไดเป็นด้านเฉียง (ด้านที่ยาวที่สุดตรงข้ามมุมฉาก) พื้นกับกำแพงตั้งฉากกัน ใช้พีทาโกรัส: (ความสูง)² + (ระยะห่างจากกำแพง)² = (ความยาวบันได)²`,`h² + ${b}² = ${L}² จึง h² = ${L*L} − ${b*b} = ${L*L-b*b}`,`h = √${L*L-b*b} = ${h} เมตร`],`สามเหลี่ยมมุมฉากด้านเฉียง ${L} ด้านหนึ่ง ${b} ที่เหลือคือ ${h} (เป็นชุดตัวเลขที่พบบ่อย ${x*m}-${y*m}-${z*m}) ข้อควรระวัง: ด้านเฉียงเป็นตัวที่ต้องลบ ไม่ใช่บวก`),gTri(b,h,L))},
+()=>{const r=P([2,3,4]),k=P([-5,-4,-3,-2,2,3,4,5]),c=-r*r-k*r;return mk('สมการกำลังสอง',`x = ${r} เป็นคำตอบของสมการ x² + kx ${sg(c)} = 0 จงหาค่า k`,k,[[-k,'ย้ายข้างแล้วเครื่องหมายผิด','เครื่องหมาย'],[k*r,'ลืมหารด้วย r','ลืมขั้นตอน'],[(c-r*r)/r,'ใช้ −r² แทน r² ในสมการ','เครื่องหมาย']],SL([`"เป็นคำตอบของสมการ" แปลว่าแทน x = ${r} แล้วสมการเป็นจริง`,`${r*r} + ${r}k ${sg(c)} = 0`,`${r}k = ${-(r*r+c)}`,`k = ${fr(-(r*r+c),r)} = ${k}`],`แทนค่าที่โจทย์ให้ลงในสมการ เหลือตัวไม่รู้ตัวเดียว (k) ก็แก้สมการธรรมดาได้เลย`))}
+];
+function begin(n,md){clearInterval(T);let qs=pickQ(n);if(md==='r'){const tx=qs.filter(q=>q.txt),nu=qs.filter(q=>!q.txt),k=Math.max(0,16-tx.length);qs=sh(tx.concat(nu.slice(0,k))).concat(nu.slice(k))}qs.forEach(q=>q.opts=sh([{v:q.a[0],c:1},...q.w.map(w=>({v:w[0],why:w[1],tag:w[2],c:0}))]));
+S={qs,i:0,ans:[],mode:qs.map((q,i)=>q.txt?'c':md==='f'?'t':md==='r'?(i<16?'c':'t'):md),fx:md!=='f',sel:null,t0:Date.now(),title:NAV.sn+' · O-NET ม.3'};show();
+T=setInterval(()=>{const e=document.getElementById('tm');if(e){const t=Math.floor((Date.now()-S.t0)/1000);e.textContent=String(Math.floor(t/60)).padStart(2,'0')+':'+String(t%60).padStart(2,'0')}},500)}
+function show(){const q=S.qs[S.i],n=S.qs.length,m=S.mode[S.i]||'t',on='border-color:var(--ac);font-weight:600';
+const body=m==='c'?q.opts.map((o,k)=>`<button class="o${S.sel===k?' s':''}" onclick="pick(${k})">${'กขคง'[k]}. ${f(o.v)}</button>`).join(''):`<div class="f"><input autocomplete="off" aria-label="คำตอบ" onfocus="focusEl=this"></div><div class="k">${['π','√','^','/','(',')','−','⌫'].map(c=>`<button type="button" onmousedown="event.preventDefault()" onclick="ins('${c}')">${c}</button>`).join('')}</div>`;
+app.innerHTML=`<div class="top"><span>${S.title} · ข้อ ${S.i+1}/${n}</span><span id="tm">00:00</span></div><div class="bar"><i style="width:${S.i/n*100}%"></i></div><div class="card ex"><div class="qa"><p class="q">${q.q}</p>${q.svg||''}</div><div class="an"><div class="k"${S.fx||q.txt?' style="display:none"':''}><button style="padding:0 12px;${m==='t'?on:''}" onclick="setMode('t')">พิมพ์คำตอบเอง</button><button style="padding:0 12px;${m==='c'?on:''}" onclick="setMode('c')">เลือกตอบ</button></div>${body}</div><button class="p" onclick="next()">${S.i+1<n?'ข้อต่อไป':'ส่งและดูผล'}</button>`;
+if(m==='t')app.querySelector('input').focus()}
+function setMode(m){S.mode[S.i]=m;S.sel=null;show()}
+function pick(k){S.sel=k;show()}
+function next(){const m=S.mode[S.i]||'t';S.ans[S.i]=m==='c'?{m,c:S.sel}:{m,t:app.querySelector('input').value};S.sel=null;S.i++;S.i<S.qs.length?show():result()}
+function judge(q,a){a=a||{};if(a.m==='c'){const o=q.opts[a.c];return o?{ok:o.c,why:o.why,tag:o.tag,s:f(o.v)}:{ok:0,why:'ไม่ได้ตอบ',tag:'ไม่ได้ตอบ',s:'-'}}
+const x=ev(a.t);if(x!==null&&Math.abs(x-q.a[0])<1e-6*Math.max(1,Math.abs(q.a[0])))return{ok:1,s:a.t};
+const w=x===null?null:q.w.find(w=>Math.abs(w[0]-x)<0.01);return{ok:0,why:w?w[1]:(x===null?'ไม่ได้ตอบหรือพิมพ์รูปแบบไม่ถูกต้อง':'ไม่ตรงกับข้อผิดพลาดที่พบบ่อย ลองเทียบกับวิธีทำ'),tag:w?w[2]:'อื่น ๆ',s:a.t||'-'}}
+function result(){clearInterval(T);const sec=Math.floor((Date.now()-S.t0)/1000),tp={},er={},J=S.qs.map((q,i)=>judge(q,S.ans[i]));let sc=0;
+S.qs.forEach((q,i)=>{const j=J[i];tp[q.tp]=tp[q.tp]||[0,0];tp[q.tp][1]++;if(j.ok){sc++;tp[q.tp][0]++}else er[j.tag]=(er[j.tag]||0)+1});
+const ers=Object.entries(er).sort((a,b)=>b[1]-a[1]);
+app.innerHTML=`<h1>ผลการทำข้อสอบ</h1><div class="card"><div class="sc">${sc}/${S.qs.length}</div><p class="m">ใช้เวลา ${Math.floor(sec/60)} นาที ${sec%60} วินาที</p><h2>คะแนนแยกตามหัวข้อ</h2>${Object.entries(tp).map(([k,v])=>`<div class="t"><span>${k}</span><b>${v[0]}/${v[1]}</b></div>`).join('')}<h2 style="margin-top:16px">ข้อผิดพลาดที่พบบ่อยของคุณ</h2>${ers.length?ers.map(([k,v])=>`<div class="t"><span>${k}</span><b>${v} ข้อ</b></div>`).join(''):'<p class="m">ไม่พบข้อผิดพลาด</p>'}</div><h2>เฉลยละเอียด</h2>${S.qs.map((q,i)=>{const j=J[i];return `<div class="r ${j.ok?'y':'n'}"><b class="${j.ok?'y':'n'}">ข้อ ${i+1} ${j.ok?'ถูก':'ผิด'}</b> · ${q.tp}<br>${q.svg||''}${q.q}<div class="kv"><span>คำตอบของคุณ</span><b>${j.s}</b></div><div class="kv"><span>คำตอบที่ถูก</span><b>${f(q.a[0])}</b></div><div class="kv"><span>วิธีคิด</span><div>${q.sol}</div></div>${j.ok?'':`<div class="kv"><span>ผิดเพราะ</span><div>${j.why}</div></div>`}<div class="kv"><span>ข้อผิดที่พบบ่อย</span><div>${q.w.map(x=>`${f(x[0])} — ${x[1]}`).join('<br>')}</div></div></div>`}).join('')}<button class="p" onclick="start()">ทำอีกครั้ง</button> <button class="p l" onclick="home()">กลับหน้าหลัก</button>`}
+const AH='0abbdab7c565275515d6d91af50f9708915d6f262ec38cae9b4fd78911bade91';let ADM=false,codes=[],atab='b';
+try{codes=JSON.parse(localStorage.getItem('codes')||'[]')}catch(e){}
+async function hx(u,p){const e=new TextEncoder(),k=await crypto.subtle.importKey('raw',e.encode(u+':'+p),'PBKDF2',false,['deriveBits']),b=await crypto.subtle.deriveBits({name:'PBKDF2',hash:'SHA-256',salt:e.encode('onet-admin-v1'),iterations:100000},k,256);return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function homeLegacy33291(){clearInterval(T);const lv=[['ระดับโรงเรียน',0],['ระดับอำเภอ',0],['ระดับจังหวัด',0],['O-NET',1]];
+app.innerHTML=`<h1>ฝึกข้อสอบคณิตศาสตร์ ม.3</h1><p class="m">เลือกระดับข้อสอบ ระบบจะสุ่มโจทย์มาให้ ${N} ข้อ</p><div class="g">${lv.map(([t,on])=>`<div class="c" style="${on?'border-color:var(--ac)':'opacity:.5'}"><b>${t}</b><span>${on?'เลือกอยู่':'เร็วๆ นี้'}</span></div>`).join('')}</div><button class="p" onclick="start()">เริ่มทำข้อสอบ ${N} ข้อ</button><p style="margin-top:40px"><button class="p l" style="padding:6px 12px;font-size:.85rem" onclick="admin()">ผู้ดูแลระบบ</button></p>`}
+function adminLogin(){app.innerHTML=`<h1>ผู้ดูแลระบบ</h1><div class="card"><div class="f"><label>ชื่อผู้ใช้</label><input id="au" autocomplete="off"></div><div class="f"><label>รหัสผ่าน</label><input id="ap" type="password" autocomplete="off"></div><div id="ae" style="color:var(--bad);min-height:1.7em"></div><button class="p" onclick="doLogin()">เข้าสู่ระบบ</button> <button class="p l" onclick="home()">กลับ</button></div>`}
+async function doLogin(){const u=document.getElementById('au').value.trim(),p=document.getElementById('ap').value;let g=false;try{g=(await hx(u,p))===AH}catch(e){}
+if(g){ADM=true;admin()}else document.getElementById('ae').textContent='ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง'}
+function admin(t){if(!ADM)return adminLogin();if(t)atab=t;
+const tab=(k,n)=>`<button class="p${atab===k?'':' l'}" style="margin:0 6px 12px 0" onclick="admin('${k}')">${n}</button>`;
+const BK=NAV.ab==='sci'?GS:G;let b='';if(atab==='b'){b=`<div>${[['math','คณิตศาสตร์'],['sci','วิทยาศาสตร์']].map(([k,n])=>`<button class="p${NAV.ab===k?'':' l'}" style="margin:0 6px 10px 0" onclick="NAV.ab='${k}';admin()">${n}</button>`).join('')}</div><p class="m">แม่แบบโจทย์ ${BK.length} แบบ แสดงตัวอย่างที่สุ่มใหม่ทุกครั้งที่เปิดหน้านี้ พร้อมคำตอบ วิธีคิด และเหตุผลของตัวเลือกหลอก</p>`+BK.map((g,i)=>{const q=g();return `<div class="card"><b>แบบที่ ${i+1} · ${q.tp}</b><p class="q">${q.q}</p>${q.svg||''}<div><b style="color:var(--ok)">คำตอบที่ถูก: ${f(q.a[0])}</b></div><div class="m" style="margin:6px 0">วิธีคิด: ${q.sol}</div>${q.w.map(w=>`<div class="t"><span>ตัวหลอก ${f(w[0])} — ${w[1]}</span><span>${w[2]}</span></div>`).join('')}</div>`}).join('')}
+else{b=`<p class="m">สร้างโค้ดลับ 15 ตัวอักษรจากการสุ่ม ผสมตัวอักษรและตัวเลข ตอนนี้โค้ดยังใช้งานไม่ได้ ระบบเก็บเฉพาะค่าแฮช ถ้าโค้ดหลุดจากรายการนี้ก็นำไปใช้ไม่ได้ และโค้ดแต่ละตัวใช้ได้ครั้งเดียว</p><button class="p" onclick="genCode()">สร้างโค้ดลับใหม่</button>${NAV.fresh?`<div class="card" style="margin-top:12px"><b>โค้ดที่เพิ่งสร้าง (แสดงครั้งเดียว ให้คัดลอกเก็บไว้)</b><div style="font-family:monospace;font-size:1.3rem;margin-top:6px">${NAV.fresh}</div></div>`:''}<div style="margin-top:14px">${codes.length?codes.map((c,i)=>`<div class="t"><b style="font-family:monospace;font-size:1.05rem">${c.m}</b><span>${c.t} · ยังไม่เปิดใช้งาน · ใช้ได้ครั้งเดียว</span></div>`).join(''):'<p class="m">ยังไม่มีโค้ด กดสร้างโค้ดลับใหม่เพื่อเริ่ม'}</div>`}
+app.innerHTML=`<h1>ผู้ดูแลระบบ</h1><div>${tab('b','คลังข้อสอบ')}${tab('c','โค้ดลับ')}<button class="p l" style="margin:0 0 12px" onclick="ADM=false;home()">ออกจากระบบ</button></div>${b}`}
+async function sha(t){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode('code-v1:'+t));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+async function genCode(){const cs='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789',a=new Uint32Array(15);crypto.getRandomValues(a);let s=[...a].map(x=>cs[x%cs.length]).join('');s=s.match(/.{5}/g).join('-');
+const h=await sha(s);NAV.fresh=s;codes.unshift({h:h,m:s.slice(0,2)+'***-*****-***'+s.slice(-2),t:new Date().toLocaleString('th-TH'),used:0});try{localStorage.setItem('codes',JSON.stringify(codes))}catch(e){}admin()}
+
+let CFG={n:30,md:'r'};
+function start(){clearInterval(T);const opt=(k,v,t)=>`<button class="o${CFG[k]===v?' s':''}" onclick="CFG['${k}']=${typeof v==='number'?v:`'${v}'`};start()">${t}</button>`;
+pane(4,`<h1>ตั้งค่าก่อนเริ่มสอบ</h1><div class="card"><h2>จำนวนข้อ</h2>${[10,20,30].map(n=>opt('n',n,n+' ข้อ')).join('')}<h2 style="margin-top:14px">วิธีตอบ</h2>${opt('md','r','แบบข้อสอบจริง (ข้อ 1–16 ช้อยส์ ข้อ 17 ขึ้นไปเขียนตอบ)')}${opt('md','c','เลือกตอบ (ช้อยส์) ทุกข้อ')}${opt('md','t','พิมพ์คำตอบเองทุกข้อ')}${opt('md','f','เลือกวิธีตอบเองทีละข้อ')}</div><div class="card"><h2>สรุปที่เลือก</h2><p class="m" style="margin:0">${NAV.sn} · ระดับ O-NET ม.3 · ${CFG.n} ข้อ · ${{r:'แบบข้อสอบจริง (1–16 ช้อยส์ / 17+ เขียนตอบ)',c:'เลือกตอบทุกข้อ',t:'พิมพ์ตอบทุกข้อ',f:'เลือกวิธีตอบทีละข้อ'}[CFG.md]}</p></div><button class="p" onclick="begin(CFG.n,CFG.md)">ยืนยันและเริ่มทำข้อสอบ</button> <button class="p l" onclick="levels()">ย้อนกลับ</button>`)}
+const NM=['ดี','เอ','ลาย','บี','ฟ้า','ภูมิ','มะลิ','โอ๊ค','นุ่น','ต้นกล้า'],nm=()=>P(NM),sup=e=>String(e).replace(/\d/g,d=>'⁰¹²³⁴⁵⁶⁷⁸⁹'[d]);
+function fs(v){const e=Math.floor(Math.log10(Math.abs(v))),m=+(v/10**e).toFixed(4);return m+'×10'+sup(e)}
+const gArch=(w,H,d)=>{const s=120/w,Y=y=>170-y*150/H,X=x=>150+x*s,yd=H-H/(w*w)*d*d;let p='';for(let i=0;i<=40;i++){const x=-w+2*w*i/40;p+=(i?'L':'M')+X(x).toFixed(1)+' '+Y(H-H/(w*w)*x*x).toFixed(1)}
+return sv(`<path d="${p}" stroke="var(--ac)" stroke-width="2.5"/><line x1="10" x2="290" y1="170" y2="170"/><line x1="${X(d)}" x2="${X(d)}" y1="170" y2="${Y(yd)}" stroke-dasharray="4"/>`+tx(150,Y(H)-8,`สูง ${H} ม.`)+tx(150,186,`กว้าง ${2*w} ม.`)+tx(X(d)+4,160,`${d} ม.`,'start')+tx(X(d)+6,Y(yd)-4,'สูง ?','start'))};
+const gSim=(a,b,c,H)=>{const s=Math.min(240/(b+c),140/H),o=10+b*s+30;return sv(`<path d="M10 170 H${10+b*s} V${170-a*s} Z M${o} 170 H${o+c*s} V${170-H*s} Z" stroke="var(--ac)" stroke-width="2.5"/>`+tx(10+b*s/2,186,`${b} ม.`)+tx(10+b*s+4,170-a*s/2,`${a} ม.`,'start')+tx(o+c*s/2,186,`${c} ม.`)+tx(o+c*s+4,170-H*s/2,'สูง ?','start'))};
+G.push(
+()=>{const x1=P([2,3]),x2=P([4,6]),y=P([5,7]),z=P([7,9]),k=P([4,6,8]);let L=x1;while(L%x2)L+=x1;const yp=y*L/x1,zp=z*L/x2,T0=k*(L+yp+zp);return mk('อัตราส่วน',`ร้านผลไม้ของ${nm()}บอกว่า ส้มต่อองุ่นเป็น ${x1} : ${y} และส้มต่อแอปเปิลเป็น ${x2} : ${z} มีผลไม้ทั้ง 3 ชนิดรวมกัน ${T0} ผล แอปเปิลมากกว่าส้มกี่ผล`,(zp-L)*k,[[zp*k,'ตอบจำนวนแอปเปิลแทนส่วนต่าง','อ่านโจทย์'],[(z-x2)*k,'ไม่ปรับอัตราส่วนให้ส้มเท่ากัน','ลืมขั้นตอน'],[zp-L,'ลืมคูณด้วยจำนวนต่อส่วน','ลืมขั้นตอน']],`ปรับให้ส้มเท่ากัน ส้ม : องุ่น : แอปเปิล = ${L} : ${yp} : ${zp} รวม ${L+yp+zp} ส่วน ส่วนละ ${k} ผล ส่วนต่าง ${zp-L} ส่วน = ${(zp-L)*k} ผล`)},
+()=>{const da=R(60,95),db=R(10,55),e=P([9,10,11]),v=(da-db)/10*10**e;return mk('เลขวิทยาศาสตร์',`${nm()}สำรวจการส่งออกของจังหวัดหนึ่ง ข้าวหอมมะลิมีมูลค่าประมาณ ${da/10} × 10${sup(e)} บาท ยางพารามีมูลค่าประมาณ ${db/10} × 10${sup(e)} บาท มูลค่าของสองชนิดต่างกันกี่บาท`,v,[[(da+db)/10*10**e,'บวกแทนการลบ','เครื่องหมาย'],[v*10,'เลื่อนจุดทศนิยมผิด','คิดเลขพลาด'],[v/10,'เลื่อนจุดทศนิยมผิด','คิดเลขพลาด']],SL([`เลขชี้กำลังของ 10 เท่ากันแล้ว (10${sup(e)}) ดึงออกเป็นตัวร่วมได้`,`(${da/10} − ${db/10}) × 10${sup(e)}`,`${da/10} − ${db/10} = ${(da-db)/10}`,`คำตอบ ${(da-db)/10} × 10${sup(e)}`],`เหมือนลบกล่องขนาดเท่ากัน ลบแค่ "จำนวนกล่อง" (ส่วนตัวเลข) ส่วน "ขนาดกล่อง" (10${sup(e)}) ไม่เปลี่ยน`))},
+()=>{const w=P([4,6,8,10]),H=w*w/4,d=w>4?P([2,4]):2,ans=H-d*d/4;return mk('พาราโบลา',`ซุ้มประตูของ${nm()}เป็นพาราโบลาคว่ำ สูงที่สุด ${H} เมตรที่กึ่งกลาง และกว้างที่พื้น ${2*w} เมตร ที่ตำแหน่งห่างจากกึ่งกลาง ${d} เมตร ซุ้มสูงจากพื้นกี่เมตร`,ans,[[d*d/4,'ตอบค่าที่ต่ำลงแทนความสูง','อ่านโจทย์'],[H-d*d,'ลืมหาค่าคงที่ a','ลืมขั้นตอน'],[H-H/w*d*d,'ไม่ยกกำลังสองครึ่งความกว้าง','ใช้สูตรผิด']],SL([`ให้ยอดซุ้มอยู่กลางซุ้ม สมการพาราโบลาคว่ำคือ y = ${H} − a·x² (x วัดจากกึ่งกลาง)`,`ที่ขอบพื้นห่างจากกลาง ${w} เมตร สูง 0: 0 = ${H} − a(${w})² จึง a = ${fr(H,w*w)} = ${fr(1,4)}`,`ที่ห่างจากกลาง ${d} เมตร: y = ${H} − ${fr(1,4)}(${d})² = ${H} − ${fr(d*d,4)}`,`y = ${ans} เมตร`],`ซุ้มสูงสุดที่กลาง ยิ่งเดินห่างกลางก็ยิ่งเตี้ยลงตามระยะกำลังสอง หา "อัตราเตี้ยลง" a จากจุดที่รู้ (ขอบพื้นสูง 0) แล้วนำไปคำนวณที่ตำแหน่งที่ถาม`),gArch(w,H,d))},
+()=>{const[a,b]=P([['ตั๋วนักเรียน','ตั๋วทั่วไป'],['ตั๋วธรรมดา','ตั๋ว VIP']]),p=P([100,150,200]),n1=R(15,30)*10,n2=R(2,12)*10,N0=n1+n2,Rv=p*n1+2*p*n2;return mk('ระบบสมการ',`งานคอนเสิร์ตของวง${nm()} ขาย${a}ใบละ ${p} บาท และ${b}ใบละ ${2*p} บาท มีผู้ซื้อตั๋วรวม ${N0} คน ได้เงินรวม ${Rv} บาท ผู้ซื้อ${a}มากกว่าผู้ซื้อ${b}กี่คน`,n1-n2,[[n1,`ตอบจำนวน${a}แทนผลต่าง`,'อ่านโจทย์'],[n2-n1,'ลบสลับตำแหน่ง','เครื่องหมาย'],[n2,`ตอบจำนวน${b}แทนผลต่าง`,'อ่านโจทย์']],SL([`ให้ n₁ = จำนวนผู้ซื้อ${a} (ใบละ ${p} บาท) และ n₂ = จำนวนผู้ซื้อ${b} (ใบละ ${2*p} บาท)`,`สมการจำนวนคน: n₁ + n₂ = ${N0}`,`สมการเงินรวม: ${p}n₁ + ${2*p}n₂ = ${Rv}`,`จากสมการแรก n₁ = ${N0} − n₂ แทนในสมการสอง: ${p}(${N0} − n₂) + ${2*p}n₂ = ${Rv} ได้ ${p*N0} + ${p}n₂ = ${Rv}`,`${p}n₂ = ${Rv-p*N0} จึง n₂ = ${n2} และ n₁ = ${N0} − ${n2} = ${n1}`,`${a}มากกว่า${b} อยู่ ${n1} − ${n2} = ${n1-n2} คน`],`ข้อมูลสองอย่าง (จำนวนคน และเงินรวม) เขียนเป็นสองสมการ มีตัวไม่รู้ 2 ตัว ใช้ "แทนค่า" ให้เหลือตัวเดียว ตรวจ: ${p}×${n1} + ${2*p}×${n2} = ${Rv}`))},
+()=>{const[r,h,Rr]=P([[2,8,2],[2,27,3],[2,64,4],[4,2,2],[4,16,4],[6,3,3],[6,24,6]]);return mk('พื้นที่และปริมาตร',`${nm()}ปั้นไอศกรีมทรงกลมให้มีปริมาตรเท่ากับไอศกรีมทรงกรวยรัศมีฐาน ${r} ซม. สูง ${h} ซม. ทรงกลมมีรัศมีกี่เซนติเมตร`,Rr,[[Rr**3,'ลืมถอดรากที่สาม','ใช้สูตรผิด'],[r,'ตอบรัศมีของกรวย','อ่านโจทย์'],[Math.cbrt(r*r*h/3),'ลืม 4/3 ในสูตรทรงกลม','ใช้สูตรผิด']],SL([`ปริมาตรเท่ากัน: ปริมาตรทรงกลม = ปริมาตรทรงกรวย`,`สูตร: ทรงกลม ${fr(4,3)}πR³ ทรงกรวย ${fr(1,3)}πr²h`,`${fr(4,3)}πR³ = ${fr(1,3)}π(${r})²(${h})`,`คูณ 3 แล้วหารด้วย π ทั้งสองข้าง: 4R³ = ${r*r*h}`,`R³ = ${fr(r*r*h,4)} = ${Rr**3} จึง R = ${Rr} เซนติเมตร`],`ปั้นกรวยเป็นทรงกลม เนื้อไอศกรีมเท่าเดิม ปริมาตรจึงเท่ากัน ตั้งสมการแล้ว π ตัดกันหมด ตรวจ: ${Rr}³ = ${Rr**3}`))},
+()=>{const[a,b]=P([[2,3],[3,4],[4,5]]),k=P([6,8,10,12]),c=b*k;return mk('สามเหลี่ยมคล้าย',`${nm()}ปักเสาสูง ${a} เมตร ได้เงายาว ${b} เมตร ในเวลาเดียวกันตึกแห่งหนึ่งมีเงายาว ${c} เมตร ตึกสูงกี่เมตร`,a*k,[[c-b+a,'ใช้การบวกลบแทนอัตราส่วน','ใช้สูตรผิด'],[c*b/a,'กลับอัตราส่วน','ใช้สูตรผิด'],[a*c,'คูณโดยไม่หารด้วยเงาของเสา','ลืมขั้นตอน']],SL([`เวลาเดียวกัน แสงแดดทำมุมเท่ากัน สามเหลี่ยมของ (เสา, เงาเสา) คล้ายกับ (ตึก, เงาตึก)`,`ความสูง : เงา เท่ากัน: ${fr(a,b)} = ${fr('H',c)}`,`H = ${fr(a+' × '+c,b)} = ${fr(a*c,b)} = ${a*k} เมตร`],`ของทุกอย่างในเวลาเดียวกันสูงเป็น ${fr(a,b)} เท่าของเงาตัวเอง ตึกมีเงา ${c} เมตร จึงสูง ${c} × ${fr(a,b)} = ${a*k} เมตร`),gSim(a,b,c,a*k))},
+()=>{let v,last,sm;do{v=[R(50,60)];for(let i=0;i<7;i++)v.push(v[i]+R(0,6));last=v[0]+R(v[7]-v[0],v[7]-v[0]+20);sm=v.reduce((p,q)=>p+q,0)+last}while(sm%9);const rg=last-v[0],m=sm/9,sk=sm-last;return mk('สถิติ',`${nm()}บันทึกคะแนนสอบของนักเรียน 9 คน เรียงจากน้อยไปมาก ได้ ${v.join(', ')}, a โดยพิสัยของข้อมูลเท่ากับ ${rg} ค่าเฉลี่ยเลขคณิตเท่ากับเท่าใด`,m,[[sk/8,'ไม่นับค่า a','ลืมขั้นตอน'],[(sk+rg)/9,'ใช้พิสัยแทนค่า a','อ่านโจทย์'],[last,'ตอบค่า a แทนค่าเฉลี่ย','อ่านโจทย์']],SL([`พิสัย = ค่าสูงสุด − ค่าต่ำสุด จึงค่าสูงสุด = ค่าต่ำสุด + พิสัย`,`ข้อมูลเรียงน้อยไปมาก ค่าต่ำสุดคือ ${v[0]} จึง a = ${v[0]} + ${rg} = ${last}`,`ผลรวมข้อมูลทั้งหมด = ${v.join(' + ')} + ${last} = ${sm}`,`ค่าเฉลี่ย = ${fr('ผลรวม','จำนวนข้อมูล')} = ${fr(sm,9)} = ${m}`],`ใช้ "พิสัย" หาตัวที่หายไปก่อน แล้วค่อยบวกทุกตัวและหารด้วยจำนวนข้อมูลทั้งหมด (9 ตัว)`))},
+()=>{const n=P([40,60,80,120,200]),pc=P([5,10,15,25]),k=n*pc/100;return mk('ความน่าจะเป็น',`ช่อง${nm()}แจกบัตรของขวัญ ${k} ใบ ให้ผู้ร่วมกิจกรรม ${n} คน คนละไม่เกิน 1 ใบ ความน่าจะเป็นที่ผู้ร่วมกิจกรรมคนหนึ่งจะไม่ได้รับบัตร คิดเป็นร้อยละเท่าใด`,100-pc,[[pc,'ตอบความน่าจะเป็นที่ได้รับบัตร','อ่านโจทย์'],[n-k,'ตอบจำนวนคนแทนร้อยละ','อ่านโจทย์'],[100-k,'ใช้จำนวนบัตรแทนร้อยละ','ใช้สูตรผิด']],SL([`ความน่าจะเป็น = ${fr('จำนวนกรณีที่สนใจ','จำนวนกรณีทั้งหมด')}`,`ได้รับบัตร: ${fr(k,n)} = ${pc}%`,`ไม่ได้รับบัตร = 100% − ${pc}% = ${100-pc}%`],`มี ${n} คน ได้บัตร ${k} คน ไม่ได้ ${n-k} คน จึง ${fr(n-k,n)} × 100 = ${100-pc}% (ใช้ "100% ลบส่วนที่ได้" ก็ได้เร็วกว่า)`))},
+()=>{const p=P([40,50,60,80]),q=P([2000,3000,4000]),x=R(20,60),B=p*x+q;return mk('ฟังก์ชันเชิงเส้น',`ค่าปูกระเบื้องของ${nm()}คิดตามฟังก์ชัน f(x) = ${p}x + ${q} เมื่อ x เป็นพื้นที่ (ตารางเมตร) ถ้ามีงบ ${B} บาท ปูได้มากที่สุดกี่ตารางเมตร`,x,[[B/p,'ไม่หักค่าคงที่','ลืมขั้นตอน'],[(B+q)/p,'บวกค่าคงที่แทนการลบ','เครื่องหมาย'],[(B-q)*p,'คูณแทนหาร','ใช้สูตรผิด']],SL([`สมการค่าใช้จ่าย: ${p}x + ${q} = งบประมาณ`,`${p}x + ${q} = ${B}`,`${p}x = ${B} − ${q} = ${B-q}`,`x = ${fr(B-q,p)} = ${x}`],`${q} เป็นค่าคงที่ที่จ่ายเสมอ ที่เหลือคือราคาต่อหน่วย × จำนวนหน่วย: เอางบลบค่าคงที่ก่อน แล้วหารด้วยราคาต่อหน่วย ตรวจ: ${p}×${x} + ${q} = ${B}`))}
+);
+
+function mkT(tp,q,a,w,sol,svg){const seen=new Set([a]),ws=w.filter(x=>!seen.has(x[0])&&seen.add(x[0]));return{tp,q,svg,a:[a],w:ws.slice(0,3),sol,txt:1}}
+const mkN=(tp,q,a,w,sol,svg)=>mk(tp,q,a,w,sol,svg);
+const TXT=(tp,q,a,wr,sol,tag,svg)=>mkT(tp,q,a,wr.map(x=>[x[0],x[1],x[2]||tag]),sol,svg);
+const GS0=[
+()=>{const k=P([3,4,5,6]),t=P([5,7,10,14]),d1=3*k,d2=4*k,a=(d1+d2)/t,dis=5*k;return mkN('การเคลื่อนที่',`${nm()}ขับรถไปทางทิศเหนือ ${d1} เมตร แล้วไปทางทิศตะวันออกอีก ${d2} เมตร ใช้เวลาทั้งหมด ${t} วินาที (วัดเป็นเส้นตรงแล้วจุดสุดท้ายอยู่ห่างจากจุดเริ่มต้น ${dis} เมตร) อัตราเร็วเฉลี่ยกี่เมตรต่อวินาที`,a,[[dis/t,'ใช้ระยะกระจัดแทนระยะทาง (ได้ความเร็วเฉลี่ย)','สับสนปริมาณ'],[d1/t,'นับเฉพาะช่วงแรก','อ่านโจทย์'],[(d1+d2)*t,'คูณเวลาแทนการหาร','ใช้สูตรผิด']],SL([`อัตราเร็วเฉลี่ย = ${fr('ระยะทางทั้งหมด','เวลาทั้งหมด')} (ระยะทาง = ความยาวตามเส้นทางที่เคลื่อนที่จริง)`,`ระยะทางรวม = ${d1} + ${d2} = ${d1+d2} เมตร`,`อัตราเร็วเฉลี่ย = ${fr(d1+d2,t)} = ${f(a)} เมตรต่อวินาที`,`หมายเหตุ: ${dis} เมตร เป็นขนาดของการกระจัด (เส้นตรงจากจุดเริ่มถึงจุดสุดท้าย) ใช้หาความเร็วเฉลี่ย ไม่ใช่อัตราเร็วเฉลี่ย`],`อัตราเร็ว = "เคลื่อนที่จริงกี่เมตรต่อวินาที" ต้องนับทุกเมตรที่ไปรวมกัน ส่วนความเร็วนับแค่ระยะตรงจากต้นถึงปลายและมีทิศทางด้วย`))},
+()=>{const w1=P([1.2,2,3,4]),d1=P([20,30,40]),L=P([5,10,15]),w2=w1*d1/L;return mkN('โมเมนต์ของแรง',`ไม้บรรทัดยาว 60 เซนติเมตร แขวนที่ตำแหน่งกึ่งกลาง วางสมดุลในแนวระดับ แขวนวัตถุหนัก ${w1} นิวตัน ที่ห่างจุดแขวน ${d1} เซนติเมตร จะต้องแขวนวัตถุอีกก้อนที่ด้านตรงข้ามห่างจุดแขวน ${L} เซนติเมตร น้ำหนักกี่นิวตัน จึงจะสมดุล`,w2,[[w1*d1,'ไม่หารด้วยระยะของแขนอีกข้าง','ลืมขั้นตอน'],[w1,'คิดว่าแรงเท่ากันก็สมดุล','เข้าใจแนวคิดผิด'],[w1*L/d1,'สลับระยะแขนทั้งสอง','ใช้สูตรผิด']],SL([`หลักสมดุลของคาน: โมเมนต์ทวนเข็ม = โมเมนต์ตามเข็ม โดย โมเมนต์ = แรง × ระยะจากจุดหมุน`,`ฝั่งแรก: ${w1} × ${d1} = ${w1*d1}`,`ฝั่งตรงข้าม: W × ${L} ต้องเท่ากัน จึง W × ${L} = ${w1*d1}`,`W = ${fr(w1*d1,L)} = ${f(w2)} นิวตัน`],`คานเหมือนไม้กระดานหก ยิ่งนั่งไกลจุดหมุน ยิ่งใช้น้ำหนักน้อยก็ถ่วงได้ ฝั่งที่ใกล้จุดหมุนกว่า (${L} ซม.) จึงต้องใช้น้ำหนักมากกว่า (${f(w2)} นิวตัน)`),sv(tx(150,60,'จุดแขวน')+'<path d="M20 100 H280"/><path d="M150 100 L135 130 H165 Z"/>'+tx(60,90,w1+' N')+tx(250,90,'? N')+tx(60,125,d1+' ซม.')+tx(235,125,L+' ซม.')))},
+()=>{const R1=P([2,4,6]),R2=P([3,6,8]),I=P([1,2,3]),V1=R1*I,fig=sv(`<path d="M30 40 H90 M150 40 H210 M270 40 H300 V170 H30 V105 M30 85 V40 M90 50 V95 H108 M132 95 H150 V50"/><rect x="90" y="30" width="60" height="20"/><rect x="210" y="30" width="60" height="20"/><path d="M12 85 H48 M20 105 H40" stroke-width="3"/><circle cx="120" cy="95" r="12"/>`+tx(120,99,'V')+tx(120,20,`R₁ = ${R1} Ω`)+tx(240,20,`R₂ = ${R2} Ω`)+tx(220,130,`โวลต์มิเตอร์อ่านได้ ${V1} V`)+tx(240,75,'I = ?')+tx(30,192,'แบตเตอรี่'));
+return mkN('วงจรไฟฟ้า',`ตัวต้านทาน R₁ = ${R1} โอห์ม และ R₂ = ${R2} โอห์ม ต่ออนุกรมกับแบตเตอรี่ดังรูป โวลต์มิเตอร์ต่อคร่อมเฉพาะ R₁ (ตัว ${R1} โอห์ม) อ่านค่าได้ ${V1} โวลต์ กระแสไฟฟ้าที่ผ่านตัวต้านทาน R₂ มีค่ากี่แอมแปร์`,I,[[V1/R2,'ใช้แรงดันคร่อม R₁ หารความต้านทาน R₂','ใช้สูตรผิด'],[V1/(R1+R2),'หารด้วยความต้านทานรวม ทั้งที่ V นี้เป็นแรงดันคร่อม R₁ ตัวเดียว','เงื่อนไขผิด'],[V1*R2/R1,'คิดว่ากระแสต่างกันตามความต้านทาน','เข้าใจแนวคิดผิด']],SL([`วงจรอนุกรม: กระแสไฟฟ้าผ่านทุกตัวเท่ากัน จึงหากระแสที่ R₁ แล้วนำไปใช้กับ R₂ ได้`,`กฎของโอห์ม: I = ${fr('V','R')}`,`I = ${fr(V1,R1)} = ${I} แอมแปร์`,`กระแสที่ผ่าน R₂ จึงเท่ากับ ${I} แอมแปร์ด้วย`],`เหมือนน้ำในท่อท่อเดียวที่ต่อกันเป็นสายยาว น้ำไหลผ่านทุกช่วงเท่ากัน ส่วนแรงดันไฟฟ้าต่างหากที่แบ่งกันตามความต้านทาน`),fig)},
+()=>{const Tf=P([30,35,40]),TB=P([10,20]),r=P([2,3,4]),TA=Tf+r*(Tf-TB);return mkN('ความร้อน',`นำของเหลว A อุณหภูมิ ${TA} องศาเซลเซียส กับของเหลว B อุณหภูมิ ${TB} องศาเซลเซียส มวลเท่ากันมาผสมกัน ได้อุณหภูมิสุดท้าย ${Tf} องศาเซลเซียส ความร้อนจำเพาะของ B เป็นกี่เท่าของ A`,r,[[1/r,'กลับอัตราส่วน','สลับค่า'],[TA/TB,'เทียบอุณหภูมิเริ่มต้นตรง ๆ','ใช้สูตรผิด'],[r+1,'บวกหนึ่งจากการนับผลต่างผิด','คิดเลขพลาด']],SL([`ความร้อนที่ของเหลวร้อนเสีย = ความร้อนที่ของเหลวเย็นได้รับ โดย Q = m·c·ΔT`,`มวลเท่ากัน ตัด m ทิ้งได้: cA(${TA} − ${Tf}) = cB(${Tf} − ${TB})`,`cA × ${TA-Tf} = cB × ${Tf-TB}`,`${fr('cB','cA')} = ${fr(TA-Tf,Tf-TB)} = ${r}`],`ของที่อุณหภูมิเปลี่ยนน้อยกว่าแปลว่าทนความร้อนกว่า (ความร้อนจำเพาะสูงกว่า) B เปลี่ยนแค่ ${Tf-TB} องศา ส่วน A เปลี่ยน ${TA-Tf} องศา B จึงมีความร้อนจำเพาะมากกว่า ${r} เท่า`))},
+()=>{const E0=P([60,80,100]),E1=E0+P([20,30,40]),a=E0-E1;return mkN('พลังงาน',`โยนก้อนหินขึ้นในแนวดิ่ง ตอนออกจากมือมีพลังงานจลน์ ${E0} จูล ขึ้นถึงจุดสูงสุดมีพลังงานกล ${E0} จูล เมื่อตกลงมากำลังจะกระทบพื้นซึ่งต่ำกว่าระดับมือ พบว่ามีพลังงานจลน์ ${E1} จูล พลังงานศักย์ของก้อนหินขณะนั้น (เทียบระดับมือ) เป็นกี่จูล`,a,[[E1-E0,'ลืมเครื่องหมายลบ (ต่ำกว่าระดับมือ)','เครื่องหมาย'],[0,'คิดว่าที่พื้นไม่มีพลังงานศักย์','เข้าใจแนวคิดผิด'],[-E1,'ใช้พลังงานจลน์เป็นค่าพลังงานศักย์','สับสนปริมาณ']],SL([`พลังงานกล = พลังงานจลน์ + พลังงานศักย์ และพลังงานกลคงที่ตลอดการเคลื่อนที่`,`พลังงานกลทั้งหมด = ${E0} จูล (จุดสูงสุดความเร็วเป็น 0 จึงมีแต่พลังงานศักย์ แต่ค่ารวมเท่ากับที่ออกจากมือ)`,`ตอนจะกระทบพื้น: ${E0} = ${E1} + PE`,`PE = ${E0} − ${E1} = ${a} จูล (ติดลบเพราะต่ำกว่าระดับมือที่ใช้เป็นระดับอ้างอิง)`],`พลังงานรวมเหมือนเงินในกระเป๋า จลน์เพิ่มศักย์ก็ต้องลด ถ้าเลือกระดับมือเป็นศูนย์ ต่ำกว่ามือจึงได้ค่าติดลบ`))},
+()=>{const rho=P([2,3]),F=P([2,3,4]),M=rho*rho*F;return mkN('แรงโน้มถ่วง',`ดาวเคราะห์ A และ B โคจรรอบดาวฤกษ์ดวงเดียวกัน แรงโน้มถ่วงที่กระทำต่อ A เป็น ${F} เท่าของที่กระทำต่อ B และมวลของ A เป็น ${M} เท่าของมวล B อัตราส่วนระยะห่างจากดาวฤกษ์ของ A ต่อ B เป็นเท่าใด`,rho,[[rho*rho,'ลืมถอดรากที่สอง','ใช้สูตรผิด'],[1/rho,'สลับ A กับ B','สลับค่า'],[M/F,'หารตรง ๆ โดยไม่ถอดราก','ลืมขั้นตอน']],SL([`กฎแรงโน้มถ่วง: F = ${fr('G·M·m','r²')} จึงได้ r² = ${fr('G·M·m','F')}`,`ดาวฤกษ์ดวงเดียวกัน (m เท่ากัน) เทียบกันได้ว่า r² เป็นสัดส่วนกับ ${fr('M','F')}`,`${fr('r(A)²','r(B)²')} = ${fr(M,F)} = ${rho*rho}`,`${fr('r(A)','r(B)')} = √${rho*rho} = ${rho}`],`มวลมากทำให้แรงมาก แต่ระยะห่างมากทำให้แรงลดลงเร็ว (ตามกำลังสอง) จึงต้องถอดรากที่สองในขั้นสุดท้าย อย่าลืม`))},
+()=>{const p=P([5,10,15,20]),V=P([100,200,250,500]),a=p*V/100;return mkN('สารละลาย',`สาร X มีความเข้มข้นร้อยละ ${p} โดยมวลต่อปริมาตร ถ้าสารละลายมีปริมาตร ${V} มิลลิลิตร จะมีสาร X กี่กรัม`,a,[[p*V,'ลืมหารด้วย 100','ใช้สูตรผิด'],[V-a,'ตอบปริมาณตัวทำละลาย','อ่านโจทย์'],[p,'ตอบตัวเลขร้อยละ','อ่านโจทย์']],SL([`ร้อยละ ${p} โดยมวลต่อปริมาตร หมายถึง มีสาร ${p} กรัม ในสารละลาย 100 มิลลิลิตร`,`มวลสาร = ${fr(p,100)} × ${V}`,`= ${f(a)} กรัม`],`เหมือนส่วนลด ${p}% ของ ${V}: เอา ${p} หารด้วย 100 ก่อน แล้วคูณปริมาณทั้งหมด`))},
+()=>{const m1=P([100,120,150]),m2=P([50,80]),x=P([4,6,10]),a=m1+m2-x;return mkN('การเปลี่ยนแปลงของสาร',`ผสมสารละลาย A หนัก ${m1} กรัม กับสารละลาย B หนัก ${m2} กรัม ในภาชนะปิด เกิดตะกอน ${x} กรัม เมื่อกรองตะกอนออก สารละลายที่เหลือหนักกี่กรัม`,a,[[m1+m2,'ลืมหักตะกอน','ลืมขั้นตอน'],[m1+m2+x,'บวกตะกอนเพิ่ม','เครื่องหมาย'],[x,'ตอบมวลตะกอน','อ่านโจทย์']],SL([`กฎทรงมวล: มวลสารก่อนทำปฏิกิริยา = มวลสารหลังทำปฏิกิริยา (ระบบปิด)`,`มวลรวมก่อน = ${m1} + ${m2} = ${m1+m2} กรัม`,`เกิดตะกอน ${x} กรัม กรองตะกอนออก สารละลายเหลือ = ${m1+m2} − ${x} = ${a} กรัม`],`ไม่มีมวลหายไปไหน แค่ย้ายไปอยู่ในตะกอน กรองตะกอนออกจึงต้องหักออกจากมวลรวม`))},
+()=>{const N=P([8,12,16,24,46]),n=P([2,3]),c=2**n,a=c*N;return mkN('การแบ่งเซลล์',`เซลล์ร่างกายของสัตว์ชนิดหนึ่งมี ${N} โครโมโซม แบ่งเซลล์แบบไมโทซิสต่อเนื่อง ${n} รอบ จะได้เซลล์ลูกกี่เซลล์ และมีโครโมโซมรวมทุกเซลล์กี่แท่ง (ตอบเป็นจำนวนโครโมโซมรวม)`,a,[[N,'นับเฉพาะเซลล์เดียว','อ่านโจทย์'],[n*2*N,'คิดจำนวนเซลล์เป็น 2 × จำนวนรอบ','ใช้สูตรผิด'],[c*N/2,'ใช้แบบไมโอซิสที่โครโมโซมลดครึ่ง','สับสนแนวคิด']],SL([`ไมโทซิส 1 รอบ: 1 เซลล์ได้ 2 เซลล์ และเซลล์ลูกมีโครโมโซมเท่าเซลล์แม่ (${N} แท่ง)`,`${n} รอบ ได้จำนวนเซลล์ = 2${sup(n)} = ${c} เซลล์`,`โครโมโซมรวม = ${c} × ${N} = ${a} แท่ง`],`เซลล์เพิ่มแบบคูณ 2 ทุกรอบ (ไม่ใช่บวกทีละ 2) และโครโมโซมต่อเซลล์ไม่ลดลง (ลดครึ่งเฉพาะไมโอซิส)`))},
+()=>{const W=P([20,30,40,50]),a=P([4,6,8,10,12]),Wa=W-a;return mkN('แรงลอยตัว',`ชั่งวัตถุก้อนหนึ่งในอากาศได้ ${W} นิวตัน เมื่อจุ่มลงในน้ำจนมิดชั่งได้ ${Wa} นิวตัน แรงพยุงของน้ำมีค่ากี่นิวตัน`,a,[[W+Wa,'บวกแทนการลบ','เครื่องหมาย'],[Wa,'ตอบน้ำหนักในน้ำ','อ่านโจทย์'],[W,'ตอบน้ำหนักในอากาศ','อ่านโจทย์']],SL([`แรงพยุง (แรงลอยตัว) = น้ำหนักในอากาศ − น้ำหนักที่ชั่งได้ในน้ำ`,`= ${W} − ${Wa} = ${a} นิวตัน`],`ในน้ำวัตถุ "เบาลง" เพราะน้ำช่วยพยุงขึ้น ส่วนที่เบาลงไปก็คือแรงพยุงนั่นเอง`))},
+()=>{const[u,fl,v]=P([[60,20,30],[30,10,15],[20,10,20],[12,4,6]]),k=120/u,fx1=160-fl*k,fx2=160+fl*k,fig=sv(`<path d="M-10 100 H330"/><path d="M160 45 Q178 100 160 155 Q142 100 160 45"/><path d="M40 100 V60 M35 67 L40 60 L45 67"/><path d="M${fx1} 94 V106 M${fx2} 94 V106"/>`+tx(fx1,122,'F')+tx(fx2,122,'F')+tx(40,50,'วัตถุ')+tx(90,145,`u = ${u} ซม.`)+tx(160,178,`f = ${fl} ซม. (ทั้งสองข้าง)`));
+return mkN('เลนส์',`วางวัตถุหน้าเลนส์นูนดังรูป วัตถุห่างจากเลนส์ ${u} เซนติเมตร เลนส์มีความยาวโฟกัส ${fl} เซนติเมตร ภาพเกิดห่างจากเลนส์อีกด้านหนึ่งกี่เซนติเมตร (ใช้ 1/f = 1/u + 1/v)`,v,[[u-fl,'ลบระยะวัตถุกับโฟกัสตรง ๆ','ใช้สูตรผิด'],[fl,'ตอบความยาวโฟกัส','อ่านโจทย์'],[u*fl/(u+fl),'บวกแทนลบเมื่อแก้สมการ','เครื่องหมาย']],SL([`สูตรเลนส์บาง: ${fr(1,'f')} = ${fr(1,'u')} + ${fr(1,'v')} (f = โฟกัส, u = ระยะวัตถุ, v = ระยะภาพ)`,`ย้ายข้าง: ${fr(1,'v')} = ${fr(1,'f')} − ${fr(1,'u')} = ${fr(1,fl)} − ${fr(1,u)}`,`รวมเศษส่วน: ${fr(1,'v')} = ${fr(u-fl,u*fl)}`,`v = ${fr(u*fl,u-fl)} = ${f(v)} เซนติเมตร`],`เลนส์นูนรวมแสงให้เกิดภาพ ตำแหน่งภาพขึ้นกับว่าวัตถุอยู่ไกลจากโฟกัสแค่ไหน ถ้าไม่อยากรวมเศษส่วน ใช้สูตรลัด v = ${fr('u × f','u − f')}`),fig)},
+()=>{const g=P([['สีดอก','ม่วง','ขาว'],['สีเมล็ด','เหลือง','เขียว'],['ความสูงต้น','สูง','เตี้ย']]),all=P([1,0]),ans=all?'AA':'Aa',pc=all?'100%':'50%';
+return TXT('พันธุศาสตร์',`ถั่ว${g[0]}${g[1]}เป็นลักษณะเด่น (A) และ${g[2]}เป็นลักษณะด้อย (a) นำต้นที่มี${g[0]}${g[1]}ไปผสมกับต้น${g[2]} ได้รุ่นลูก${g[1]} ${pc}${all?'':' และ'+g[2]+' 50%'} จีโนไทป์ของต้นที่มี${g[0]}${g[1]}คือข้อใด`,ans,[['aa','เป็นจีโนไทป์ของลักษณะด้อย'],[all?'Aa':'AA',all?'ถ้าเป็น Aa ลูกต้องมีลักษณะด้อยออกมาบ้าง':'ถ้าเป็น AA ลูกต้องเป็นลักษณะเด่นทั้งหมด'],['AA หรือ Aa ก็ได้','ไม่ได้ใช้อัตราส่วนของลูกตัดสิน']],SL([`ผสมกับต้นลักษณะด้อย (aa) ซึ่งส่งต่อได้แค่ยีน a ลักษณะของลูกจึงบอกว่าต้นที่ถามส่งยีนอะไรบ้าง`,all?`ลูกเป็นลักษณะเด่น 100% แปลว่าไม่มียีน a ส่งมาเลย ต้นนี้จึงเป็น AA`:`ลูกแยก ${g[1]} : ${g[2]} = 1 : 1 แปลว่าบางลูกได้ยีน A บางลูกได้ยีน a ต้นนี้จึงเป็น Aa`,`จีโนไทป์ = ${ans}`],all?`ถ้าลูกทุกตัวเป็นลักษณะเด่น ต้นพ่อแม่ต้อง "เด่นล้วน" (AA)`:`สัดส่วน 1 : 1 เป็นสัญญาณว่าต้นที่ถามมียีนสองแบบปนกัน (Aa)`),'เข้าใจกฎการถ่ายทอดผิด')},
+()=>{const M=[['ทราย','น้ำ','ขนาดอนุภาคต่างกัน','การกรอง'],['น้ำมัน','น้ำ','ไม่ละลายและความหนาแน่นต่างกัน','การแยกด้วยกรวยแยก'],['สารสีในหมึก','น้ำหมึก','เคลื่อนที่บนตัวดูดซับได้ต่างกัน','โครมาโทกราฟี'],['น้ำ','เอทานอล','จุดเดือดต่างกัน','การกลั่นลำดับส่วน'],['ไอโอดีน','เกลือ','ละลายในตัวทำละลายอินทรีย์ต่างกัน','การสกัดด้วยตัวทำละลาย']],c=P(M),o=M.filter(x=>x!==c);
+return TXT('การแยกสาร',`สารผสมประกอบด้วย${c[0]}กับ${c[1]} ซึ่งต่างกันที่สมบัติ: ${c[2]} ควรเลือกใช้วิธีแยกสารใด`,c[3],sh(o).slice(0,3).map(x=>[x[3],`วิธีนี้ใช้ได้กับสารที่${x[2]}`]),SL([`ดูสมบัติที่ต่างกันของสารในสารผสม: ${c[2]}`,`วิธีแยกที่ใช้สมบัตินั้นคือ ${c[3]}`],`เลือกวิธีแยกจาก "สมบัติที่ต่างกัน" เสมอ เช่น กรอง → ขนาดอนุภาค, กลั่น → จุดเดือด, โครมาโทกราฟี → การเคลื่อนที่บนตัวดูดซับ`),'เลือกวิธีไม่ตรงสมบัติ')},
+()=>{const C=[['แพลงก์ตอนพืช','หอย','ปู','นกปากห่าง'],['หญ้า','ตั๊กแตน','กบ','งู'],['สาหร่าย','ลูกน้ำ','ปลาเล็ก','ปลาใหญ่']],c=P(C),L=P([2,3]),nmL=['','','ที่สอง','ที่สาม'][L],fig=sv('<g style="font-size:10.5px">'+c.map((x,i)=>`<rect x="${-15+i*86}" y="75" width="68" height="36" rx="6"/>`+tx(19+i*86,97,x)).join('')+'</g>'+[0,1,2].map(i=>`<path d="M${55+i*86} 93 H${69+i*86} M${64+i*86} 89 L${69+i*86} 93 L${64+i*86} 97"/>`).join('')+tx(150,150,'ลูกศรชี้จากผู้ถูกกินไปยังผู้กิน'));
+return TXT('ห่วงโซ่อาหาร',`จากรูปห่วงโซ่อาหาร สิ่งมีชีวิตใดเป็นผู้บริโภคลำดับ${nmL}`,c[L],L===3?[[c[2],'นับผู้ผลิตเป็นผู้บริโภคลำดับที่ 1 ลำดับเลยเลื่อนไปหนึ่งขั้น'],[c[1],'นับลำดับต่ำไปสองขั้น'],[c[0],'ตอบผู้ผลิต']]:[[c[1],'นับผู้ผลิตเป็นผู้บริโภคลำดับที่ 1 ลำดับเลยเลื่อนไปหนึ่งขั้น'],[c[3],'นับเกินไปหนึ่งขั้น'],[c[0],'ตอบผู้ผลิต']],SL([`ผู้ผลิต (${c[0]}) ไม่นับเป็นผู้บริโภค`,`ผู้บริโภคลำดับที่ 1 = ตัวที่กินผู้ผลิต คือ ${c[1]}`,`ลำดับที่ 2 คือ ${c[2]} ลำดับที่ 3 คือ ${c[3]}`,`ผู้บริโภคลำดับ${nmL}คือ ${c[L]}`],`ลูกศรชี้ไปหาผู้กิน ให้เริ่มนับ "ผู้บริโภคลำดับที่ 1" ที่ตัวแรกที่กินผู้ผลิต ไม่ใช่นับผู้ผลิตเป็นลำดับแรก`),'นับลำดับผิด',fig)},
+()=>{const S1=[['กลูโคส','ท่อหน่วยไตดูดกลับกลูโคสเข้าสู่หลอดเลือดได้ทั้งหมด'],['โปรตีนขนาดใหญ่','โมเลกุลใหญ่เกินกว่าจะผ่านผนังโกลเมอรูลัสออกมาได้'],['เม็ดเลือดแดง','เซลล์มีขนาดใหญ่เกินกว่าจะผ่านผนังหลอดเลือดฝอยในโกลเมอรูลัสได้']],c=P(S1);
+return TXT('ระบบขับถ่าย',`เพราะเหตุใดจึงไม่พบ${c[0]}ในปัสสาวะของคนปกติ`,c[1],S1.filter(x=>x!==c).map(x=>[x[1],`เป็นสาเหตุของ${x[0]} ไม่ใช่ ${c[0]}`]).concat([['${c[0]}ถูกย่อยสลายในท่อหน่วยไตจนหมด','ไตไม่ได้ย่อยสลายสารเหล่านี้']].map(x=>[x[0].replace('${c[0]}',c[0]),x[1]])),SL([`ไตกรองเลือดที่โกลเมอรูลัส แล้วดูดสารที่ร่างกายต้องการกลับที่ท่อหน่วยไต`,`${c[0]}ไม่พบในปัสสาวะปกติ เพราะ: ${c[1]}`],`สารที่ไม่ปรากฏในปัสสาวะมีเหตุผลต่างกัน กลูโคสถูกดูดกลับ ส่วนโปรตีนและเม็ดเลือดแดงตัวใหญ่เกินกว่าจะผ่านการกรองตั้งแต่ต้น`),'สลับสาเหตุ')},
+()=>{const o2=P([1,0]),g=o2?'ออกซิเจน':'คาร์บอนไดออกไซด์',a=`หลอดเลือดฝอยที่ล้อมรอบถุงลมในปอดมีแก๊ส${g}${o2?'ต่ำกว่า':'สูงกว่า'}ในถุงลม`,x=o2?'สูงกว่า':'ต่ำกว่า';
+return TXT('ระบบหายใจ',`เมื่อมีการหายใจเข้า ข้อใดถูกต้องเกี่ยวกับแก๊ส${g}ในหลอดเลือดฝอยรอบถุงลม`,a,[[`หลอดเลือดฝอยที่ล้อมรอบถุงลมในปอดมีแก๊ส${g}${x}ในถุงลม`,'สลับทิศทางการแพร่'],[`หลอดเลือดฝอยที่ล้อมรอบถุงลมในปอดมีแก๊ส${g}ใกล้เคียงกับในถุงลม`,'คิดว่าแก๊สสมดุลแล้ว'],[`หลอดเลือดฝอยที่ล้อมรอบถุงลมในปอดไม่มีแก๊ส${g}อยู่เลย`,'ไม่ตรงกับความจริง เลือดมีแก๊สละลายอยู่']],SL([`แก๊สแพร่จากที่ที่มีมากไปยังที่ที่มีน้อย`,o2?`หายใจเข้า ถุงลมมีออกซิเจนสูง ออกซิเจนแพร่เข้าสู่เลือด แปลว่าเลือดรอบถุงลมมีออกซิเจนต่ำกว่าถุงลม`:`คาร์บอนไดออกไซด์ในเลือดมีมาก แพร่ออกสู่ถุงลมที่มีน้อยกว่า แปลว่าเลือดมีคาร์บอนไดออกไซด์สูงกว่าถุงลม`,`คำตอบ: ${a}`],`ลูกศรการแพร่ชี้จาก "มาก" ไป "น้อย" เสมอ ดูว่าแก๊สเคลื่อนไปทางไหนก็รู้ว่าที่ไหนมีมากกว่า`),'ทิศทางการแพร่')},
+()=>{const T=[['แรม 8 ค่ำ','00.00 น.'],['ขึ้น 8 ค่ำ','12.00 น.'],['ขึ้น 15 ค่ำ','18.00 น.'],['ขึ้น 1 ค่ำ','06.00 น.']],c=P(T);
+return TXT('ดาราศาสตร์',`วัน${c[0]} ดวงจันทร์จะขึ้นจากขอบฟ้าประมาณเวลาใด`,c[1],sh(T.filter(x=>x!==c)).map(x=>[x[1],'จำเวลาขึ้นของข้างขึ้นข้างแรมผิด']),SL([`ดวงจันทร์ขึ้นช้าลงวันละประมาณ 50 นาที`,`ข้างขึ้น 1 ค่ำ ขึ้นประมาณ 06.00 น. ข้างขึ้น 8 ค่ำ ประมาณ 12.00 น. ข้างขึ้น 15 ค่ำ (เต็มดวง) ประมาณ 18.00 น. แรม 8 ค่ำ ประมาณเที่ยงคืน`,`วัน${c[0]}: ${c[1]}`],`จำง่าย ๆ: เต็มดวงขึ้นตอนเย็น ครึ่งดวงข้างขึ้นขึ้นตอนเที่ยง ครึ่งดวงข้างแรมขึ้นตอนเที่ยงคืน`),'จำข้อมูลผิด')}
+];
+const GS=GS0.map(g=>()=>{const q=g();q.nr=1;return q});
+
+function ren(q){if(q.nr||!/k/.test(q.q))return;const L=P(['k','m','n','t','p','h']);if(L==='k')return;const r=s=>s.replace(/k/g,L);q.q=r(q.q);q.sol=r(q.sol);q.w.forEach(w=>{w[1]=r(w[1])});if(q.svg)q.svg=q.svg.replace(/>([^<]*)</g,(m,t)=>'>'+r(t)+'<')}
+function pickQ(n){const GC=NAV.subj==='sci'?GS:G,all=sh(GC.length>=n?GC.map(g=>g()):GC.flatMap(g=>[g(),g()])),cnt={},out=[];
+while(out.length<n&&all.length){const m=Math.min(...all.map(q=>cnt[q.tp]||0)),i=all.findIndex(q=>(cnt[q.tp]||0)===m),q=all.splice(i,1)[0];cnt[q.tp]=(cnt[q.tp]||0)+1;out.push(q)}
+const rs=[],rem=sh(out);while(rem.length){const rc=rs.slice(-3).map(q=>q.tp);let i=rem.findIndex(q=>!rc.includes(q.tp));if(i<0)i=0;rs.push(rem.splice(i,1)[0])}
+rs.forEach(ren);return rs}
+G.splice(7,1);G.splice(4,1);
+G.push(
+()=>{const[p,q]=P([[4,9],[3,8],[5,7],[7,9],[2,5]]),f=P([1,1,2,3,4,6]),w=P([3,5,6,8]),u=f*w,T0=(p+q)*u,[a,b]=P([['หมู','ไก่'],['ปลา','กุ้ง'],['ข้าวโพด','ถั่วเหลือง'],['ลำไย','ลิ้นจี่']]),s=P([0,1]),X=s?b:a,Y=s?a:b,n=s?q:p,xv=n*u,yv=(s?p:q)*u;
+return mk('อัตราส่วน',`ฟาร์มของ${nm()}มี${a}กับ${b}รวมกัน ${T0} หน่วย โดยอัตราส่วนของ${a}ต่อ${b}เป็น ${p*f} : ${q*f} มี${X}กี่หน่วย`,xv,[[yv,`ตอบจำนวน${Y}แทน${X}`,'อ่านโจทย์'],[T0/(n*f),'หารผลรวมด้วยตัวเลขอัตราส่วนตัวเดียว','ใช้สูตรผิด'],[T0-n*f,'ลบตัวเลขอัตราส่วนออกจากผลรวมโดยตรง','ลืมขั้นตอน']],SL([`${f>1?`อัตราส่วนที่ให้ ${p*f} : ${q*f} ทอนโดยหารด้วย ${f} ได้ ${p} : ${q}`:`อัตราส่วนคือ ${p} : ${q}`}`,`จำนวนส่วนรวม = ${p} + ${q} = ${p+q} ส่วน`,`ส่วนละ ${fr(T0,p+q)} = ${u} หน่วย`,`${X} มี ${n} ส่วน = ${n} × ${u} = ${xv} หน่วย`],`แบ่งทั้งหมดเป็น ${p+q} กองเท่า ๆ กัน กองละ ${u} แล้วนับว่าสิ่งที่ถามมีกี่กอง`),undefined,f>1?1:0)},
+()=>{const x1=P([2,3]),x2=P([4,6]),y=P([5,7]),z=P([7,9]),k=P([4,6,8]),f1=P([1,2,2,3,4]),f2=P([1,2,3]);let L=x1;while(L%x2)L+=x1;const yp=y*L/x1,zp=z*L/x2,T0=k*(L+yp+zp),[A,B,C]=P([['ส้ม','องุ่น','แอปเปิล'],['ปากกา','ดินสอ','ยางลบ'],['เสื้อ','กางเกง','หมวก']]);return mk('อัตราส่วน',`ร้านของ${nm()}มีสินค้า 3 ชนิด คือ ${A} ${B} และ${C} โดย${A}ต่อ${B}เป็น ${x1*f1} : ${y*f1} และ${A}ต่อ${C}เป็น ${x2*f2} : ${z*f2} มีสินค้าทั้งหมด ${T0} ชิ้น ${C}มากกว่า${A}กี่ชิ้น`,(zp-L)*k,[[zp*k,`ตอบจำนวน${C}แทนส่วนต่าง`,'อ่านโจทย์'],[(z-x2)*k,`ไม่ปรับให้${A}เท่ากัน`,'ลืมขั้นตอน'],[zp-L,'ลืมคูณด้วยจำนวนต่อส่วน','ลืมขั้นตอน']],SL([`ทอนอัตราส่วนแต่ละคู่: ${A}:${B} = ${x1}:${y} และ ${A}:${C} = ${x2}:${z}`,`ทำให้ส่วนของ${A}เท่ากัน ใช้ ค.ร.น. ของ ${x1} กับ ${x2} คือ ${L}`,`${A}:${B}:${C} = ${L}:${yp}:${zp} (คู่แรกขยาย ${L/x1} เท่า คู่ที่สองขยาย ${L/x2} เท่า)`,`รวม ${L} + ${yp} + ${zp} = ${L+yp+zp} ส่วน ส่วนละ ${k}`,`${C}มากกว่า${A} ${zp} − ${L} = ${zp-L} ส่วน = ${zp-L} × ${k} = ${(zp-L)*k}`],`มีสามสิ่งต้องปรับให้ "ตัวที่ซ้ำกัน" (${A}) มีส่วนเท่ากันทั้งสองอัตราส่วนก่อน จึงต่อเป็น ${A}:${B}:${C} ได้`),undefined,f1>1||f2>1?1:0)},
+()=>{const c=P([1,2,3]),h=P([1,2,3,-1,-2]),v=P([-3,-1,1,2,4]),a=-2*c*h,b=c*h*h+v;return mk('พาราโบลา',`กราฟ f(x) = ${c}x² + ax + b มีจุดต่ำสุดที่ (${h}, ${v}) จงหาค่า a + b`,a+b,[[a,'ตอบเฉพาะค่า a','ลืมขั้นตอน'],[-a+b,'เครื่องหมายของ a ผิด','เครื่องหมาย'],[b,'ตอบเฉพาะค่า b','ลืมขั้นตอน'],[a+v,'ใช้ค่า y ของจุดต่ำสุดแทน b','ใช้สูตรผิด']],SL([`ใช้รูปจุดยอด: f(x) = ${c}(x − h)² + v เมื่อจุดยอดคือ (h, v)`,`จุดยอด (${h}, ${v}) จึง f(x) = ${c}(x ${sg(-h)})² ${sg(v)}`,`กระจาย (x ${sg(-h)})² = x² ${sg(-2*h)}x + ${h*h} แล้วคูณ ${c} บวก ${v}`,`ได้ f(x) = ${c}x² ${sg(a)}x ${sg(b)} จึง a = ${a} และ b = ${b}`,`a + b = ${a} + (${b}) = ${a+b}`],`โจทย์บอกจุดต่ำสุด = บอกจุดยอด ให้เขียนในรูป "ยอด" ก่อน แล้วกระจายให้เป็น ax² + bx + c เพื่อเทียบสัมประสิทธิ์`))},
+()=>{const p=R(10,30),d=P([3,5,7,9]),q=p+d,S1=p+q;return mk('พีชคณิต',`ผลคูณของจำนวนนับสองจำนวนเป็น ${p*q} และผลต่างของทั้งสองเท่ากับ ${d} ผลบวกของทั้งสองเป็นเท่าใด`,S1,[[q,'ตอบจำนวนที่มากกว่า','อ่านโจทย์'],[p*q/d,'หารผลคูณด้วยผลต่างโดยตรง','ใช้สูตรผิด'],[S1-2,'คิดเลขคลาดเคลื่อน','คิดเลขพลาด']],SL([`ให้จำนวนสองจำนวนคือ a กับ b โดย ab = ${p*q} และ b − a = ${d}`,`ใช้สูตร (a + b)² = (a − b)² + 4ab`,`(a + b)² = ${d}² + 4(${p*q}) = ${d*d} + ${4*p*q} = ${S1*S1}`,`a + b = √${S1*S1} = ${S1}`,`ตรวจ: ${p} × ${q} = ${p*q} และ ${q} − ${p} = ${d}`],`ไม่ต้องเดาก็ได้ เพราะมีสูตรเชื่อมผลบวก ผลต่าง และผลคูณ (ถ้าจะเดา: หาสองจำนวนที่ต่างกัน ${d} แล้วคูณได้ ${p*q} คือ ${p} กับ ${q})`))},
+()=>{let v,mn,X;do{v=[R(3,9),R(5,12),R(6,13),R(8,15),R(9,14)];mn=R(8,14);X=mn*6-v.reduce((a,b)=>a+b,0)}while(X<2||X%2);const u=P(['X','A','Y']),c=R(3,8),ls=[...v.slice(0,2),u,...v.slice(2)].join(', ');return mk('สถิติ',`${nm()}บันทึกคะแนนของนักเรียน 6 คน ได้ ${ls} ค่าเฉลี่ยเลขคณิตเท่ากับ ${mn} จงหาค่าของ ½${u} + ${c}`,X/2+c,[[X,`ตอบค่า ${u} แทน`,'อ่านโจทย์'],[X/2,`ลืมบวก ${c}`,'ลืมขั้นตอน'],[mn/2+c,`ใช้ค่าเฉลี่ยแทน ${u}`,'ใช้สูตรผิด']],SL([`ค่าเฉลี่ย = ${fr('ผลรวมข้อมูล','จำนวนข้อมูล')} ดังนั้น ผลรวม = ค่าเฉลี่ย × จำนวนข้อมูล`,`ผลรวมทั้งหมด = ${mn} × 6 = ${mn*6}`,`ผลรวมของข้อมูลที่รู้ = ${v.join(' + ')} = ${v.reduce((a,b)=>a+b,0)}`,`${u} = ${mn*6} − ${v.reduce((a,b)=>a+b,0)} = ${X}`,`${fr(1,2)}${u} + ${c} = ${fr(X,2)} + ${c} = ${X/2+c}`],`รู้ค่าเฉลี่ยกับจำนวนข้อมูลก็รู้ "ผลรวม" ทันที แล้วเอาผลรวมของตัวที่รู้ไปลบ เหลือตัวที่หายไป`))},
+()=>{const B=R(10,30),d=P([10,12,14,16,18,20]),A=B+d,m=(A+B)/2;const[a,b]=P([['น้ำตาลทรายแดง','น้ำตาลทรายขาว'],['แป้งสาลี','แป้งข้าวเจ้า'],['นมจืด','นมหวาน']]);return mk('สถิติ',`${nm()}ทำขนมโดยใช้${a}มากกว่า${b}อยู่ ${d} กิโลกรัม ถ้าค่าเฉลี่ยของน้ำหนักวัตถุดิบสองชนิดนี้เท่ากับ ${m} กิโลกรัม ต้องใช้${b}กี่กิโลกรัม`,B,[[A,`ตอบน้ำหนัก${a}แทน`,'อ่านโจทย์'],[m-d,'ลบผลต่างทั้งหมดจากค่าเฉลี่ย','ใช้สูตรผิด'],[m*2,'ตอบผลรวมน้ำหนัก','อ่านโจทย์']],SL([`ให้${b} = x กิโลกรัม ดังนั้น${a} = x + ${d} กิโลกรัม`,`ค่าเฉลี่ย = ${fr('ผลรวม','จำนวน')} ได้ ${fr('x + (x + '+d+')',2)} = ${m}`,`2x + ${d} = ${m} × 2 = ${2*m}`,`2x = ${2*m-d} จึง x = ${B}`],`ค่าเฉลี่ยของสองจำนวนอยู่กึ่งกลางพอดี จำนวนน้อย = ค่าเฉลี่ย − ครึ่งหนึ่งของส่วนต่าง = ${m} − ${d/2} = ${B}`))},
+()=>{const a=R(1,5),b=R(1,5),r=R(2,4),s=R(1,3),x2=-(a+r),y2=b-s;return mk('ระนาบพิกัด',`จุด P(${a}, ${b}) ถูกเลื่อนไปทางขวา ${r} หน่วย และลงล่าง ${s} หน่วย แล้วสะท้อนผ่านแกน Y ได้จุด P′ จงหาค่า x + y ของจุด P′`,x2+y2,[[a+r+y2,'ลืมเปลี่ยนเครื่องหมายของ x หลังสะท้อน','เครื่องหมาย'],[x2+b+s,'เลื่อนขึ้นแทนลง','อ่านโจทย์'],[-a+y2,'สะท้อนโดยไม่เลื่อนทางขวา','ลืมขั้นตอน']],SL([`เลื่อนไปทางขวา ${r} หน่วย: x เพิ่ม ${r} ได้ x = ${a} + ${r} = ${a+r}`,`เลื่อนลง ${s} หน่วย: y ลด ${s} ได้ y = ${b} − ${s} = ${b-s} จุดใหม่คือ (${a+r}, ${b-s})`,`สะท้อนผ่านแกน Y: เปลี่ยนเครื่องหมายของ x อย่างเดียว ได้ P′(${x2}, ${y2})`,`x + y = ${x2} + (${y2}) = ${x2+y2}`],`แกน Y เหมือนกระจกตั้งตรง ภาพในกระจกอยู่ฝั่งตรงข้ามที่ระยะเท่าเดิม ความสูง (y) เท่าเดิม แต่ซ้าย-ขวา (x) กลับด้าน`))},
+()=>{const T0=P([50,100]);let c;do{c=[R(8,20),R(8,20),R(8,25)];c.push(T0-c[0]-c[1]-c[2])}while(c[3]<5);const vs=P([[800,500,300,100],[1000,500,200,100]]),t=c[0]+c[1]+c[2],pc=t*100/T0;return mk('ความน่าจะเป็น',`${nm()}จัดกิจกรรมจับสลากบัตรส่วนลดจากกล่อง มีบัตร ${vs[0]} บาท ${c[0]} ใบ ${vs[1]} บาท ${c[1]} ใบ ${vs[2]} บาท ${c[2]} ใบ และ ${vs[3]} บาท ${c[3]} ใบ หยิบ 1 ใบโดยสุ่ม ความน่าจะเป็นที่ได้บัตรมูลค่าไม่น้อยกว่า ${vs[2]} บาท คิดเป็นร้อยละเท่าใด`,pc,[[t,'ตอบจำนวนใบแทนร้อยละ','อ่านโจทย์'],[100-pc,`นับเฉพาะบัตรที่ต่ำกว่า ${vs[2]} บาท`,'อ่านโจทย์'],[c[2]*100/T0,`นับเฉพาะบัตร ${vs[2]} บาท ไม่รวมที่มากกว่า`,'อ่านโจทย์']],SL([`ความน่าจะเป็น = ${fr('จำนวนที่สนใจ','จำนวนทั้งหมด')}`,`บัตรทั้งหมด ${T0} ใบ`,`"ไม่น้อยกว่า ${vs[2]} บาท" คือบัตรมูลค่า ${vs[0]}, ${vs[1]} และ ${vs[2]} บาท = ${c[0]} + ${c[1]} + ${c[2]} = ${t} ใบ`,`ร้อยละ = ${fr(t,T0)} × 100 = ${pc}`],`"ไม่น้อยกว่า" แปลว่า "เท่ากับหรือมากกว่า" จึงต้องนับบัตรมูลค่า ${vs[2]} บาทด้วย`))},
+()=>{const r=P([7,14,21]),n=R(3,9);return mk('วงกลม',`ล้อรถจักรยานของ${nm()}มีรัศมี ${r} เซนติเมตร เมื่อล้อหมุนครบ ${n} รอบ รถเคลื่อนที่ไปกี่เซนติเมตร (กำหนด π = 22/7)`,44*r/7*n,[[22*r/7*n,'ใช้รัศมีแทนเส้นผ่านศูนย์กลาง (ได้ครึ่งหนึ่ง)','ใช้สูตรผิด'],[22/7*r*r*n,'ใช้สูตรพื้นที่แทนเส้นรอบวง','ใช้สูตรผิด'],[44*r/7,'คิดแค่รอบเดียว','ลืมขั้นตอน']],SL([`ล้อหมุน 1 รอบ ไปได้เท่าเส้นรอบวง = 2πr`,`2 × ${fr(22,7)} × ${r} = ${44*r/7} เซนติเมตร`,`หมุน ${n} รอบ: ${n} × ${44*r/7} = ${44*r/7*n} เซนติเมตร`],`ล้อกลิ้งครบ 1 รอบ ระยะที่ไปเท่ากับความยาวรอบล้อพอดี ระยะทั้งหมด = เส้นรอบวง × จำนวนรอบ`))},
+()=>{const w=P([4,6,7,8]),l=P([11,12,14,16]),N0=P([600,800,900,1200]),per=Math.floor(50/w)*Math.floor(90/l);return mk('พื้นที่และปริมาตร',`${nm()}ต้องการตัดการ์ดขนาดกว้าง ${w} ซม. ยาว ${l} ซม. จำนวน ${N0} ใบ จากกระดาษแผ่นใหญ่กว้าง 50 ซม. ยาว 90 ซม. (ร้านขายเป็นแผ่นเต็มเท่านั้น และไม่หมุนกระดาษ) ต้องซื้ออย่างน้อยกี่แผ่น`,Math.ceil(N0/per),[[Math.ceil(N0*w*l/4500),'คิดจากพื้นที่รวมโดยไม่คำนึงเศษที่ตัดไม่ได้','ลืมขั้นตอน'],[Math.floor(N0/per),'ปัดลงแทนปัดขึ้น','คิดเลขพลาด'],[N0/per,'ไม่ปัดเป็นจำนวนเต็ม','คิดเลขพลาด']],SL([`กระดาษแผ่นใหญ่ 50 × 90 ซม. ไม่หมุน ตัดการ์ดกว้าง ${w} ยาว ${l}`,`ตามด้าน 50: ${fr(50,w)} = ${(50/w).toFixed(2)} ได้ ${Math.floor(50/w)} ใบ (ปัดลง เพราะเศษใช้ไม่ได้)`,`ตามด้าน 90: ${fr(90,l)} = ${(90/l).toFixed(2)} ได้ ${Math.floor(90/l)} ใบ`,`ต่อแผ่น = ${Math.floor(50/w)} × ${Math.floor(90/l)} = ${per} ใบ`,`ต้องการ ${N0} ใบ: ${fr(N0,per)} = ${(N0/per).toFixed(2)} ปัดขึ้นเป็น ${Math.ceil(N0/per)} แผ่น`],`ตัดกระดาษต้อง "ปัดลง" ในแต่ละด้าน แต่นับแผ่นที่ต้องซื้อต้อง "ปัดขึ้น" เพราะขายเป็นแผ่นเต็ม`))},
+()=>{const N0=P([2000,3000,4000,5000]);let t;do{t=[R(300,500),R(150,250),R(50,120),R(5,30)]}while(1000-t.reduce((a,b)=>a+b,0)<30);const m10=1000-t.reduce((a,b)=>a+b,0),cnt=m10*N0/1000,[A,B,C,D,E]=P([['ข้าวผัด','ก๋วยเตี๋ยว','ส้มตำ','ไก่ทอด','สลัด'],['คณิตศาสตร์','ภาษาไทย','วิทยาศาสตร์','ศิลปะ','ดนตรี'],['ฟุตบอล','บาสเกตบอล','แบดมินตัน','ว่ายน้ำ','วอลเลย์บอล']]);return mk('ตารางข้อมูล',`${nm()}สำรวจนักเรียน ${N0} คน ให้เลือกสิ่งที่ชอบเพียง 1 อย่าง ได้ผลดังนี้ ${A}ร้อยละ ${t[0]/10}, ${B}ร้อยละ ${t[1]/10}, ${D}ร้อยละ ${t[2]/10} และ${E}ร้อยละ ${t[3]/10} ที่เหลือเลือก${C} มีนักเรียนเลือก${C}กี่คน`,cnt,[[m10/10,'ตอบเป็นร้อยละแทนจำนวนคน','อ่านโจทย์'],[N0*t[0]/1000,`ใช้ร้อยละของ${A}แทน${C}`,'อ่านโจทย์'],[N0*(1000-m10)/1000,`นับคนที่ไม่ได้เลือก${C}`,'อ่านโจทย์']],SL([`ร้อยละรวมทั้งหมดต้องเป็น 100`,`ร้อยละที่ให้ไว้: ${t[0]/10} + ${t[1]/10} + ${t[2]/10} + ${t[3]/10} = ${(1000-m10)/10}`,`ที่เหลือเลือก${C} = 100 − ${(1000-m10)/10} = ${m10/10}%`,`จำนวนคน = ${fr(m10/10,100)} × ${N0} = ${cnt}`],`หาส่วนที่เหลือจาก 100% ก่อน แล้วเปลี่ยนเป็นจำนวนคนโดยคูณจำนวนนักเรียนทั้งหมด`))},
+()=>{const w=R(14,30),d=P([8,10,12,13,15]),l=w+d,Pm=2*w+l;return mk('พื้นที่และสมการ',`${nm()}ล้อมรั้วสวนรูปสี่เหลี่ยมผืนผ้าที่ด้านยาวด้านหนึ่งติดริมคลอง จึงล้อมรั้วเพียง 3 ด้าน ยาวรวม ${Pm} เมตร ถ้าด้านยาวยาวกว่าด้านกว้าง ${d} เมตร สวนมีพื้นที่กี่ตารางเมตร`,w*l,[[w,'ตอบความกว้างแทนพื้นที่','อ่านโจทย์'],[(Pm/4)**2,'ถือว่ารั้วล้อมครบ 4 ด้านเป็นจัตุรัส','ใช้สูตรผิด'],[(Pm-d)/4*((Pm-d)/4+d),'ใช้รอบรูป 2 ด้านกว้าง + 2 ด้านยาว','ใช้สูตรผิด']],SL([`รั้วล้อม 3 ด้าน: ด้านกว้าง 2 ด้าน กับด้านยาว 1 ด้าน (ด้านติดคลองไม่ต้องล้อม)`,`ให้กว้าง w ยาว w + ${d}: 2w + (w + ${d}) = ${Pm}`,`3w + ${d} = ${Pm} จึง 3w = ${Pm-d} และ w = ${w}`,`ยาว = ${w} + ${d} = ${l}`,`พื้นที่ = ${w} × ${l} = ${w*l} ตารางเมตร`],`ข้อนี้ต้องดูให้ออกว่ารั้วมีกี่ด้าน อย่านับ 4 ด้านโดยอัตโนมัติ`))},
+()=>{const a=R(8,25),b=R(2*a+1,3*a-1),c1=3*a-b,c2=b-2*a;return mk('ระบบสมการ',`${nm()}เล่นเกมทายจำนวนสองจำนวน ใบ้ว่า สามเท่าของจำนวนน้อยมากกว่าจำนวนมากอยู่ ${c1} และจำนวนมากมากกว่าสองเท่าของจำนวนน้อยอยู่ ${c2} ผลบวกของสองจำนวนเป็นเท่าใด`,a+b,[[b,'ตอบจำนวนที่มากกว่า','อ่านโจทย์'],[a,'ตอบจำนวนที่น้อยกว่า','อ่านโจทย์'],[b-a,'ตอบผลต่างแทนผลบวก','อ่านโจทย์']],SL([`ให้จำนวนน้อย a จำนวนมาก b`,`"สามเท่าของจำนวนน้อยมากกว่าจำนวนมาก ${c1}": 3a − b = ${c1}`,`"จำนวนมากมากกว่าสองเท่าของจำนวนน้อย ${c2}": b − 2a = ${c2}`,`บวกสองสมการ (b กับ −b หักล้างกัน): a = ${c1+c2}`,`b = 3a − ${c1} = ${3*a-c1}`,`ผลบวก = ${a} + ${b} = ${a+b}`],`สองประโยคคือสองสมการ ลองบวกกันดู ถ้ามี b กับ −b จะหายไป เหลือ a ตัวเดียว ตรวจ: 3(${a}) − ${b} = ${c1} และ ${b} − 2(${a}) = ${c2}`))},
+()=>{const m1=P([3,4,5]),m2=P([2,3,4]),g=P([10,15,20,25]),V=g*(1+m1)*(1+m2);return mk('อัตราส่วน',`${nm()}ผสมสีรวม ${V} มิลลิลิตร จากสีแดง สีขาว และสีฟ้า โดยสีขาวมีปริมาณเป็น ${m1} เท่าของสีแดง และสีฟ้ามีปริมาณเป็น ${m2} เท่าของสีแดงกับสีขาวรวมกัน มีสีขาวกี่มิลลิลิตร`,m1*g,[[g,'ตอบปริมาณสีแดงแทนสีขาว','อ่านโจทย์'],[m2*(1+m1)*g,'ตอบปริมาณสีฟ้าแทนสีขาว','อ่านโจทย์'],[V*m1/(1+m1+m2),'ถือว่าสีแดง : ขาว : ฟ้า = 1 : m₁ : m₂ โดยตรง','ใช้สูตรผิด']],SL([`ให้สีแดง = g`,`สีขาว = ${m1}g สีฟ้า = ${m2}(g + ${m1}g) = ${m2*(1+m1)}g`,`รวม g + ${m1}g + ${m2*(1+m1)}g = ${(1+m1)*(1+m2)}g = ${V}`,`g = ${fr(V,(1+m1)*(1+m2))} = ${g}`,`สีขาว = ${m1} × ${g} = ${m1*g} มิลลิลิตร`],`ตั้งสีที่น้อยที่สุดเป็นหน่วยฐาน (g) แล้วเขียนสีอื่นเป็นกี่เท่าของ g จากนั้นรวมทั้งหมดแล้วหาร`),undefined,1)}
+);
+G.push(
+()=>{const[A,B,C]=P([[144,9,36],[100,16,25],[64,9,16],[196,25,49],[324,4,9]]),[u,v]=P([['x','y'],['a','b'],['m','n']]),m=R(9,13),n=R(8,12),s=R(1,4),t=R(1,4),r=Math.sqrt(A*B/C);
+return mk('เลขยกกำลังและราก',`จงหาค่าของ √(${A}${u}${sup(m)}${v}${sup(n)}) × √(${B}${u}⁻${sup(s)}${v}⁻${sup(t)}) ÷ √(${C}${u}${sup(m-s)}${v}${sup(n-t)}) เมื่อ ${u} และ ${v} เป็นจำนวนจริงบวก`,r,[[A*B/C,'ลืมถอดรากที่สองของสัมประสิทธิ์','ลืมขั้นตอน'],[Math.sqrt(A)*Math.sqrt(B)/C,'หารด้วย C แทน √C','ใช้สูตรผิด'],[r*2,'คิดเลขคลาดเคลื่อน','คิดเลขพลาด']],SL([`รวมเลขยกกำลังฐานเดียวกัน: aᵐ × aⁿ = aᵐ⁺ⁿ และ aᵐ ÷ aⁿ = aᵐ⁻ⁿ`,`เลขชี้กำลังของ ${u}: ${m} + (−${s}) − ${m-s} = 0`,`เลขชี้กำลังของ ${v}: ${n} + (−${t}) − ${n-t} = 0`,`a⁰ = 1 ตัวแปรหายหมด เหลือแต่ตัวเลข: √${fr(A+' × '+B,C)} = √${A*B/C} = ${r}`],`ตัวแปรเยอะดูน่ากลัว แต่เลขชี้กำลังรวมกันเป็น 0 แล้วกลายเป็น 1 เหลือแค่ตัวเลขที่ต้องถอดรากที่สอง`),undefined,1)},
+()=>{const L=P([6,8,10,12,14,16,20]),w=P([0,1]),a=L/2;
+return mk('ตรีโกณมิติ',`บันไดยาว ${L} เมตร พิงกำแพงที่ตั้งฉากกับพื้น โดยทำมุม ${w?60:30}° กับผนังกำแพง ${w?'ปลายบนของบันไดสูงจากพื้นกี่เมตร':'ปลายล่างของบันไดอยู่ห่างจากฐานกำแพงกี่เมตร'}`,a,[[L*Math.sqrt(3)/2,'สลับ sin กับ cos','ใช้สูตรผิด'],[L,'ตอบความยาวบันได','อ่านโจทย์'],[L/Math.sqrt(3),'ใช้ tan แทน sin หรือ cos','ใช้สูตรผิด']],w?SL([`บันไดพิงกำแพง ทำมุม 60° กับผนังกำแพง ความสูงของปลายบันไดอยู่ "ชิดมุม 60°"`,`ใช้ cos (ด้านชิดมุม ÷ ด้านเฉียง): cos 60° = ${fr(1,2)}`,`ความสูง = ${L} × cos 60° = ${L} × ${fr(1,2)} = ${a} เมตร`],`จำ: sin = ${fr('ตรงข้าม','ฉาก')}, cos = ${fr('ชิด','ฉาก')} ถามด้านไหน ให้ดูว่าด้านนั้น "ชิดมุม" หรือ "ตรงข้ามมุม" ที่โจทย์ให้`):SL([`บันไดทำมุม 30° กับผนังกำแพง ระยะห่างของปลายล่างอยู่ "ตรงข้ามมุม 30°"`,`ใช้ sin (ด้านตรงข้าม ÷ ด้านเฉียง): sin 30° = ${fr(1,2)}`,`ระยะห่าง = ${L} × sin 30° = ${L} × ${fr(1,2)} = ${a} เมตร`],`จำ: sin = ${fr('ตรงข้าม','ฉาก')}, cos = ${fr('ชิด','ฉาก')} ถามด้านไหน ให้ดูว่าด้านนั้น "ชิดมุม" หรือ "ตรงข้ามมุม" ที่โจทย์ให้`),undefined,1)},
+()=>{let p,x,e,Lg;do{p=P([4,5,6,8,9]);x=R(3,9);e=R(1,3);Lg=x*(p+x+e)/p}while(!Number.isInteger(Lg)||Lg>30||Lg<=x);
+const W=p+x+e,sc=230/W,X0=10,Y0=170,Dx=X0+p*sc,Bx=X0+W*sc,Tx=X0+W*sc*.6,Ty=30,k=p/W;
+return mk('สามเหลี่ยมคล้าย',`จากรูป เส้นตรงที่ยาว x หน่วยขนานกับด้านที่ยาว ${Lg} หน่วย จงหาค่า x`,x,[[x+e,'ตอบความยาวส่วนฐานด้านขวา','อ่านโจทย์'],[Lg,'ตอบความยาวที่โจทย์ให้','อ่านโจทย์'],[p*Lg/(p+e),'ละ x ในผลบวกฐานของสามเหลี่ยมใหญ่','ลืมขั้นตอน']],SL([`อ่านรูป: เส้นที่ยาว x ขนานกับด้านยาว ${Lg} จึงได้สามเหลี่ยมเล็ก (ฐาน ${p} ด้านขนาน x) คล้ายกับสามเหลี่ยมใหญ่ (ฐานรวม ${p} + x + ${e} ด้านขนาน ${Lg}) เพราะมุมเท่ากันทุกมุม`,`ด้านที่ตรงกันของรูปคล้ายมีอัตราส่วนเท่ากัน: ${fr(p,p+' + x + '+e)} = ${fr('x',Lg)}`,`คูณไขว้: ${Lg} × ${p} = x(x + ${p+e}) ได้ x² + ${p+e}x = ${p*Lg}`,`จัดรูป x² + ${p+e}x − ${p*Lg} = 0 แยกตัวประกอบ (x − ${x})(x + ${x+p+e}) = 0`,`x ต้องเป็นบวก จึง x = ${x}`],`เส้นขนานทำให้ได้สามเหลี่ยม 2 รูปที่เป็นรูปเดียวกันแต่ขนาดต่างกัน ด้านเล็กต่อด้านใหญ่ของทุกคู่เท่ากัน ข้อสำคัญ: ฐานของสามเหลี่ยมใหญ่ต้องรวมทุกช่วง คือ ${p} + x + ${e} ตรวจ: ${fr(p,p+x+e)} = ${fr(x,Lg)}`),sv(`<path d="M${X0} ${Y0} H${Bx} L${Tx} ${Ty} Z"/><path d="M${Dx} ${Y0} L${X0+(Tx-X0)*k} ${Y0-(Y0-Ty)*k}"/>`+tx(X0+p*sc/2,186,`${p}`)+tx((Dx+Bx)/2,186,`x + ${e}`)+tx(Dx+(Tx-X0)*k/2+8,Y0-(Y0-Ty)*k/2,'x','start')+tx((Bx+Tx)/2+8,(Y0+Ty)/2,`${Lg}`,'start')),1)},
+()=>{const d=P([21,42]),th=P([30,60]),ans=22/7*d*th/180;
+return mk('วงกลม',`กำหนด O เป็นจุดศูนย์กลางของวงกลม โดย AD และ BC เป็นเส้นผ่านศูนย์กลางตัดกันที่ O ถ้า BC ยาว ${d} หน่วย และ ∠DAC = ${th}° แล้วส่วนโค้ง AB ยาวกี่หน่วย (π = 22/7)`,ans,[[ans/2,'ใช้มุมที่เส้นรอบวงแทนมุมที่จุดศูนย์กลาง','ใช้สูตรผิด'],[ans*2,'ใช้ BC เป็นรัศมี','ใช้สูตรผิด'],[22/7*d,'ตอบเส้นรอบวงทั้งวง','อ่านโจทย์']],SL([`∠DAC เป็นมุมที่เส้นรอบวง รองรับส่วนโค้ง DC ส่วน ∠DOC เป็นมุมที่จุดศูนย์กลาง รองรับส่วนโค้งเดียวกัน`,`มุมที่จุดศูนย์กลาง = 2 × มุมที่เส้นรอบวง: ∠DOC = 2 × ${th}° = ${2*th}°`,`AD กับ BC ตัดกันที่ O: ∠AOB กับ ∠DOC เป็นมุมตรงข้าม จึง ∠AOB = ${2*th}°`,`ส่วนโค้ง AB = ${fr(2*th,360)} × (เส้นรอบวง πd) = ${fr(2*th,360)} × ${fr(22,7)} × ${d}`,`= ${ans} หน่วย`],`ส่วนโค้ง = "เศษส่วนของวงกลมเต็มวง" × เส้นรอบวง มุม ${2*th}° เป็น ${fr(2*th,360)} ของวงกลมเต็มวง (เต็มวงคือ 360°)`),undefined,1)}
+);
+/* ---- รูปประกอบโจทย์เพิ่มเติม (คณิตศาสตร์) ---- */
+{
+const C='stroke="var(--ac)" stroke-width="2.5"',cl=(a,b)=>`<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}"/>`;
+const tbl=(h,rows)=>`<table style="border-collapse:collapse;margin:0 auto 12px;font-size:.95rem"><tr>${h.map(x=>`<th style="border:1.5px solid var(--bd);padding:4px 12px;background:var(--grid)">${x}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map(x=>`<td style="border:1.5px solid var(--bd);padding:4px 12px;text-align:center">${x}</td>`).join('')}</tr>`).join('')}</table>`;
+const F={
+20:t=>{const m=t.match(/P\((\d+), (\d+)\)/);if(!m)return;const a=+m[1],b=+m[2],X=x=>150+x*20,Y=y=>110-y*20;let g='';for(let i=-7;i<=7;i++)g+=`<line x1="${X(i)}" y1="${Y(-3)}" x2="${X(i)}" y2="${Y(5)}" stroke="var(--bd)" stroke-width=".7"/>`;for(let j=-3;j<=5;j++)g+=`<line x1="${X(-7)}" y1="${Y(j)}" x2="${X(7)}" y2="${Y(j)}" stroke="var(--bd)" stroke-width=".7"/>`;
+return sv(g+cl([X(-7.4),Y(0)],[X(7.4),Y(0)])+cl([X(0),Y(5.4)],[X(0),Y(-3.4)])+tx(X(7.4)-2,Y(0)+14,'X','end')+tx(X(0)+8,Y(5.4)+4,'Y','start')+tx(X(0)-6,Y(0)+14,'O','end')+`<circle cx="${X(a)}" cy="${Y(b)}" r="4.5" fill="var(--ac)" stroke="none"/>`+tx(X(a)+7,Y(b)-7,`P(${a}, ${b})`,'start'))},
+22:t=>{const m=t.match(/รัศมี (\d+) เซนติเมตร เมื่อล้อหมุนครบ (\d+) รอบ/);if(!m)return;return sv(`<circle cx="70" cy="110" r="50" ${C}/><circle cx="70" cy="110" r="3" fill="currentColor"/>${cl([70,110],[120,110])}${tx(95,104,'r = '+m[1])}<line x1="10" y1="160" x2="320" y2="160"/>${tx(190,180,`ล้อหมุน ${m[2]} รอบ ระยะที่เคลื่อน = ?`)}<path d="M130 70 H250 M240 63 L250 70 L240 77" stroke-dasharray="4"/>`)},
+25:t=>{const m=t.match(/ยาวรวม (\d+) เมตร ถ้าด้านยาวยาวกว่าด้านกว้าง (\d+)/);if(!m)return;return sv(`<path d="M30 30 Q60 18 90 30 T150 30 T210 30 T270 30" stroke="var(--ac)" fill="none" stroke-width="2.5"/>`+tx(150,18,'~ ริมคลอง ~')+`<path d="M30 30 V130 H270 V30" ${C} stroke-dasharray="7 4"/>`+tx(150,152,`ยาว = กว้าง + ${m[2]}`)+tx(22,85,'กว้าง','end')+tx(278,85,'กว้าง','start')+tx(150,90,`รั้วรวม ${m[1]} ม.`))},
+29:t=>{const m=t.match(/ยาว (\d+) เมตร.*ทำมุม (\d+)°/);if(!m)return;const L=+m[1],th=+m[2]*Math.PI/180,len=150,dx=len*Math.sin(th),dy=len*Math.cos(th);const x0=70,yb=180,yt=yb-dy;return sv(`<line x1="${x0}" y1="${yb}" x2="${x0}" y2="10" stroke-width="4"/><line x1="20" y1="${yb}" x2="300" y2="${yb}" stroke-width="2"/><line x1="${x0}" y1="${yt}" x2="${x0+dx}" y2="${yb}" ${C}/>`+tx(x0-8,(yt+yb)/2,'กำแพง','end')+tx(x0+dx/2+8,(yt+yb)/2-6,`ยาว ${L} ม.`,'start')+tx(x0+6,yt+34,m[2]+'°','start')+`<path d="M${x0} ${yt+24} A24 24 0 0 1 ${x0+24*Math.sin(th)} ${yt+24*Math.cos(th)}" fill="none"/>`+tx(x0+dx/2,yb+16,'พื้น'))},
+31:t=>{const m=t.match(/BC ยาว (\d+) หน่วย และ ∠DAC = (\d+)°/);if(!m)return;const th=+m[2],cx=150,cy=100,r=80,P=a=>[cx+r*Math.cos(a*Math.PI/180),cy-r*Math.sin(a*Math.PI/180)],a0=-20,D=P(a0),A=P(a0+180),C2=P(a0+2*th),B=P(a0+2*th+180),lb=(p,s,dx,dy)=>tx(p[0]+dx,p[1]+dy,s);return sv(`<circle cx="${cx}" cy="${cy}" r="${r}" ${C}/>${cl(A,D)}${cl(B,C2)}${cl(A,C2)}<circle cx="${cx}" cy="${cy}" r="2.5" fill="currentColor"/>`+tx(cx+8,cy+14,'O','start')+lb(A,'A',-10,4)+lb(D,'D',10,4)+lb(B,'B',-8,14)+lb(C2,'C',8,-6)+tx(A[0]+34,A[1]+(th>45?-8:14),m[2]+'°','start')+tx(cx,200,`BC = ${m[1]} หน่วย`))},
+9:t=>{const m=t.match(/รัศมีฐาน (\d+) ซม. สูง (\d+)/);if(!m)return;return sv(`<path d="M50 40 L20 150 H80 Z" ${C}/><line x1="50" y1="40" x2="50" y2="150" stroke-dasharray="4"/>${cl([50,150],[80,150])}`+tx(95,100,'สูง '+m[2]+' ซม.','start')+tx(65,168,'r = '+m[1],'middle')+tx(50,190,'ทรงกรวย')+`<circle cx="230" cy="100" r="48" ${C}/><circle cx="230" cy="100" r="2.5" fill="currentColor"/>${cl([230,100],[278,100])}`+tx(254,92,'R = ?')+tx(230,190,'ทรงกลม')+tx(150,100,'='))},
+23:t=>{const m=t.match(/กว้าง (\d+) ซม. ยาว (\d+) ซม./);if(!m)return;const w=+m[1],l=+m[2],s=2.6,W=50*s,H=90*s,nx=Math.floor(50/w),ny=Math.floor(90/l);let g=`<rect x="20" y="10" width="${W}" height="${H}" stroke-dasharray="5 3"/>`;for(let i=0;i<nx;i++)for(let j=0;j<ny;j++)g+=`<rect x="${20+i*w*s}" y="${10+j*l*s}" width="${w*s}" height="${l*s}" ${C.replace('2.5','1')} fill="var(--grid)"/>`;return `<svg viewBox="0 0 340 250" style="width:100%;max-width:300px;display:block;margin:0 auto 12px;font:12px sans-serif"><g stroke="currentColor" fill="none" stroke-width="1.5" transform="scale(1) ">${g.replace(/y="(\d+(?:\.\d+)?)"/g,(a,y)=>`y="${(y*0.9).toFixed(1)}"`).replace(/height="([\d.]+)"/g,(a,h)=>`height="${(h*0.9).toFixed(1)}"`)}</g>`+tx(20+W+8,120,'กว้าง 50 ซม.','start')+tx(20+W/2,20+H*0.9+6,'ยาว 90 ซม.')+tx(20+W+8,140,`การ์ด ${w}×${l} ซม.`,'start')+'</svg>'},
+24:t=>{const m=t.match(/ผลดังนี้ (.*?) ที่เหลือเลือก(\S+)/);if(!m)return;const rows=m[1].split(/, | และ/).map(x=>x.trim().match(/^(.+?)ร้อยละ ([\d.]+)$/)).filter(Boolean).map(x=>[x[1],x[2]+' %']);if(!rows.length)return;rows.push([m[2],'?']);return tbl(['ที่ชอบ','ร้อยละ'],rows)},
+21:t=>{const rows=[...t.matchAll(/(\d+) บาท (\d+) ใบ/g)].map(x=>[x[1]+' บาท',x[2]+' ใบ']);if(rows.length<2)return;return tbl(['มูลค่าบัตร','จำนวน'],rows)}
+};
+Object.keys(F).forEach(i=>{const g=G[i],f=F[i];if(!g)return;G[i]=()=>{const q=g();if(!q.svg){try{const s=f(q.q);if(s)q.svg=s}catch(e){}}return q}});
+}
+
+/* ---- คลังข้อสอบจริง ส.ทศ. วิชาคณิตศาสตร์ (ปี 2565, 2566, 2568) ---- */
+{
+const D=ds=>ds.map(s=>[s,'เลือกจากการคิดผิดขั้นตอนหรืออ่านโจทย์ผิด','ผิดขั้นตอน']);
+const TQ=(tp,q,a,ds,sol)=>()=>{const r=mkT(tp,q,a,D(ds),sol);r.nr=1;return r};
+const NQ=(tp,q,a,ds,sol)=>()=>{const r=mk(tp,q,a,ds.map(v=>[v,'คิดเลขผิดขั้นตอน','ผิดขั้นตอน']),sol);r.nr=1;return r};
+G.push(
+/* ===== 2565 ===== */
+TQ('อัตราส่วน','โรงงานผลิตอาหารแห่งหนึ่งมีพนักงานทั้งหมด 1,200 คน เดือนแรกมีอัตราส่วนของพนักงานที่ฉีดวัคซีนเข็มที่ 1 ต่อพนักงานที่ยังไม่ได้ฉีดเป็น 7 : 17 เดือนที่สองมีพนักงานฉีดวัคซีนเข็มที่ 1 เพิ่มขึ้นอีก 400 คน และเดือนที่สามพนักงานได้รับการฉีดครบทั้งหมด จำนวนพนักงานโรงงานแห่งนี้ได้รับการฉีดเข็ม 1 ในเดือนแรก ต่างจากที่ได้รับเข็ม 1 ในเดือนที่สามจำนวนกี่คน','100 คน',['50 คน','150 คน','500 คน'],'เดือนแรกฉีด 7/24 × 1,200 = 350 คน เดือนที่สองฉีดรวม 750 คน เดือนที่สามฉีดเพิ่ม 1,200 − 750 = 450 คน ต่างกัน 450 − 350 = 100 คน'),
+TQ('ตัวเลขยกกำลัง','ข้อมูลการส่งออกสินค้าปี 2563 ของประเทศไทย พบว่าสินค้าประเภทยานยนต์และอุปกรณ์ มีมูลค่าการส่งออกประมาณ 21,000 ล้านดอลลาร์ ประเภทอัญมณีและเครื่องประดับ 18,200 ล้านดอลลาร์ และประเภทเครื่องปรับอากาศ 5,200 ล้านดอลลาร์ สินค้าทั้ง 3 ประเภทมีมูลค่าการส่งออกเฉลี่ยกี่ดอลลาร์','1.48 × 10¹⁰ ดอลลาร์',['3.05 × 10⁹ ดอลลาร์','3.05 × 10¹⁰ ดอลลาร์','1.48 × 10⁹ ดอลลาร์'],'รวม 44,400 ล้านดอลลาร์ เฉลี่ย 44,400 ÷ 3 = 14,800 ล้าน = 1.48 × 10¹⁰ ดอลลาร์'),
+TQ('พหุนาม','กำหนดให้ a เป็นจำนวนจริงที่สอดคล้องกับ (x − 1)² + 2x + 1 = x + a² และ x + a = 1 แล้ว a มีค่าเท่ากับข้อใด','2',['3/4','1','13/2'],'(x − 1)² + 2x + 1 = x² + 2 จึง x² + 2 = x + a² และ x = 1 − a แทนค่าได้ 3 − 2a = 1 − a ดังนั้น a = 2'),
+TQ('พาราโบลา','ให้กราฟของฟังก์ชัน f(x) = 2x² + ax + b มีลักษณะเป็นพาราโบลาหงาย ถ้ากำหนดให้จุดต่ำสุดของกราฟอยู่ที่ (1, 1) แล้ว a + b มีค่าเท่ากับข้อใด','−1',['−4','2','3'],'จุดยอดที่ x = −a/4 = 1 ได้ a = −4 แทน f(1) = 2 − 4 + b = 1 ได้ b = 3 จึง a + b = −1'),
+TQ('พื้นที่และสมการ','ที่ดินรูปสี่เหลี่ยมผืนผ้าแปลงหนึ่งมีด้านยาวยาวกว่าด้านกว้างอยู่ 13 เมตร ที่ดินนี้มีด้านยาวด้านหนึ่งติดกับแม่น้ำ ถ้าวัดความยาว 3 ด้านโดยไม่รวมด้านที่ติดแม่น้ำจะได้ 49 เมตร แล้วที่ดินแปลงนี้มีพื้นที่เท่าใด','300 ตารางเมตร',['264 ตารางเมตร','770 ตารางเมตร','1,014 ตารางเมตร'],'ให้กว้าง w ยาว w + 13 รั้ว 3 ด้านคือ w + w + (w + 13) = 49 ได้ w = 12 ยาว 25 พื้นที่ = 300 ตารางเมตร'),
+TQ('สมการเชิงเส้น','อิฐก่อสร้างชนิด A ราคาก้อนละ 9 บาท ชนิด B ราคาก้อนละ 13 บาท ถ้าช่างซื้ออิฐทั้งสองชนิดเป็นเงิน 366 บาท โดยซื้อชนิด A มากกว่าชนิด B จำนวน 4 ก้อน แล้วช่างซื้ออิฐชนิด B จำนวนกี่ก้อน','15 ก้อน',['17 ก้อน','19 ก้อน','21 ก้อน'],'ให้ B = b จะได้ A = b + 4 และ 9(b + 4) + 13b = 366 ได้ 22b = 330 จึง b = 15'),
+TQ('ผลบวกและผลคูณ','ถ้าผลคูณของจำนวนนับสองจำนวนเป็น 450 และผลต่างของทั้งสองจำนวนเท่ากับ 7 แล้วผลบวกของทั้งสองจำนวนเป็นเท่าใด','43',['37','40','45'],'(ผลบวก)² = (ผลต่าง)² + 4 × ผลคูณ = 49 + 1,800 = 1,849 ดังนั้นผลบวก = 43'),
+TQ('พื้นที่และปริมาตร','อ่างบัวอัตโนมัติมีส่วนประกอบเป็นถังน้ำทรงปริซึมฐานสี่เหลี่ยมจัตุรัสซึ่งมีความสูงเป็น 3 เท่าของความยาวฐานแต่ละด้าน ถูกสร้างให้ติดกับฐานอ่างบัวสูง 1/2 เมตร โดยฐานอ่างบัวเป็นรูป 3/4 ของวงกลม (จุดศูนย์กลางอยู่ที่มุมของถังน้ำ) ถ้าถังน้ำมีความจุ 24 ลูกบาศก์เมตร ความจุของน้ำมากที่สุดที่ฐานอ่างบัวจะรองรับได้เป็นกี่ลูกบาศก์เมตร (π ≈ 22/7)','66/7 ลูกบาศก์เมตร',['33/7 ลูกบาศก์เมตร','44/7 ลูกบาศก์เมตร','88/7 ลูกบาศก์เมตร'],'ถังมีฐานด้าน s และสูง 3s จึง 3s³ = 24 ได้ s = 2 รัศมีวงกลม R = 2√2 ปริมาตรฐาน = (3/4) × (22/7) × 8 × (1/2) = 66/7'),
+TQ('พื้นที่ผิว','โรงเรียนสร้างโรงเรือนเกษตรหลังคารูปกรวยว่ำโดยขอบของฐานกรวยบรรจบกับขอบของทรงกระบอกพอดี ด้านหน้ามีช่องเปิดโล่งพื้นที่ 14 ตารางเมตร ถ้าต้องการซื้อพลาสติกคลุมหลังคาและด้านข้างของโรงเรือน ยกเว้นช่องเปิดโล่ง โดยกำหนดให้รัศมีของกรวยเป็น 7 เมตร สูงเอียง 9 เมตร และทรงกระบอกสูง 4 เมตร ต้องซื้อพลาสติกประมาณกี่ตารางเมตร (π ≈ 22/7)','360 ตารางเมตร',['176 ตารางเมตร','198 ตารางเมตร','346 ตารางเมตร'],'พื้นที่ผิวข้างกรวย = πrl = 198, ผิวข้างทรงกระบอก = 2πrh = 176 รวม 374 หักช่องเปิด 14 เหลือ 360 ตารางเมตร'),
+TQ('อัตราส่วนและความคล้าย','จากรูป สามเหลี่ยมใหญ่มีฐานยาว 6 และ x + 1 ด้านขวายาว 10 มีเส้นตรงยาว x ลากจากฐานด้านซ้ายขึ้นไปตัดด้านซ้ายขนานกับด้านขวา (ด้านที่ยาว 10) จงหาความยาว x เป็นกี่หน่วย','5 หน่วย',['6 หน่วย','7 หน่วย','8 หน่วย'],'สามเหลี่ยมคล้าย 6/(6 + x + 1) = x/10 ได้ x² + 7x − 60 = 0 จึง x = 5'),
+TQ('ตรีโกณมิติ','เมื่อน้อยยืนอยู่บนพื้นหน้าตึก B เขามองขึ้นไปที่ยอดตึก A เป็นมุมเงยขนาด 45 องศา แต่เมื่อเขาไปยืนบนดาดฟ้าของตึก B แล้วมองไปที่ยอดตึก A จะเป็นมุมเงย 30 องศา (โดยไม่คิดความสูงของน้อย) ถ้าตึก A สูงกว่าตึก B อยู่ 60 เมตร แล้วตึก B สูงกี่เมตร','60√3 − 60 เมตร',['60 เมตร','60√3 เมตร','30√6 − 60 เมตร'],'ให้ระยะราบ D แล้ว tan 45° ได้ตึก A สูง D และ tan 30° = 60/D ได้ D = 60√3 จึงตึก B สูง 60√3 − 60 เมตร'),
+TQ('วงกลม','กำหนด O เป็นจุดศูนย์กลางวงกลม และเป็นจุดตัดของ AD กับ BC ถ้า BC ยาว 3 หน่วย และมุม DAC เท่ากับ 30 องศา แล้วส่วนโค้ง AB ยาวกี่หน่วย','π/2 หน่วย',['π หน่วย','π/4 หน่วย','π/6 หน่วย'],'BC เป็นเส้นผ่านศูนย์กลางยาว 3 มุม DOC = 2 × 30° = 60° มุม AOB = 60° ส่วนโค้ง AB = (60/360) × π × 3 = π/2'),
+TQ('การแปลงทางเรขาคณิต','ข้อใดไม่ถูกต้อง<br>1. การสะท้อนจุด A(1, 2) โดยมีเส้นสะท้อนเป็นแกน X จะได้จุด A′(−1, −2)<br>2. การสะท้อนจุด B(3, 3) โดยมีเส้นสะท้อนเป็นแกน Y จะได้จุด B′(−3, 3)<br>3. การเลื่อนขนานจุด B(3, 3) ตามแนวแกน X ไปทางขวา 3 หน่วย และตามแนวแกน Y ไปข้างล่าง 2 หน่วย จะได้จุด B′(6, 1)<br>4. การเลื่อนขนานจุด C(2, 4) ตามแนวแกน X ไปทางขวา 3 หน่วย และตามแนวแกน Y ไปข้างล่าง 2 หน่วย จะได้จุด C′(5, 2)','ข้อ 1',['ข้อ 2','ข้อ 3','ข้อ 4'],'การสะท้อนผ่านแกน X ได้ A′(1, −2) ไม่ใช่ (−1, −2) ส่วนข้ออื่นถูกต้อง'),
+TQ('ค่าเฉลี่ยเลขคณิต','คะแนนสอบวิชาคณิตศาสตร์ของนักเรียน 6 คน คือ 4, 8, X, 8, 9, 13 ถ้าค่าเฉลี่ยเลขคณิตของข้อมูลชุดนี้เท่ากับ 9 แล้ว (1/2)X + 5 มีค่าเท่ากับข้อใด','11',['10','12','17'],'ผลรวม 9 × 6 = 54 จาก 4 + 8 + 8 + 9 + 13 = 42 ได้ X = 12 จึง 12/2 + 5 = 11'),
+TQ('ความน่าจะเป็น','ห้างสรรพสินค้าแห่งหนึ่งกำหนดให้ลูกค้าที่มาใช้บริการจับสลากบัตรส่วนลดจากกล่องใบใหญ่คนละ 1 ใบ ในกล่องมีบัตรมูลค่า 800 บาท 15 ใบ 500 บาท 15 ใบ 300 บาท 26 ใบ และ 100 บาท 24 ใบ ความน่าจะเป็นที่ลูกค้าคนแรกจะจับได้สลากบัตรส่วนลดมูลค่าไม่น้อยกว่า 300 บาท เป็นเท่าใด','7/10',['3/8','3/10','13/40'],'จำนวนบัตรทั้งหมด 80 ใบ บัตรที่มูลค่า ≥ 300 บาท มี 15 + 15 + 26 = 56 ใบ ความน่าจะเป็น = 56/80 = 7/10'),
+NQ('รากและเลขยกกำลัง','√(∛(√(27 × 81 × 3⁵))) − ∛(−125) มีค่าเท่าใด','8',[2,10,14],'27 × 81 × 3⁵ = 3¹² จึง √ได้ 3⁶ = 729 ∛729 = 9 √9 = 3 และ −∛(−125) = 5 รวม 8'),
+NQ('ความเข้มข้นและสัดส่วน','ผสมแอลกอฮอล์เจล 500 มิลลิลิตร มีส่วนผสมเอทิลแอลกอฮอล์ กลีเซอรีน และน้ำสะอาด โดยปริมาณของน้ำสะอาดที่ใช้เป็น 4 เท่าของปริมาณกลีเซอรีน และปริมาณของเอทิลแอลกอฮอล์เป็น 3 เท่าของปริมาณน้ำสะอาดและกลีเซอรีนรวมกัน ถ้าในส่วนผสมนี้มีเอทิลแอลกอฮอล์ทั้งหมด 375 มิลลิลิตร แล้วจะมีน้ำสะอาดในส่วนผสมกี่มิลลิลิตร','100',[50,200,400],'ให้กลีเซอรีน g น้ำสะอาด 4g เอทิล 3(5g) = 15g = 375 ได้ g = 25 จึงน้ำสะอาด = 100 มิลลิลิตร'),
+NQ('ลำดับและอนุกรม','ข้อมูลชุดหนึ่งประกอบด้วยจำนวนเต็มบวก 4 จำนวน ถ้าฐานนิยม มัธยฐาน และพิสัยของข้อมูลชุดนี้เท่ากับ 6, 5 และ 4 ตามลำดับ แล้ว 2 เท่าของผลบวกของข้อมูลชุดนี้มีค่าเท่าใด','36',[18,24,72],'ข้อมูลคือ 2, 4, 6, 6 ผลบวก = 18 จึง 2 × 18 = 36'),
+
+/* ===== 2566 ===== */
+TQ('อัตราส่วน','ห้างสรรพสินค้าแห่งหนึ่งวางแผนการซื้อน้ำผลไม้กล่อง 3 รส เพื่อนำมาจำหน่าย โดยมีอัตราส่วนของน้ำฝรั่ง : น้ำองุ่น เป็น 3 : 5 และ น้ำฝรั่ง : น้ำส้ม เป็น 1 : 3 โดยน้ำส้มมีจำนวนมากกว่าน้ำองุ่น 480 กล่อง ห้างสรรพสินค้าแห่งนี้ซื้อน้ำผลไม้ทั้งหมดกี่กล่อง','2,040 กล่อง',['960 กล่อง','1,080 กล่อง','1,440 กล่อง'],'ให้น้ำฝรั่ง = 3f จะได้น้ำองุ่น = 5f และจากน้ำฝรั่ง : น้ำส้ม = 1 : 3 ได้น้ำส้ม = 9f ส้มมากกว่าองุ่น 4f = 480 ได้ f = 120 รวม 3f + 5f + 9f = 17f = 2,040 กล่อง'),
+TQ('ตัวเลขยกกำลัง','หากข้อมูลรายได้ของรัฐ พบว่ามาจากกรมสรรพากร 2,085,300 ล้านบาท กรมสรรพสามิต 642,600 ล้านบาท และกรมศุลกากร 104,800 ล้านบาท รายได้รวมจากทั้ง 3 ส่วนมีมูลค่ากี่บาท','2.8327 × 10¹² บาท',['2.8327 × 10¹¹ บาท','9.5593 × 10¹¹ บาท','9.5593 × 10¹² บาท'],'รวม 2,832,700 ล้านบาท = 2.8327 × 10¹² บาท'),
+TQ('พื้นที่และการใช้จ่าย','โรงเรียนแห่งหนึ่งต้องการทำสวน โดยแบ่งพื้นที่เป็นสองส่วน ส่วนที่ปูหญ้าคือบริเวณพื้นที่ที่ไม่ได้แรเงา และส่วนที่เป็นหินกรวดคือบริเวณพื้นที่ที่แรเงา (รูปประกอบ: สี่เหลี่ยมผืนผ้ากว้าง 4 เมตร ยาว 10 เมตร มีหินกรวดสองส่วนขนาด x × (x + 1) และ x × (x + 3)) ส่วนที่ปูหญ้าเสียค่าใช้จ่ายไปทั้งหมด 1,008 บาท ถ้าหินกรวดราคาถุงละ 60 บาท และหญ้าตารางเมตรละ 42 บาท แล้วข้อใดคือค่าใช้จ่ายรวมในการซื้อหญ้าและหินกรวดในการทำสวนนี้ (หมายเหตุ หินกรวด 1 ถุง ลงพื้นที่ได้ 0.5 ตารางเมตร)','2,928 บาท',['1,920 บาท','2,268 บาท','3,520 บาท'],'หญ้า 1,008 ÷ 42 = 24 ตารางเมตร หินกรวดจึงมี 40 − 24 = 16 ตารางเมตร ได้ x = 2 ใช้หินกรวด 16 ÷ 0.5 = 32 ถุง คิดเป็น 1,920 บาท รวมกับหญ้า 1,008 บาท เป็น 2,928 บาท'),
+TQ('พาราโบลา','จากรูป คือโครงเหล็กแขวนดอกไม้รูปพาราโบลา มีระยะสูงสุด 4 เมตรจากพื้นและฐานกว้าง 4 เมตร ถ้าต้องการสร้างเหล็กยึดขาทั้งสองด้านของพาราโบลา สูงจากพื้น 3 เมตร แล้วเหล็กยึดยาวกี่เมตร','2 เมตร',['1.5 เมตร','2.5 เมตร','3 เมตร'],'พาราโบลา y = 4 − x² เมื่อ y = 3 ได้ x = ±1 เหล็กยึดยาว 2 เมตร'),
+TQ('สัดส่วนร้อยละ','จากการสอบถามนักเรียนจำนวน 3,000 คนในโรงเรียนแห่งหนึ่ง โดยให้เลือกอาหารที่ชอบเพียง 1 ประเภท ได้ผลดังนี้ เนื้อ 48.6%, หมู 22.4%, ปลา ..., ไก่ 10.6%, ผัก 0.9% รวม 100% มีนักเรียนที่ชอบรับประทานปลาทั้งหมดกี่คน','525 คน',['354 คน','495 คน','619 คน'],'ปลา = 100 − 48.6 − 22.4 − 10.6 − 0.9 = 17.5% จึง 3,000 × 0.175 = 525 คน'),
+TQ('อัตราส่วนและสมการ','ในการทำขนมชนิดหนึ่งต้องใช้นมกล่องรสหวานจำนวนมากกว่านมกล่องรสจืด 15 กล่อง ถ้าค่าเฉลี่ยของจำนวนนมกล่องทั้ง 2 ชนิด คือ 28.5 กล่อง แล้วต้องใช้นมกล่องรสจืดในการทำขนมทั้งหมดกี่กล่อง','21 กล่อง',['13.5 กล่อง','21.75 กล่อง','43.5 กล่อง'],'ให้รสจืด = p รสหวาน = p + 15 ค่าเฉลี่ย (2p + 15)/2 = 28.5 ได้ p = 21'),
+TQ('พื้นที่และการตัด','ถ้าต้องการทำบัตรคอนเสิร์ตจำนวน 1,000 ใบ โดยแต่ละใบมีขนาดกว้าง 5 เซนติเมตร และยาว 15 เซนติเมตร ซึ่งตัดจากกระดาษโปสเตอร์แผ่นใหญ่ขนาดกว้าง 50 เซนติเมตร และยาว 90 เซนติเมตร แล้วจะต้องซื้อกระดาษโปสเตอร์จากร้านค้ามาใช้อย่างน้อยที่สุดกี่แผ่น (ร้านค้าจะไม่ตัดแบ่งกระดาษขาย)','17 แผ่น',['16 แผ่น','60 แผ่น','75 แผ่น'],'กระดาษ 1 แผ่นตัดได้ 10 × 6 = 60 ใบ 1,000 ÷ 60 ≈ 16.67 จึงต้องใช้ 17 แผ่น'),
+TQ('ปริมาตรทรงกระบอก','นักเรียนกลุ่มหนึ่งเขียนโครงงานคณิตศาสตร์ออกแบบบันไดสำเร็จรูปด้วยการนำแท่งคอนกรีตมาประกอบกัน โดยแต่ละแท่งเป็นคอนกรีตทรงสี่เหลี่ยมมุมฉากกว้าง 8 นิ้ว ยาว 21 นิ้ว และสูง 8 นิ้ว ด้านในเป็นรูปทรงกระบอกกลวงมีระยะห่างจากขอบ α นิ้ว ถ้า 1 แท่งใช้คอนกรีตหล่อทั้งหมด 750 ลูกบาศก์นิ้ว แล้วรัศมีของทรงกระบอกยาวกี่นิ้ว (กำหนด π = 22/7)','3 นิ้ว',['2 นิ้ว','4 นิ้ว','6 นิ้ว'],'ปริมาตรแท่ง 8 × 8 × 21 = 1,344 ปริมาตรรูทรงกระบอก = 1,344 − 750 = 594 = (22/7) r² × 21 ได้ r² = 9 จึง r = 3 นิ้ว'),
+TQ('ปริมาตรและพื้นที่ผิว','โรงเรียนต้องการสร้างกระโจมแปลงเกษตรทรงพีระมิดฐานจัตุรัส มีความสูงเท่ากับความกว้างของฐาน ด้านในมีท่อน้ำเพื่อติดระบบรดน้ำอัตโนมัติตรงกลางและสูงครึ่งหนึ่งของกระโจม ถ้าใช้วัสดุสำหรับสร้างกระโจม 25√5 ตารางเมตร (ไม่รวมฐานที่เป็นพื้นดิน) แล้วท่อน้ำสูงกี่เมตร','2.5 เมตร',['1.5 เมตร','1.8 เมตร','2.2 เมตร'],'พื้นที่ผิวข้าง = a²√5 = 25√5 ได้ a = 5 ความสูง = 5 ท่อน้ำสูงครึ่งหนึ่ง = 2.5 เมตร'),
+TQ('รูปเรขาคณิตสามมิติ','กำหนดพีระมิดฐานสี่เหลี่ยมมุมฉาก ข้อใดไม่ใช่หน้าตัดที่เกิดจากการตัดพีระมิดฐานสี่เหลี่ยมมุมฉากด้วยระนาบ (ตัวเลือก: 1. หกเหลี่ยม 2. สี่เหลี่ยมจัตุรัส 3. สี่เหลี่ยมคางหมู 4. สามเหลี่ยม)','รูปหกเหลี่ยม',['รูปสี่เหลี่ยมจัตุรัส','รูปสี่เหลี่ยมคางหมู','รูปสามเหลี่ยม'],'พีระมิดฐานสี่เหลี่ยมมี 5 หน้า หน้าตัดมีได้ไม่เกิน 5 ด้าน จึงไม่มีหน้าตัดรูปหกเหลี่ยม'),
+TQ('ความยาวส่วนโค้ง','นาฬิกาทรงกลมเรือนหนึ่งมีเข็มวินาทียาว 7 เซนติเมตร โดยเข็มวินาทีเคลื่อนที่หมุนแบบต่อเนื่อง เมื่อเวลาผ่านไป 4 นาที จุดตรงปลายเข็มวินาทีจะหมุนเป็นระยะทางประมาณกี่เซนติเมตร (กำหนด π = 22/7)','176 เซนติเมตร',['22 เซนติเมตร','44 เซนติเมตร','88 เซนติเมตร'],'4 นาที = 4 รอบ ระยะทาง = 4 × 2π × 7 = 4 × 44 = 176 เซนติเมตร'),
+TQ('ตรีโกณมิติ','บันไดวางพาดกำแพงโดยทำมุม 30 องศากับผนังกำแพงในแนวตั้ง ถ้าบันไดยาว 6 เมตร แล้วปลายอีกด้านของบันไดอยู่ห่างจากฐานกำแพงกี่เมตร','3 เมตร',['3√2 เมตร','3√3 เมตร','6 เมตร'],'ระยะห่างจากฐานกำแพง = 6 sin 30° = 6 × 1/2 = 3 เมตร'),
+TQ('พื้นที่สามเหลี่ยมคล้าย','จากรูป สามเหลี่ยม TRP มีมุม TRP และ QSP เป็นมุมฉาก RS = 5, SP = 4 และ QS = 8 (ความยาวมีหน่วยเป็นเซนติเมตร) จากข้อมูลข้างต้น พื้นที่ของรูปสามเหลี่ยม TRP มีขนาดกี่ตารางเซนติเมตร','81 ตารางเซนติเมตร',['20.25 ตารางเซนติเมตร','45 ตารางเซนติเมตร','50.63 ตารางเซนติเมตร'],'สามเหลี่ยม PSQ คล้าย PRT ได้ QS/TR = SP/RP จึง 8/TR = 4/9 ได้ TR = 18 พื้นที่ = ½ × 9 × 18 = 81'),
+TQ('มัธยฐาน','นักเรียนที่อยู่ชมรมรักษ์โรงเรียนกลุ่มหนึ่ง มีอายุ 9, 12, 10, 14 ปี และมีฝาแฝดอีก 3 คนรวมอยู่ด้วย ถ้าอายุเฉลี่ยของนักเรียนกลุ่มนี้เท่ากับ 12 ปี ดังนั้นมัธยฐานของอายุของนักเรียนทั้ง 7 คน เท่ากับข้อใด','13 ปี',['9 ปี','9.5 ปี','14 ปี'],'ผลรวม 84 − 45 = 39 ฝาแฝดแต่ละคนอายุ 13 ปี เรียงได้ 9, 10, 12, 13, 13, 13, 14 มัธยฐาน = 13'),
+TQ('ความน่าจะเป็น','เด็กหญิง JANE ซื้อขนมปังมา 1 กล่อง ในกล่องเป็นขนมปังที่เป็นรูปตัวอักษรภาษาอังกฤษ A-Z ครบทั้ง 26 ตัวอักษร แต่ละตัวอักษรมีจำนวน 5 ชิ้นเท่ากัน เมื่อเปิดกล่องแล้วเด็กหญิง JANE หยิบขนมในกล่องเป็นครั้งแรกจำนวน 1 ชิ้น ผลต่างของความน่าจะเป็นที่จะหยิบได้ตัวอักษรที่อยู่ในชื่อกับหยิบไม่ได้ตัวอักษรที่อยู่ในชื่อของตนเองเป็นเท่าใด','9/13',['2/13','4/13','11/13'],'ตัวอักษรในชื่อ J A N E มี 4 ตัว P(อยู่ในชื่อ) = 20/130 P(ไม่อยู่) = 110/130 ผลต่าง = 90/130 = 9/13'),
+NQ('เลขยกกำลัง','√(144x¹¹y¹⁰z⁹) × √(9x⁻²y⁻²z⁻⁵) ÷ √(36x⁹y⁸z⁴) มีค่าเท่าใด','6',[5,12,36],'ภายในรากเป็น 1296x⁹y⁸z⁴ ÷ 36x⁹y⁸z⁴ จึงได้ √(36) ÷ √(36) × √(...) = 6'),
+NQ('สมการ','สมใจเล่นเกมทายตัวเลขกับเพื่อน โดยสมใจจะเลือกจำนวนสองจำนวน แล้วบอกคำใบ้ว่า สองเท่าของจำนวนน้อยมีค่ามากกว่าจำนวนมากอยู่ 8 และสองเท่าของจำนวนมากมีค่ามากกว่าสามเท่าของจำนวนน้อยอยู่ 2 แล้วผลบวกของจำนวนทั้งสองมีค่าเท่าใด','46',[36,28,54],'ให้น้อย s มาก L: 2s − L = 8 และ 2L − 3s = 2 ได้ s = 18 L = 28 ผลบวก = 46'),
+NQ('เรขาคณิต','จากรูปสามเหลี่ยม PQR เป็นรูปสามเหลี่ยมที่มีมุม R เป็นมุมฉาก มีด้าน QR ยาว 10√3 หน่วย และด้าน PQ ยาว 20 หน่วย ถ้าลากเส้นตรงจากจุด R ไปตั้งฉากกับด้าน PQ ที่จุด S แล้ว √3 ของความยาวด้าน RS มีค่าเท่าใด','15',[14,20,30],'PR = 10 RS = (10√3 × 10)/20 = 5√3 จึง √3 × 5√3 = 15'),
+NQ('ค่าเฉลี่ยและมัธยฐาน','จากการสำรวจคะแนนสอบวิชาคณิตศาสตร์ของนักเรียน 3 คน พบว่า ค่าเฉลี่ยเลขคณิตของคะแนนสอบของนักเรียนทั้ง 3 คน เท่ากับ 67 คะแนน มัธยฐานเท่ากับ 65 คะแนน และพิสัยเท่ากับ 18 คะแนน อยากทราบว่านักเรียนที่ได้คะแนนต่ำสุดได้คะแนนเท่าใด','59',[65,67,71],'ผลรวม 201 มัธยฐาน 65 ให้ต่ำสุด a และสูงสุด a + 18 ได้ a + (a + 18) = 136 จึง a = 59'),
+
+/* ===== 2568 ===== */
+TQ('อัตราส่วน','บริษัทเอกชนแห่งหนึ่งเปิดรับสมัครพนักงานในตำแหน่งผู้จัดการสาขา โดยมีอัตราส่วนของจำนวนผู้สมัครเพศชายต่อจำนวนผู้สมัครเพศหญิงเป็น 7 : 9 ถ้ามีจำนวนผู้สมัครทั้งหมด 320 คน จำนวนผู้สมัครเพศชายมีจำนวนน้อยกว่าเพศหญิงกี่คน','40 คน',['100 คน','140 คน','180 คน'],'ชาย = 320 × 7/16 = 140 หญิง = 180 ต่างกัน 40 คน'),
+TQ('ตัวเลขยกกำลัง','ข้อมูลการส่งออกสินค้าจากกระทรวงพาณิชย์ ประจำปี 2566 สินค้าที่มีมูลค่าการส่งออกสูงที่สุดคือรถยนต์ อุปกรณ์และส่วนประกอบประมาณ 1,110,044 × 10⁶ บาท รองลงมาคือสินค้าประเภทอัญมณีและเครื่องประดับประมาณ 509,829 × 10⁶ บาท มูลค่าการส่งออกสินค้าทั้งสองประเภทต่างกันกี่บาท','6.002150 × 10¹¹ บาท',['1.619873 × 10¹² บาท','6.002150 × 10¹² บาท','1.619873 × 10¹¹ บาท'],'ผลต่าง = (1,110,044 − 509,829) × 10⁶ = 600,215 × 10⁶ = 6.002150 × 10¹¹ บาท'),
+TQ('พื้นที่แรเงา','โรงเรียนต้องการสร้างสวนที่มีพื้นที่ส่วนที่แรเงารวมกันทั้งหมดเท่ากับ 8 ตารางเมตร โดยรูปสามเหลี่ยมที่แรเงามีพื้นที่เท่ากัน (รูปประกอบ: สี่เหลี่ยมจัตุรัสด้านยาว x ซ้อนกับสี่เหลี่ยมขนมเปียกปูนขนาดเท่ากัน) ถ้าให้ A เป็นส่วนที่ไม่ได้แรเงาและมีขนาดเป็น 8 + 8√2 ตารางเมตร ข้อใดถูกต้อง (√2 ≈ 1.414)','ค่าของ x มีค่ามากกว่า 4.5 และน้อยกว่า 5',['ค่าของ x มีค่ามากกว่าหรือเท่ากับ 5 และน้อยกว่า 5.5','ค่าของ x มีค่ามากกว่าหรือเท่ากับ 5.5 และน้อยกว่า 6','ค่าของ x มีค่ามากกว่าหรือเท่ากับ 6 และน้อยกว่า 6.5'],'ส่วนแรเงาทั้งหมด 2C = 8 ได้ C = 4 และ x² = A + C = 12 + 8√2 ≈ 23.31 จึง x ≈ 4.83'),
+TQ('ความสัมพันธ์ของกราฟพาราโบลา','นักเรียนกลุ่มหนึ่งออกแบบคลองส่งน้ำรูปพาราโบลาซ้อนกัน ดังรูป (รูปประกอบ: y = ax² และ y = bx² มีจุดยอดที่ 0 ความกว้างรวม 20 เมตร ระดับพื้นดินสูง 10 เมตร) ข้อใดถูกต้อง (√2 ≈ 1.414)','m มีค่ามากกว่า 80b',['a มีค่ามากกว่า b','a และ b มีค่าเท่ากัน','m มีความยาวประมาณ 6 เมตร'],'a = 10/400 = 1/40 และ b = 5/100 = 1/20 จึง a < b ความกว้าง m = 10√2 − 10 ≈ 4.14 และ 80b = 4 ดังนั้น m > 80b'),
+TQ('แผนภูมิวงกลม','แผนภูมิแสดงสัดส่วนของนักเรียนที่ชอบสีต่าง ๆ ของโรงเรียนแห่งหนึ่ง ถ้าโรงเรียนนี้มีนักเรียนทั้งหมด 3,900 คน แล้วจะมีคนชอบสีฟ้ากี่คน (สีน้ำเงิน 13%, สีแดง 44%, สีม่วง 16%, สีเขียว 11%)','507 คน',['858 คน','624 คน','429 คน'],'สีฟ้า (สีน้ำเงิน) 13% ของ 3,900 = 507 คน'),
+TQ('ตารางข้อมูลผู้ป่วย','แผนภูมิแท่งแสดงอัตราผู้ป่วยจากการติดเชื้อไข้หวัดใหญ่จำแนกตามช่วงอายุต่อประชากรแสนคน (ช่วง 0–4 ปี = 2,858.70, 5–14 ปี = 2,541.15, 15–24 ปี = 681.42, 25–34 ปี = 648.11, 35–44 ปี = 623.07, 45–54 ปี = 413.18, 55–64 ปี = 349.50, 65+ ปี = 340.08) พิจารณาข้อความ 6.1 ช่วงอายุที่มีจำนวนประชากรติดเชื้อมากที่สุดคือช่วง 65 ปีขึ้นไป 6.2 ช่วงอายุ 0–4 ปี มากกว่าช่วงอายุ 5–14 ปี อยู่ 307.55 คนต่อประชากรแสนคน 6.3 ช่วงอายุ 65 ปีขึ้นไป น้อยกว่าช่วงอายุ 45–54 ปี อยู่ 73.1 คนต่อประชากรแสนคน 6.4 ช่วงอายุ 65 ปีขึ้นไป มากกว่าช่วงอายุ 15–24 ปี อยู่ 341.24 คนต่อประชากรแสนคน ข้อใดตอบ ใช่/ไม่ใช่ ได้ถูกต้องตามลำดับ','ไม่ใช่, ไม่ใช่, ใช่, ไม่ใช่',['ใช่, ไม่ใช่, ใช่, ไม่ใช่','ไม่ใช่, ใช่, ไม่ใช่, ไม่ใช่','ไม่ใช่, ไม่ใช่, ไม่ใช่, ใช่'],'6.1 ผิด (0–4 ปีมากที่สุด) 6.2 ผิด (ต่างกัน 317.55) 6.3 ถูก (340.08 ต่ำกว่า 413.18 อยู่ 73.10) 6.4 ผิด (340.08 น้อยกว่า 681.42)'),
+TQ('ความแปรผัน','ในการจัดสวนแห่งหนึ่งต้องใช้ดอกกุหลาบมากกว่าดอกมะลิอยู่ 120 ต้น โดยดอกกุหลาบมีราคาต้นละ 80 บาท ส่วนดอกมะลิราคาต้นละ 30 บาท ถ้าเจ้าของสวนซื้อต้นไม้ทั้งสองชนิดรวมเป็นเงิน 18,400 บาท แล้วเขาจะได้ต้นไม้รวมทั้งหมดกี่ต้น','280 ต้น',['390 ต้น','408 ต้น','426 ต้น'],'ให้มะลิ = m กุหลาบ = m + 120 ได้ 80(m + 120) + 30m = 18,400 จึง m = 80 รวม 280 ต้น'),
+TQ('ระบบสมการ','ตั๋วคอนเสิร์ตธรรมดาราคา 1,000 บาท และตั๋ว VIP ราคา 2,000 บาท งานคอนเสิร์ตมีผู้เข้าร่วมทั้งหมด 330 คน และรายได้รวมจากการขายตั๋วเท่ากับ 530,000 บาท ข้อใดคือผลต่างระหว่างจำนวนผู้ซื้อบัตรธรรมดากับผู้ซื้อบัตร VIP','70 คน',['20 คน','30 คน','50 คน'],'ให้ธรรมดา = s, VIP = v จะได้ s + v = 330 และ s + 2v = 530 ได้ v = 200 s = 130 ผลต่าง = 70 คน'),
+TQ('ปริมาตรพีระมิด','ในการทำขนมเทียน 1 ห่อของร้านขนมแห่งหนึ่ง ต้องใช้แป้งขนมและไส้รวมกันแล้วห่อด้วยใบตองสำเร็จรูป 1 คู่ ให้ห่อด้วยใบตองเป็นรูปพีระมิดฐานสี่เหลี่ยมจัตุรัสกว้าง 5 เซนติเมตร สูง 4 เซนติเมตร โดยปริมาตรของแป้งขนมและไส้รวมกันคิดเป็น 3/4 ของปริมาตรพีระมิด ถ้าในการทำขนมเทียนทั้งหมดต้องใช้แป้งขนมบรรจุเต็มถังรูปทรงกระบอก รัศมี 15 เซนติเมตร สูง 30 เซนติเมตร และต้องใช้ไส้ที่บรรจุเต็มในถังรูปทรงกระบอกรัศมี 5 เซนติเมตร สูง 10 เซนติเมตร และใบตองสำเร็จรูป 1 คู่ ราคาคู่ละ 2 บาท แล้วต้องใช้เงินในการซื้อใบตองทั้งหมดกี่บาท (กำหนด π = 22/7)','1,760 บาท',['780 บาท','880 บาท','1,560 บาท'],'ปริมาตรพีระมิด = (1/3)(25)(4) = 100/3 แป้งและไส้ต่อห่อ = 3/4 × 100/3 = 25 ปริมาตรรวม = 6,750π + 250π = 7,000π = 22,000 จำนวนห่อ = 22,000/25 = 880 ห่อ ราคา 880 × 2 = 1,760 บาท'),
+TQ('ปริมาตรทรงกลม','โรงงานผลิตแก้วไอศกรีมทรงกรวย รัศมีปากกรวย 5 เซนติเมตร สูง 12 เซนติเมตร หากต้องการปั้นไอศกรีมทรงกลม โดยให้ปริมาตรไอศกรีมทรงกลมเท่ากับปริมาตรกรวย ข้อใดต่อไปนี้คือรัศมีของไอศกรีมทรงกลม','∛75 เซนติเมตร',['4 เซนติเมตร','∛72 เซนติเมตร','5 เซนติเมตร'],'ปริมาตรกรวย = (1/3)π(25)(12) = 100π ทรงกลม (4/3)πR³ = 100π จึง R³ = 75'),
+TQ('หน้าตัดของรูปทรงเรขาคณิต','กำหนดพีระมิดฐานสี่เหลี่ยมมุมฉาก ข้อใดไม่ใช่หน้าตัดที่เกิดจากการตัดพีระมิดด้วยระนาบ (ตัวเลือก: 1. หกเหลี่ยม 2. สี่เหลี่ยมจัตุรัส 3. สี่เหลี่ยมคางหมู 4. สามเหลี่ยม)','รูปหกเหลี่ยม',['รูปสี่เหลี่ยมจัตุรัส','รูปสี่เหลี่ยมคางหมู','รูปสามเหลี่ยม'],'พีระมิดฐานสี่เหลี่ยมมี 5 หน้า หน้าตัดได้ไม่เกิน 5 ด้าน จึงไม่มีรูปหกเหลี่ยม'),
+TQ('มุมระหว่างคอร์ด','สวนสาธารณะแห่งหนึ่งเป็นรูปวงกลมรัศมี 100 เมตร มีทางเข้าที่จุด A และ B และมีทางออกที่จุด C และ D ทางเดินเป็นส่วนของเส้นตรงเชื่อมระหว่างทางเข้าและทางออก โดย AC ตัดกับ BD ที่จุด P (รูปประกอบ: ∠DAC = 32°, ∠BCA = 16°) ข้อใดคือขนาดของมุม APB','48°',['24°','32°','64°'],'∠APB = ½(ส่วนโค้ง AB + ส่วนโค้ง CD) = ½(2 × 16° + 2 × 32°) = 48°'),
+TQ('พื้นที่และจำนวนแผ่น','สถาปนิกต้องการปูกระเบื้องให้เต็มพื้นที่ของที่พักผู้โดยสารรูปสี่เหลี่ยมคางหมูหน้าจั่ว ที่มีด้านขนานยาว 6 เมตร และ 4 เมตร มุมที่ฐาน 45 องศา สูง 1 เมตร หากกระเบื้องที่ใช้ปูพื้นแต่ละแผ่นกว้าง 50 เซนติเมตรและยาว 50 เซนติเมตร โดยที่กระเบื้องสามารถถูกตัดและนำมาต่อกันได้จนปิดพื้นที่ทั้งหมดพอดี และไม่มีเศษเหลือ ข้อใดคือจำนวนกระเบื้องที่ต้องใช้','20 แผ่น',['18 แผ่น','24 แผ่น','30 แผ่น'],'พื้นที่คางหมู = (6 + 4)/2 × 1 = 5 ตารางเมตร กระเบื้อง 1 แผ่น = 0.25 ตารางเมตร จึงใช้ 5 ÷ 0.25 = 20 แผ่น'),
+TQ('ระดับความสูงและมุม','ออมเงยหน้าขึ้นไปบนท้องฟ้ามองเห็นโดรนอยู่ตรงแนวเดียวกับยอดต้นไม้พอดี ถ้าออมสูง 150 เซนติเมตรและยืนอยู่ห่างจากต้นไม้ 2 เมตร ซึ่งต้นไม้สูง 4.5 เมตร ถ้าระยะห่างระหว่างออมกับแนวดิ่งของโดรนห่างกัน 100 เมตร โดรนอยู่สูงจากพื้นดินกี่เมตร','151.50 เมตร',['150 เมตร','152 เมตร','154.50 เมตร'],'ความชันของแนวสายตาผ่านยอดต้นไม้ = (4.5 − 1.5)/2 = 1.5 ที่ระยะ 100 เมตร สูงจากสายตา 150 เมตร สูงจากพื้น 1.5 + 150 = 151.5 เมตร'),
+TQ('มัธยฐานและพิสัย','ข้อมูลชุดหนึ่งเรียงจากน้อยไปมาก ดังนี้ 98 100 101 104 109 109 110 111 a ถ้าพิสัยของข้อมูลชุดนี้เท่ากับ 14 แล้วค่าเฉลี่ยเลขคณิตของข้อมูลชุดนี้เท่ากับข้อใด','106',['105','107','109'],'พิสัย a − 98 = 14 ได้ a = 112 ผลรวม 954 ÷ 9 = 106'),
+TQ('ความน่าจะเป็น','ช่องยูทูป (YouTube) ช่องหนึ่ง จัดกิจกรรมแจกบัตรคอนเสิร์ตจำนวน 5 ใบ ให้กับผู้เข้าร่วมกิจกรรมไลฟ์สด โดยแจกคนละไม่เกิน 1 ใบ ถ้ามีผู้เข้าร่วมกิจกรรมทั้งหมด 60 คน แล้วความน่าจะเป็นของผู้ที่ไม่ได้รับรางวัลเป็นเท่าใด','11/12',['1/6','5/6','1/12'],'ผู้ได้รับรางวัล 5 คน ไม่ได้รับ 55 คน ความน่าจะเป็น = 55/60 = 11/12'),
+NQ('เลขยกกำลัง','(10xy³z⁵)^(1/2) × (160x⁻³y⁻⁴z⁻⁵)^(1/2) ÷ (4x⁻²y⁻¹)^(1/2) มีค่าเท่าใด','20',[6,8,10],'ภายในรากตัวเศษเป็น 1,600x⁻²y⁻¹ จึงได้ √1600 ÷ √4 = 40 ÷ 2 = 20'),
+NQ('สมการ','สวนสัตว์แห่งหนึ่งคิดค่าเข้าชมสำหรับผู้ใหญ่คนละ 120 บาท และสำหรับเด็กคนละ 50 บาท วันเสาร์ที่ผ่านมาสวนสัตว์นี้เก็บค่าเข้าชมได้ทั้งหมด 162,500 บาท และมีเด็กเข้าชมมากกว่าผู้ใหญ่ 360 คน ในวันเสาร์ที่ผ่านมาสวนสัตว์นี้มีผู้ใหญ่เข้าชมทั้งหมดกี่คน','850 คน',[950,700,1000],'ให้ผู้ใหญ่ = A เด็ก = A + 360 ได้ 120A + 50(A + 360) = 162,500 จึง A = 850'),
+NQ('พื้นที่และตรีโกณมิติ','จากรูปสามเหลี่ยม JKL ที่กำหนดให้มีด้าน LK ยาว 14 หน่วย มุม J มีขนาด 45 องศา และมุม K มีขนาด 30 องศา จงหาค่าของ x² + y (y คือความสูง LM และ x คือ MK)','154',[147,151,157],'y = 14 sin 30° = 7 x = 14 cos 30° = 7√3 จึง x² + y = 147 + 7 = 154'),
+NQ('ค่าพิสัย','ข้อมูลอายุ (ปี) ของประชาชนกลุ่มหนึ่งแสดงด้วยแผนภาพต้น-ใบ (ต้น 0: 5, 7; ต้น 1: 1, 2, 4, 5; ต้น 2: 0, 1, 3; ต้น 3: 0, 2, A) ถ้ากำหนดให้อายุเฉลี่ยของประชาชนกลุ่มนี้เท่ากับ 19 ปี ค่าพิสัยของอายุมีค่าเท่าใด','33',[38,28,43],'ผลรวม 12 × 19 = 228 ได้ A = 8 ค่าสูงสุด 38 ค่าต่ำสุด 5 พิสัย = 33')
+);
+}
+
+{const _n=next;next=function(){S.tm=S.tm||[];S.tm[S.i]=(Date.now()-(S.qt||S.t0))/1000;S.qt=Date.now();_n()};
+const _r=result;result=function(){_r();const J=S.qs.map((q,i)=>judge(q,S.ans[i])),tm=S.tm||[],av=tm.reduce((a,b)=>a+b,0)/Math.max(1,tm.length);let fw=0,sw=0,w=0;J.forEach((j,i)=>{if(!j.ok){w++;if(tm[i]<av*.5)fw++;else if(tm[i]>av*1.5)sw++}});
+const msg=!w?'ไม่พบข้อผิด เก่งมาก':fw*2>=w&&fw>=2?`ตอบเร็วแต่ไม่รอบคอบ: ผิด ${fw} จาก ${w} ข้อ เป็นข้อที่ใช้เวลาน้อยกว่าครึ่งของค่าเฉลี่ย (${Math.round(av)} วินาทีต่อข้อ) ลองอ่านโจทย์ซ้ำและทวนเครื่องหมายก่อนส่ง`:sw>=2?`ใช้เวลานานแต่ยังผิด: ${sw} ข้อ น่าจะติดที่แนวคิดหรือสูตร ควรทบทวนหัวข้อที่ผิด`:'ข้อผิดกระจายทั้งแบบเร็วและช้า ลองดูประเภทข้อผิดพลาดด้านบนเพื่อเลือกจุดที่ต้องฝึก';
+const cr=S.qs.map((q,i)=>[q.care,J[i].ok]).filter(x=>x[0]!==undefined),g=h=>cr.filter(x=>!!x[0]===h),ct=a=>a.filter(x=>x[1]).length,hi=g(true),lo=g(false),
+cm=hi.length&&lo.length?`<p class="m" style="margin:8px 0 0">ข้อที่ต้องคิดละเอียด (มีกับดัก เช่น อัตราส่วนที่ยังไม่ทอน): ถูก ${ct(hi)}/${hi.length} · ข้อที่คิดได้เร็ว: ถูก ${ct(lo)}/${lo.length}${ct(lo)/lo.length-ct(hi)/hi.length>=.3?' → ข้อง่ายถูกแต่พอมีกับดักแล้วพลาด เป็นสัญญาณของความไม่รอบคอบ ลองทอนและตรวจเงื่อนไขทุกขั้นก่อนตอบ':''}</p>`:'';
+const c=app.querySelector('.card');if(c)c.insertAdjacentHTML('beforeend',`<h2 style="margin-top:16px">สไตล์การทำข้อสอบ</h2><p class="m" style="margin:0">${msg}</p>${cm}`)}}
+
+{const _a=login;login=function(){app.className='nv';_a()}}
+{const _a=hub;hub=function(){app.className='nv';_a()}}
+{const _a=subjects;subjects=function(){app.className='nv';_a()}}
+{const _a=levels;levels=function(){app.className='nv';_a()}}
+{const _a=start;start=function(){app.className='nv';_a()}}
+{const _a=show;show=function(){app.className='';_a()}}
+{const _a=result;result=function(){app.className='';_a()}}
+{const _a=admin;admin=function(t){app.className='';_a(t)}}
+{const _a=adminLogin;adminLogin=function(){app.className='';_a()}}
+/* ===== V35 add-on ===== */
+{
+const W=g=>()=>{const q=g();q.nr=1;return q},rd=(x,d=2)=>Math.round(x*10**d)/10**d;
+const GR=(a,b)=>[a,b];
+/* --- เพิ่มโจทย์คณิต (แต่ละแบบสลับโครงเองได้ = ข้อคู่ที่โครงต่างกัน) --- */
+G.push(...[
+()=>{const[N,u]=P([['ทุเรียน','กิโลกรัม'],['ข้าวสาร','กิโลกรัม'],['น้ำมันปาล์ม','ลิตร'],['ลำไย','กิโลกรัม']]);let v=R(40,80);const pr=[];for(let i=0;i<6;i++){v=Math.max(20,v+R(-12,14));pr.push(v)}
+const i=R(0,2),j=R(3,5),q=P([10,20,30,50]),s=P([0,1]),a=s?(pr[i]-pr[j])*q:(pr[j]-pr[i])*q,lo=Math.min(...pr),hi=Math.max(...pr),Y=x=>150-(x-lo)/Math.max(1,hi-lo)*110,T=(x,y,t)=>`<text x="${x}" y="${y}" text-anchor="middle" stroke="none" font-size="11">${t}</text>`;
+const svg=`<svg viewBox="0 0 320 185" width="100%" style="max-width:340px" fill="none" stroke="currentColor"><polyline points="${pr.map((p,k)=>`${30+k*52},${Y(p)}`).join(' ')}" stroke="var(--ac)" stroke-width="2.5"/>${pr.map((p,k)=>`<circle cx="${30+k*52}" cy="${Y(p)}" r="3.5" fill="var(--ac)"/>${T(30+k*52,Y(p)-9,p)}${T(30+k*52,172,'วันที่ '+(k+1))}`).join('')}</svg>`;
+return mk('สถิติและกราฟ',`กราฟแสดงราคา${N}ต่อ${u} (บาท) ในช่วง 6 วัน ${nm()}ซื้อ${N} ${q} ${u} ในวันที่ ${s?j+1:i+1} แล้วขายในวันที่ ${s?i+1:j+1} จะได้กำไร (ตอบค่าบวก) หรือขาดทุน (ตอบค่าลบ) กี่บาท`,a,[[-a,'สลับกำไรกับขาดทุน','เครื่องหมาย'],[a/q,`ลืมคูณจำนวน ${q} ${u}`,'ลืมขั้นตอน'],[Math.abs(pr[j])*q,'ใช้ราคาวันขายอย่างเดียว','อ่านโจทย์']],SL([`ราคาซื้อ ${pr[s?j:i]} บาท ราคาขาย ${pr[s?i:j]} บาท ต่อ${u}`,`กำไรต่อหน่วย = ขาย − ซื้อ = ${pr[s?i:j]} − ${pr[s?j:i]} = ${pr[s?i:j]-pr[s?j:i]}`,`คูณจำนวน ${q} ได้ ${a} บาท`],'กำไร = ราคาขาย − ราคาซื้อ ถ้าติดลบคือขาดทุน อย่าลืมคูณจำนวนที่ซื้อ'),svg)},
+()=>{const t=P([20,40,50,100]),r=()=>R(2,Math.floor(t/3));let a,b,c,d;do{a=r();b=r();c=r();d=t-a-b-c}while(d<2);const pv=[800,500,300,100],th=P([300,500]),k=th===300?3:2,s=[a,b,c,d].slice(0,k).reduce((x,y)=>x+y,0),ans=s/t*100;
+return mk('ความน่าจะเป็น',`กล่องจับสลากมีบัตรส่วนลด ${pv[0]} บาท ${a} ใบ ${pv[1]} บาท ${b} ใบ ${pv[2]} บาท ${c} ใบ และ ${pv[3]} บาท ${d} ใบ ${nm()}จับสลาก 1 ใบ มีโอกาสกี่เปอร์เซ็นต์ที่ได้บัตรมูลค่าไม่น้อยกว่า ${th} บาท`,ans,[[(s-(k===3?c:b))/t*100,`ไม่นับบัตร ${th} บาท (ลืมคำว่า "ไม่น้อยกว่า" รวมค่าเท่ากับ)`,'อ่านโจทย์'],[100-ans,'ตอบความน่าจะเป็นของบัตรที่ต่ำกว่า','อ่านโจทย์'],[s,'ตอบจำนวนบัตรแทนเปอร์เซ็นต์','ลืมขั้นตอน']],SL([`จำนวนบัตรทั้งหมด = ${a}+${b}+${c}+${d} = ${t} ใบ`,`บัตรที่ไม่น้อยกว่า ${th} บาท (รวม ${th}) = ${s} ใบ`,`ความน่าจะเป็น = ${s}/${t} × 100 = ${ans}%`],'"ไม่น้อยกว่า" แปลว่ารวมค่านั้นด้วย นับบัตรที่ราคาเท่ากับและมากกว่า'))},
+()=>{const g=P([10,20,25,30,40]),m=P([2,3,4,5]),k=P([2,3,4]),w=m*g,e=k*(m+1)*g,T0=g*(1+m+k*(m+1)),s=P([0,1]),[A,B]=P([['เอทิลแอลกอฮอล์','กลีเซอรีน'],['น้ำมันมะพร้าว','น้ำมันปาล์ม']]);
+return mk('ส่วนผสมและอัตราส่วน',`ผสมเจลแอลกอฮอล์จากเอทิลแอลกอฮอล์ กลีเซอรีน และน้ำสะอาด โดยน้ำสะอาดเป็น ${m} เท่าของกลีเซอรีน และเอทิลแอลกอฮอล์เป็น ${k} เท่าของ (น้ำสะอาด + กลีเซอรีน) ${s?`ถ้ามีเอทิลแอลกอฮอล์ ${e} มิลลิลิตร`:`ถ้าเจลรวม ${T0} มิลลิลิตร`} จะมีน้ำสะอาดกี่มิลลิลิตร`,w,[[g,'ตอบปริมาณกลีเซอรีน','อ่านโจทย์'],[e,'ตอบปริมาณเอทิลแอลกอฮอล์','อ่านโจทย์'],[Math.round(T0/(1+m+k*m)*m),'คิดเอทิลแอลกอฮอล์เป็น k เท่าของน้ำอย่างเดียว','ใช้สูตรผิด']],SL([`ให้กลีเซอรีน = 1 ส่วน น้ำ = ${m} ส่วน`,`แอลกอฮอล์ = ${k} × (${m}+1) = ${k*(m+1)} ส่วน`,`รวม ${1+m+k*(m+1)} ส่วน ${s?`แอลกอฮอล์ ${k*(m+1)} ส่วน = ${e} จึงส่วนละ ${g}`:`รวม ${T0} จึงส่วนละ ${g}`}`,`น้ำ = ${m} × ${g} = ${w} มิลลิลิตร`],'แปลงทุกอย่างเป็น "จำนวนส่วน" ของกลีเซอรีนก่อน แล้วหาว่าส่วนละเท่าไร'))},
+()=>{const[a,b]=P([[45,30],[60,45]]),d=P([20,30,40,50,60,80]),ans=rd(d*0.73,1);
+return mk('มุมเงยและมุมก้ม',`${nm()}ยืนที่พื้นหน้าตึก B มองยอดตึก A เป็นมุมเงย ${a}° แต่เมื่อขึ้นไปยืนบนดาดฟ้าตึก B มองยอดตึก A เป็นมุมเงย ${b}° ถ้าตึก A สูงกว่าตึก B อยู่ ${d} เมตร ตึก B สูงกี่เมตร (√3 ≈ 1.73)`,ans,[[rd(d*1.73,1),'ตอบระยะห่างระหว่างตึกแทนความสูง','อ่านโจทย์'],[rd(d*2.73,1),'ใช้ √3 + 1 แทน √3 − 1','เครื่องหมาย'],[d,'ตอบส่วนต่างความสูง','อ่านโจทย์']],SL([`ให้ระยะห่างระหว่างตึก = x`,a===45?`จากมุม 30° บนดาดฟ้า: d = x·tan30° = x/√3 จึง x = d√3 = ${rd(d*1.73,1)}`:`จากมุม 45° บนดาดฟ้า: d = x·tan45° = x จึง x = ${d}`,a===45?`จากพื้น มุม 45°: ความสูงตึก A = x = ${rd(d*1.73,1)}`:`จากพื้น มุม 60°: ความสูงตึก A = x√3 = ${rd(d*1.73,1)}`,`ตึก B = ตึก A − ${d} = ${ans} เมตร`],'วาดสามเหลี่ยมมุมฉากสองรูป เอาความสูงตึก A ตั้ง แล้วลบส่วนต่างความสูงออก'))},
+()=>{const[th,k]=P([[90,1],[90,2],[90,3],[180,1],[180,2],[60,3],[120,3],[45,2]]),r=7*k,a=44*k*th/360;
+return mk('วงกลมและเส้นรอบวง',`วงกลมวงหนึ่งรัศมี ${r} เซนติเมตร ส่วนโค้งหนึ่งรองรับมุมที่จุดศูนย์กลาง ${th}° ส่วนโค้งนี้ยาวกี่เซนติเมตร (π ≈ 22/7)`,a,[[a*2,'ใช้เส้นผ่านศูนย์กลางแทนรัศมีในสูตรส่วนโค้ง','ใช้สูตรผิด'],[rd(22/7*r*r*th/360),'หาพื้นที่ส่วนเฉือนแทนความยาวส่วนโค้ง','ใช้สูตรผิด'],[a/2,'ใช้ πr แทน 2πr','ใช้สูตรผิด']],SL([`ความยาวส่วนโค้ง = ${fr('มุม',360)} × 2πr`,`= ${fr(th,360)} × 2 × ${fr(22,7)} × ${r}`,`= ${a} เซนติเมตร`],`เส้นรอบวงทั้งวง 2πr = ${44*k} แล้วเอาไปคูณสัดส่วนมุม ${th}/360`))},
+()=>{const a=R(1,6),b=R(1,6),p=R(2,6),q=R(1,5),s=P([0,1]),[x1,y1]=s?[-a,b]:[a,-b],ans=x1+p+y1-q;
+return mk('การแปลงทางเรขาคณิต',`จุด P(${a}, ${b}) สะท้อนโดยมีเส้นสะท้อนเป็นแกน ${s?'Y':'X'} แล้วเลื่อนขนานไปทางขวา ${p} หน่วย และลงล่าง ${q} หน่วย ได้จุด P′(x, y) จงหาค่า x + y`,ans,[[(s?a:-a)+p+(s?-b:b)-q,`สะท้อนผิดแกน (สะท้อนแกน ${s?'X':'Y'})`,'ใช้สูตรผิด'],[a+b+p-q,'ไม่ได้สะท้อนจุด','ลืมขั้นตอน'],[x1+p+y1+q,'เลื่อนลงล่างแล้วบวก q แทนลบ','เครื่องหมาย']],SL([`สะท้อนแกน ${s?'Y':'X'}: (${a}, ${b}) → (${x1}, ${y1})`,`เลื่อนขวา ${p} (x เพิ่ม) ลงล่าง ${q} (y ลด): (${x1+p}, ${y1-q})`,`x + y = ${ans}`],'สะท้อนแกน Y เปลี่ยนเครื่องหมาย x สะท้อนแกน X เปลี่ยนเครื่องหมาย y ขวา = x เพิ่ม ลง = y ลด'))},
+()=>{const h=P([1.5,2]),s1=P([1,2,4]),s2=P([12,16,20,24,30]),a=rd(h*s2/s1),[A,B]=P([['เสาธง','ตึก'],['ต้นไม้','เสาไฟ']]);
+return mk('สามเหลี่ยมคล้ายและเงา',`ไม้เมตร สูง ${h} เมตร ทอดเงายาว ${s1} เมตร ในเวลาเดียวกัน${B}ทอดเงายาว ${s2} เมตร ${B}สูงกี่เมตร`,a,[[rd(s2/s1),'ลืมคูณความสูงไม้','ลืมขั้นตอน'],[rd(h*s1/s2),'จัดอัตราส่วนกลับด้าน','ใช้สูตรผิด'],[rd(s2+h-s1),'ใช้การบวกลบแทนสัดส่วน','ใช้สูตรผิด']],SL([`ความสูง : เงา เท่ากันทุกวัตถุ ณ เวลาเดียวกัน`,`${h}/${s1} = x/${s2}`,`x = ${h} × ${s2} ÷ ${s1} = ${a} เมตร`],'เวลาเดียวกันแสงเอียงเท่ากัน สามเหลี่ยมจึงคล้ายกัน เทียบสัดส่วนสูงต่อเงา'))},
+()=>{const a=P([2,3,4,5]),b=a+2*P([1,2,3]),h=(b-a)/2,ar=(a+b)/2*h,[tw,tl]=P([[50,50],[50,100],[25,100]]),ta=tw*tl/10000,ans=Math.round(ar/ta);
+return mk('พื้นที่และจำนวนแผ่น',`สถาปนิกต้องการปูกระเบื้องเต็มพื้นที่รูปสี่เหลี่ยมคางหมูหน้าจั่ว ด้านบนยาว ${a} เมตร ด้านล่างยาว ${b} เมตร และมุมที่ฐานทั้งสองเท่ากับ 45° ถ้ากระเบื้องแต่ละแผ่นกว้าง ${tw} เซนติเมตร ยาว ${tl} เซนติเมตร ตัดต่อได้ไม่เหลือเศษ ต้องใช้กระเบื้องกี่แผ่น`,ans,[[Math.round(ar/ta/2),'ใช้พื้นที่คางหมูแล้วหารครึ่งอีกครั้ง','ใช้สูตรผิด'],[Math.round(b*(b-a)/2/ta),'ใช้สี่เหลี่ยมผืนผ้า ฐาน × สูง','ใช้สูตรผิด'],[Math.round(ar/(tw*tl)),'ไม่แปลงหน่วยเมตรเป็นเซนติเมตร','หน่วย']],SL([`มุมฐาน 45° ความสูง = (${b} − ${a}) ÷ 2 = ${h} เมตร`,`พื้นที่ = ½ × (${a}+${b}) × ${h} = ${ar} ตร.ม.`,`กระเบื้อง 1 แผ่น = ${tw/100} × ${tl/100} = ${ta} ตร.ม.`,`จำนวน = ${ar} ÷ ${ta} = ${ans} แผ่น`],'ปีกสองข้างเป็นสามเหลี่ยมมุมฉากหน้าจั่ว ความสูงจึงเท่ากับฐานของปีก'))},
+()=>{const e=P([1.2,1.4,1.5,1.6]),t=P([3.5,4,4.5,5]),d=P([2,2.5,4,5]),D=P([50,60,80,100,120]),a=rd(e+(t-e)*D/d);
+return mk('สามเหลี่ยมคล้ายและความสูง',`${nm()}สูง ${e*100} เซนติเมตร ยืนห่างต้นไม้ ${d} เมตร เงยหน้ามองเห็นโดรนตรงแนวเดียวกับยอดต้นไม้พอดี ต้นไม้สูง ${t} เมตร ถ้าระยะแนวราบจากนักเรียนถึงแนวดิ่งของโดรนเป็น ${D} เมตร โดรนอยู่สูงจากพื้นกี่เมตร`,a,[[rd((t-e)*D/d),'ลืมบวกความสูงของผู้มอง','ลืมขั้นตอน'],[rd(t*D/d),'ใช้ความสูงต้นไม้เต็มโดยไม่ลบความสูงสายตา','ใช้สูตรผิด'],[rd(e*D/d),'ใช้ความสูงของผู้มองคูณสัดส่วน','ใช้สูตรผิด']],SL([`ส่วนสูงเหนือระดับสายตา: ต้นไม้ = ${t} − ${e} = ${rd(t-e)} เมตร`,`สามเหลี่ยมคล้าย: ${rd(t-e)}/${d} = h/${D}`,`h = ${rd((t-e)*D/d)} เมตร (เหนือระดับสายตา) บวก ${e} = ${a} เมตร`],'วัดความสูงเหนือระดับสายตาก่อน แล้วอย่าลืมบวกความสูงสายตากลับ'))},
+()=>{const s=P([0,1]),k=P([1,2,3]),n=P([2,3,4,5]),L=7*k,a=44*k*n;
+return mk('วงกลมและเส้นรอบวง',s?`เข็มนาทีของนาฬิกาเรือนหนึ่งยาว ${L} เซนติเมตร เมื่อเวลาผ่านไป ${n} ชั่วโมง ปลายเข็มเคลื่อนที่เป็นระยะทางกี่เซนติเมตร (π ≈ 22/7)`:`เข็มวินาทีของนาฬิกาเรือนหนึ่งยาว ${L} เซนติเมตร เมื่อเวลาผ่านไป ${n} นาที ปลายเข็มเคลื่อนที่เป็นระยะทางกี่เซนติเมตร (π ≈ 22/7)`,a,[[a/n,'คิดเพียงรอบเดียว','ลืมขั้นตอน'],[a/2,'ใช้ πr แทน 2πr','ใช้สูตรผิด'],[a*60,'แปลงหน่วยเวลาเกินความจำเป็น','หน่วย']],SL([`${s?'เข็มนาที 1 รอบใช้ 1 ชั่วโมง':'เข็มวินาที 1 รอบใช้ 1 นาที'} จึงหมุน ${n} รอบ`,`1 รอบ = 2πr = 2 × ${fr(22,7)} × ${L} = ${44*k} ซม.`,`${n} รอบ = ${n} × ${44*k} = ${a} ซม.`],'เส้นรอบวงวงกลม × จำนวนรอบ = ระยะทางที่ปลายเข็มเคลื่อน'))},
+()=>{const y=R(50,200),d=P([60,80,100,120,150]),x=y+d,[a1,b1]=P([[500,1000],[200,500],[300,800],[100,250]]),M=a1*y+b1*x;
+return mk('ระบบสมการ',`งานคอนเสิร์ตขายบัตรธรรมดาใบละ ${a1} บาท และบัตร VIP ใบละ ${b1} บาท มีผู้ซื้อบัตร VIP มากกว่าบัตรธรรมดา ${d} คน และขายบัตรได้เงินรวม ${M} บาท จำนวนผู้ซื้อบัตรทั้งหมดกี่คน`,x+y,[[x,'ตอบจำนวนผู้ซื้อบัตร VIP อย่างเดียว','อ่านโจทย์'],[y,'ตอบจำนวนผู้ซื้อบัตรธรรมดาอย่างเดียว','อ่านโจทย์'],[d,'ตอบผลต่าง','อ่านโจทย์']],SL([`ให้บัตรธรรมดา y ใบ บัตร VIP y + ${d} ใบ`,`${a1}y + ${b1}(y + ${d}) = ${M}`,`${a1+b1}y + ${b1*d} = ${M} ได้ y = ${y}`,`VIP = ${x} รวม ${x+y} คน`],'เขียนทุกอย่างเป็นตัวแปรเดียวก่อน แล้วค่อยแก้สมการ'))}
+].map(W));
+/* --- เพิ่มโจทย์วิทย์ แยกกลุ่มเนื้อหา --- */
+GS.push(...[
+()=>{const V=P([10,20,25,50]),r=P([0.8,1.5,2.7,7.8]),m=r*V;return mkN('ความหนาแน่น',`วัตถุก้อนหนึ่งมวล ${m} กรัม มีปริมาตร ${V} ลูกบาศก์เซนติเมตร ความหนาแน่นมีค่ากี่กรัมต่อลูกบาศก์เซนติเมตร`,r,[[rd(V/m,3),'หารกลับด้าน (ปริมาตร ÷ มวล)','ใช้สูตรผิด'],[m*V,'คูณมวลกับปริมาตร','ใช้สูตรผิด'],[m-V,'ลบกัน','ใช้สูตรผิด']],SL([`ความหนาแน่น = มวล ÷ ปริมาตร`,`= ${m} ÷ ${V} = ${r} g/cm³`],'ความหนาแน่น = เนื้อสารกี่กรัมต่อพื้นที่ 1 ลูกบาศก์เซนติเมตร'))},
+()=>{const F=P([200,400,600]),A=P([20,40,50,100]),a=F*10000/A;return mkN('ความดัน',`แรง ${F} นิวตัน กดลงบนพื้นที่ ${A} ตารางเซนติเมตร ความดันมีค่ากี่นิวตันต่อตารางเมตร (1 ตร.ม. = 10,000 ตร.ซม.)`,a,[[F/A,'ไม่แปลงหน่วยพื้นที่','หน่วย'],[F*A,'คูณแทนหาร','ใช้สูตรผิด'],[F*100/A,'แปลงหน่วยผิด (ใช้ 100)','หน่วย']],SL([`A = ${A} ÷ 10,000 = ${A/10000} ตร.ม.`,`P = F ÷ A = ${F} ÷ ${A/10000} = ${a} N/m²`],'พื้นที่น้อยลงความดันยิ่งมาก (ส้นสูงจมพื้นกว่ารองเท้าผ้าใบ)'))},
+()=>{const Pw=P([500,1000,1500,2000]),h=P([2,4,5]),d=P([10,20,30]),c=P([3,4,5]),a=Pw/1000*h*d*c;return mkN('พลังงานไฟฟ้า',`เครื่องใช้ไฟฟ้ากำลัง ${Pw} วัตต์ เปิดใช้วันละ ${h} ชั่วโมง ใช้ ${d} วัน ถ้าค่าไฟหน่วยละ ${c} บาท (1 หน่วย = 1 กิโลวัตต์-ชั่วโมง) ต้องจ่ายค่าไฟกี่บาท`,a,[[Pw*h*d*c,'ไม่แปลงวัตต์เป็นกิโลวัตต์','หน่วย'],[Pw/1000*h*c,'ลืมคูณจำนวนวัน','ลืมขั้นตอน'],[Pw/1000*h*d,'ลืมคูณราคาต่อหน่วย','ลืมขั้นตอน']],SL([`${Pw} วัตต์ = ${Pw/1000} กิโลวัตต์`,`พลังงาน = ${Pw/1000} × ${h} × ${d} = ${Pw/1000*h*d} หน่วย`,`ค่าไฟ = ${Pw/1000*h*d} × ${c} = ${a} บาท`],'หน่วยค่าไฟ = กิโลวัตต์ × ชั่วโมง'))},
+()=>{const t=P([100,200,250]),m=P([10,20,25,30]),a=m/t*100;return mkN('ความเข้มข้น',`ละลายเกลือ ${m} กรัม ลงในน้ำจนได้สารละลายหนัก ${t} กรัม สารละลายนี้มีความเข้มข้นร้อยละโดยมวลเท่าใด`,a,[[rd(m/(t-m)*100),'หารด้วยมวลตัวทำละลายแทนมวลสารละลาย','ใช้สูตรผิด'],[rd((t-m)/t*100),'ตอบร้อยละของน้ำ','อ่านโจทย์'],[m,'ตอบมวลตัวละลาย','อ่านโจทย์']],SL([`ร้อยละโดยมวล = (มวลตัวละลาย ÷ มวลสารละลาย) × 100`,`= (${m} ÷ ${t}) × 100 = ${a}`],'ตัวหารต้องเป็นสารละลายทั้งหมด (ตัวละลาย + ตัวทำละลาย)'))},
+()=>{const[C1,V1,V2]=P([[40,100,400],[20,100,200],[50,200,500],[30,50,150]]),a=C1*V1/V2;return mkN('การเจือจาง',`สารละลายเข้มข้นร้อยละ ${C1} โดยปริมาตร ปริมาณ ${V1} มิลลิลิตร เติมน้ำจนปริมาตรรวมเป็น ${V2} มิลลิลิตร ความเข้มข้นใหม่ร้อยละเท่าใด`,a,[[C1*V2/V1,'กลับตัวตั้งตัวหาร','ใช้สูตรผิด'],[C1,'คิดว่าความเข้มข้นไม่เปลี่ยน','อ่านโจทย์'],[rd(C1*V1/(V2-V1)),'ใช้ปริมาตรน้ำที่เติมแทนปริมาตรรวม','ใช้สูตรผิด']],SL([`เนื้อสารเท่าเดิม: C₁V₁ = C₂V₂`,`${C1} × ${V1} = C₂ × ${V2}`,`C₂ = ${a}`],'เติมน้ำ เนื้อสารเท่าเดิมแต่ปริมาตรเพิ่ม ความเข้มข้นจึงลดลง'))},
+()=>{const[cr,tr,fr_]=P([['Aa × Aa','ลักษณะเด่น',.75],['Aa × aa','ลักษณะเด่น',.5],['Aa × Aa','ลักษณะด้อย',.25],['Aa × Aa','ยีนเป็นเฮเทอโรไซกัส (Aa)',.5]]),N=P([40,80,100,200]),a=N*fr_;return mkN('พันธุศาสตร์',`ผสมพันธุ์พืชพันธุ์ ${cr} ได้ลูก ${N} ต้น คาดว่าจะได้ลูกที่มี${tr}ประมาณกี่ต้น`,a,[[N*(1-fr_),'ตอบฝั่งตรงข้าม','อ่านโจทย์'],[N/2,'คิดว่าทุกกรณีได้ครึ่งต่อครึ่ง','ใช้สูตรผิด'],[N/4,'คิดว่าได้ 1 ใน 4 เสมอ','ใช้สูตรผิด']],SL([`ตาราง Punnett ของ ${cr}`,`สัดส่วน${tr} = ${fr_*100}%`,`${N} × ${fr_} = ${a} ต้น`],'วาดตาราง Punnett 2×2 แล้วนับช่องที่ตรงลักษณะที่ถาม'))},
+()=>{const N=P([200,400,1000]),p=P([15,20,30,35]),a=N*(50-p)/100;return mkN('ดีเอ็นเอ',`ดีเอ็นเอสายคู่มีเบสทั้งหมด ${N} เบส เป็นอะดีนีน (A) ร้อยละ ${p} จะมีกวานีน (G) กี่เบส`,a,[[N*p/100,'ตอบจำนวน A แทน G','อ่านโจทย์'],[N*(100-2*p)/100,'ตอบ G + C รวมกัน','อ่านโจทย์'],[N*(100-p)/100,'ลบ A อย่างเดียวจาก 100','ใช้สูตรผิด']],SL([`A = T = ${p}% จึง A + T = ${2*p}%`,`G + C = ${100-2*p}% และ G = C จึง G = ${50-p}%`,`G = ${N} × ${(50-p)/100} = ${a} เบส`],'A จับ T, G จับ C จำนวนเท่ากันเป็นคู่ ๆ'))},
+()=>{const E=P([10000,20000,50000]),n=P([2,3]),a=E*0.1**n;return mkN('พลังงานในห่วงโซ่อาหาร',`ผู้ผลิตในห่วงโซ่อาหารมีพลังงาน ${E} กิโลแคลอรี ถ่ายทอดพลังงานได้ร้อยละ 10 ต่อลำดับขั้น ผู้บริโภคลำดับที่ ${n} ได้รับพลังงานกี่กิโลแคลอรี`,rd(a,0),[[E*0.1**(n-1),'นับน้อยไปหนึ่งลำดับขั้น','ใช้สูตรผิด'],[E*0.1*n,'ลดแบบบวกทีละ 10% ไม่ใช่คูณซ้ำ','ใช้สูตรผิด'],[E*0.1**(n+1),'นับเกินไปหนึ่งลำดับขั้น','ใช้สูตรผิด']],SL([`ผู้บริโภคลำดับที่ ${n} ผ่านการถ่ายทอด ${n} ครั้ง`,`พลังงาน = ${E} × 0.1^${n} = ${rd(a,0)}`],'ทุกลำดับขั้นเหลือเพียง 1 ใน 10 คูณซ้ำตามจำนวนขั้น'))},
+()=>{const Z=R(6,20),A=2*Z+P([0,1,2,3,4]);return mkN('โครงสร้างอะตอม',`อะตอมของธาตุหนึ่งมีเลขอะตอม ${Z} และเลขมวล ${A} มีนิวตรอนกี่ตัว`,A-Z,[[A+Z,'บวกแทนลบ','เครื่องหมาย'],[Z,'ตอบจำนวนโปรตอน','อ่านโจทย์'],[A,'ตอบเลขมวล','อ่านโจทย์']],SL([`เลขมวล = โปรตอน + นิวตรอน`,`นิวตรอน = ${A} − ${Z} = ${A-Z}`],'เลขอะตอมคือจำนวนโปรตอน ส่วนที่เหลือของเลขมวลคือนิวตรอน'))}
+].map(W));
+/* --- จัดกลุ่มเนื้อหา --- */
+const SGM={'ชีววิทยา':['การแบ่งเซลล์','พันธุศาสตร์','ห่วงโซ่อาหาร','ระบบหายใจ','ระบบขับถ่าย','ดีเอ็นเอ','พลังงานในห่วงโซ่อาหาร'],'ฟิสิกส์':['โมเมนต์ของแรง','แรงโน้มถ่วง','แรงลอยตัว','เลนส์','วงจรไฟฟ้า','พลังงาน','ความร้อน','การเคลื่อนที่','ความดัน','พลังงานไฟฟ้า','ความหนาแน่น'],'เคมี':['สารละลาย','การเปลี่ยนแปลงของสาร','การแยกสาร','ความเข้มข้น','การเจือจาง','โครงสร้างอะตอม'],'โลกและอวกาศ':['ดาราศาสตร์']};
+const MG=[['เลขยกกำลังและจำนวน',/ยกกำลัง|เลขวิทย์|เลขวิทยาศาสตร์|ราก/],['สถิติ กราฟ และความน่าจะเป็น',/สถิติ|มัธยฐาน|พิสัย|น่าจะเป็น|ตารางข้อมูล|แผนภูมิ|กราฟ/],['อัตราส่วนและร้อยละ',/อัตราส่วน|สัดส่วน|ร้อยละ|ส่วนผสม/],['พาราโบลา ฟังก์ชัน และพิกัด',/พาราโบลา|ฟังก์ชัน|พิกัด|การแปลง/],['วงกลม ตรีโกณ และความคล้าย',/วงกลม|มุม|ตรี|คล้าย|พีทา|ระดับความสูง/],['พื้นที่และปริมาตร',/พื้นที่|ปริมาตร|รูปเรขาคณิต|หน้าตัด/]];
+window.grp=tp=>{if(NAV.subj==='sci'){for(const k in SGM)if(SGM[k].includes(tp))return k;return 'อื่น ๆ'}for(const [n,r] of MG)if(r.test(tp))return n;return 'สมการและพีชคณิต'};
+const GC0={};window.grpCount=()=>{const s=NAV.subj==='sci'?'s':'m';if(!GC0[s]){const m={};(s==='s'?GS:G).forEach(g=>{const t=grp(g().tp);m[t]=(m[t]||0)+1});GC0[s]=m}return GC0[s]};
+}
+CFG.gp=[];
+function tg(g){const i=CFG.gp.indexOf(g);i<0?CFG.gp.push(g):CFG.gp.splice(i,1);start()}
+start=function(){app.className='nv';clearInterval(T);
+const opt=(k,v,t)=>`<button class="o${CFG[k]===v?' s':''}" onclick="CFG['${k}']=${typeof v==='number'?v:`'${v}'`};start()">${t}</button>`,gc=grpCount();
+pane(4,`<h1>ตั้งค่าก่อนเริ่มสอบ</h1><div class="row"><div class="card"><h2>จำนวนข้อ</h2><div class="chips">${[5,10,20,30].map(n=>opt('n',n,n+' ข้อ')).join('')}</div><h2 style="margin-top:14px">วิธีตอบ</h2>${opt('md','r','แบบข้อสอบจริง (ข้อ 1–16 ช้อยส์แบบ O-NET ข้อ 17+ เขียนตอบ)')}${opt('md','o','ช้อยส์แบบ O-NET ทุกข้อ (ตัวเลือกเรียงจากน้อยไปมาก)')}${opt('md','c','ช้อยส์ตามจุดผิดที่พบบ่อย (ตัวหลอกมาจากความผิดพลาดจริง)')}${opt('md','t','พิมพ์คำตอบเองทุกข้อ')}${opt('md','f','เลือกวิธีตอบเองทีละข้อ')}</div><div class="card"><h2>เนื้อหา <span class="m" style="font-weight:400">(ไม่เลือก = ทุกเนื้อหา)</span></h2><div class="chips">${Object.keys(gc).map(g=>`<button class="o${CFG.gp.includes(g)?' s':''}" onclick="tg('${g}')">${g} · ${gc[g]} แบบ</button>`).join('')}</div></div></div><button class="p" onclick="begin(CFG.n,CFG.md)">เริ่มทำข้อสอบ (${NAV.sn} · ${CFG.n} ข้อ${CFG.gp.length?' · '+CFG.gp.length+' เนื้อหา':''})</button> <button class="p l" onclick="levels()">ย้อนกลับ</button>`)};
+pickQ=function(n){const GC=NAV.subj==='sci'?GS:G,gp=CFG.gp||[],pool=[],seen=new Set();
+for(let r=0;r<8&&pool.length<n*1.5;r++)GC.forEach(g=>{const q=g();if((!gp.length||gp.includes(grp(q.tp)))&&!seen.has(q.q)){seen.add(q.q);pool.push(q)}});
+const all=sh(pool),cnt={},out=[];while(out.length<n&&all.length){const m=Math.min(...all.map(q=>cnt[q.tp]||0)),i=all.findIndex(q=>(cnt[q.tp]||0)===m),q=all.splice(i,1)[0];cnt[q.tp]=(cnt[q.tp]||0)+1;out.push(q)}
+const rs=[],rem=sh(out);while(rem.length){const rc=rs.slice(-3).map(q=>q.tp);let i=rem.findIndex(q=>!rc.includes(q.tp));if(i<0)i=0;rs.push(rem.splice(i,1)[0])}rs.forEach(ren);return rs};
+function mkOO(q){const a=q.a[0],seen=new Set([rd2(a)]),L=[{v:a,c:1}];const add=(v,why,tag)=>{const k=rd2(v);if(isFinite(v)&&!seen.has(k)&&L.length<4){seen.add(k);L.push({v:Math.round(v*100)/100,c:0,why,tag})}};
+q.w.forEach(w=>add(w[0],w[1],w[2]));[a*2,a/2,a+1,a-1,a*1.5,a+10,a*10].forEach(v=>add(v,'ค่าใกล้เคียงที่ใช้เป็นตัวเลือกหลอก (ดูวิธีคิดเพื่อตรวจ)','เดาจากตัวเลือก'));return L.sort((x,y)=>x.v-y.v)}
+function rd2(x){return Math.round(x*100)/100}
+begin=function(n,md){clearInterval(T);let qs=pickQ(n);if(!qs.length){alert('ไม่มีโจทย์ในเนื้อหาที่เลือก');return}
+if(md==='r'){const tx=qs.filter(q=>q.txt),nu=qs.filter(q=>!q.txt),k=Math.max(0,16-tx.length);qs=sh(tx.concat(nu.slice(0,k))).concat(nu.slice(k))}
+qs.forEach(q=>{q.opts=sh([{v:q.a[0],c:1},...q.w.map(w=>({v:w[0],why:w[1],tag:w[2],c:0}))]);if(!q.txt)q.oo=mkOO(q)});
+S={qs,i:0,ans:[],tm:[],qt:Date.now(),mode:qs.map((q,i)=>q.txt?'c':md==='f'?'t':md==='r'?(i<16?'o':'t'):md),fx:md!=='f',sel:null,t0:Date.now(),title:NAV.sn+' · O-NET ม.3'};show();
+T=setInterval(()=>{const e=document.getElementById('tm');if(e){const t=Math.floor((Date.now()-S.t0)/1000);e.textContent=String(Math.floor(t/60)).padStart(2,'0')+':'+String(t%60).padStart(2,'0')}},500)};
+const _j=judge;judge=function(q,a){if(a&&a.m==='o'){const o=(q.oo||[])[a.c];return o?{ok:o.c,why:o.why,tag:o.tag,s:f(o.v)}:{ok:0,why:'ไม่ได้ตอบ',tag:'ไม่ได้ตอบ',s:'-'}}return _j(q,a)};
+function saveAns(){const i=app.querySelector('input');if(i&&S.mode[S.i]==='t')S.ans[S.i]=i.value?{m:'t',t:i.value}:undefined}
+function tick(){S.tm[S.i]=(S.tm[S.i]||0)+(Date.now()-S.qt)/1000;S.qt=Date.now()}
+function ansTxt(i){const q=S.qs[i],a=S.ans[i];if(!a)return'<span class="m" style="margin:0">ยังไม่ได้ตอบ</span>';if(a.m==='t')return'พิมพ์: <b>'+a.t+'</b>';if(a.m==='o'){const o=q.oo[a.c];return o?'ตอบข้อ '+(a.c+1)+': <b>'+f(o.v)+'</b>':'-'}const o=q.opts[a.c];return o?'ตอบ '+'กขคง'[a.c]+': <b>'+f(o.v)+'</b>':'-'}
+function updNav(){const s=document.getElementById('strp'),l=document.getElementById('lst');if(!s)return;s.innerHTML=S.qs.map((q,i)=>`<button class="nb${S.ans[i]?' d':''}${i===S.i?' c':''}" onclick="go(${i})">${i+1}</button>`).join('');const c=s.querySelector('.c');if(c)c.scrollIntoView({inline:'center',block:'nearest'});l.innerHTML=`<h2>สรุปคำตอบของคุณ · ตอบแล้ว ${S.ans.filter(Boolean).length}/${S.qs.length} ข้อ</h2>`+S.qs.map((q,i)=>`<div class="t" style="cursor:pointer;${i===S.i?'font-weight:600':''}" onclick="go(${i})"><span>ข้อ ${i+1} · ${q.tp}</span><span>${ansTxt(i)}</span></div>`).join('')}
+function go(i){saveAns();tick();S.i=i;show();window.scrollTo(0,0)}
+show=function(){app.className='';const q=S.qs[S.i],n=S.qs.length,m=S.mode[S.i]||'t',a=S.ans[S.i]||{},L=m==='c'?q.opts:m==='o'?q.oo:null,on='border-color:var(--ac);font-weight:600';S.sel=a.m===m&&a.c!==undefined?a.c:null;
+const lab=m==='o'?'1234':'กขคง',body=L?L.map((o,k)=>`<button class="o${S.sel===k?' s':''}" onclick="pick(${k})">${lab[k]}. ${f(o.v)}</button>`).join(''):`<div class="f"><input autocomplete="off" aria-label="คำตอบ" value="${a.m==='t'?String(a.t).replace(/"/g,'&quot;'):''}" onfocus="focusEl=this" oninput="saveAns();updNav()"></div><div class="k">${['π','√','^','/','(',')','−','⌫'].map(c=>`<button type="button" onmousedown="event.preventDefault()" onclick="ins('${c}')">${c}</button>`).join('')}</div>`;
+app.innerHTML=`<div class="top"><span>${S.title} · ข้อ ${S.i+1}/${n}</span><span id="tm">00:00</span></div><div class="bar"><i style="width:${S.ans.filter(Boolean).length/n*100}%"></i></div><div class="card ex"><div class="qa"><p class="q">${q.q}</p>${q.svg||''}</div><div class="an"><div class="k"${S.fx||q.txt?' style="display:none"':''}><button style="padding:0 12px;${m==='t'?on:''}" onclick="setMode('t')">พิมพ์ตอบเอง</button><button style="padding:0 12px;${m==='o'?on:''}" onclick="setMode('o')">ช้อยแบบ O-NET</button><button style="padding:0 12px;${m==='c'?on:''}" onclick="setMode('c')">ช้อยตามจุดผิด</button></div>${body}</div></div><div style="display:flex;gap:10px"><button class="p l" ${S.i?'':'disabled'} onclick="go(S.i-1)">← ข้อก่อนหน้า</button><button class="p" onclick="next()">${S.i+1<n?'ข้อถัดไป →':'ส่งและดูผล'}</button><button class="p l" onclick="submitNow()" style="margin-left:auto">ส่งข้อสอบ</button></div><div id="lst" class="card" style="margin-top:16px"></div><div id="strp" class="strp"></div>`;
+const tmE=document.getElementById('tm');if(tmE){const t=Math.floor((Date.now()-S.t0)/1000);tmE.textContent=String(Math.floor(t/60)).padStart(2,'0')+':'+String(t%60).padStart(2,'0')}updNav();if(m==='t')app.querySelector('input').focus()};
+setMode=function(m){saveAns();S.ans[S.i]=undefined;S.mode[S.i]=m;show()};
+pick=function(k){S.ans[S.i]={m:S.mode[S.i],c:k};show()};
+function submitNow(){saveAns();const u=S.qs.length-S.ans.filter(Boolean).length;if(u&&!confirm('ยังไม่ได้ตอบ '+u+' ข้อ ส่งเลยหรือไม่'))return;tick();S.i=Math.min(S.i,S.qs.length-1);result()}
+next=function(){saveAns();tick();if(S.i+1<S.qs.length){S.i++;show();window.scrollTo(0,0)}else submitNow()};
+{const _i=ins;ins=function(c){_i(c);saveAns();updNav()}}
+{const st=document.createElement('style');st.textContent='.strp{position:sticky;bottom:0;display:flex;gap:6px;overflow-x:auto;padding:8px 4px;background:var(--bg);border-top:1.5px solid var(--bd);margin-top:12px}.nb{flex:none;min-width:38px;height:38px;border-radius:10px;border:1.5px solid var(--bd);background:var(--card);color:var(--fg);font:inherit;cursor:pointer}.nb.d{background:var(--ac);color:var(--acfg);border-color:var(--ac)}.nb.c{outline:3px solid var(--gold,#F2B632);outline-offset:1px}.p:disabled{opacity:.35;cursor:not-allowed}';document.head.appendChild(st)}
+
+home();
+
+/* ===== V37: โจทย์วิทยาศาสตร์ที่มีกราฟ/แผนภาพ + ตัวเลือกเป็นกราฟ + ส่งออก .md ===== */
+var GR={},GD={},GN=0;
+function gtok(svg,desc){const k='⟦g:'+(++GN)+'⟧';GR[k]=svg;GD[k]=desc||'';return k}
+{
+const rnd=a=>a[Math.floor(Math.random()*a.length)],ri=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+const nf=v=>String(Math.round(v*100)/100);
+const SV=(w,h,b,mw)=>`<svg viewBox="0 0 ${w} ${h}" style="width:100%;max-width:${mw||w}px;display:block;margin:6px auto;font:11px 'Sarabun',sans-serif;color:inherit" role="img">${b}</svg>`;
+const TX=(x,y,t,a,c,sz)=>`<text x="${x}" y="${y}" text-anchor="${a||'middle'}" fill="${c||'currentColor'}"${sz?` font-size="${sz}"`:''}>${t}</text>`;
+const LN=(a,b,c,d,s,w)=>`<line x1="${a}" y1="${b}" x2="${c}" y2="${d}" stroke="${s||'currentColor'}" stroke-width="${w||1.6}"/>`;
+function plot(o){const W=o.W||360,H=o.H||230,L=o.L||48,R=o.R||16,T=o.T||16,B=o.B||40,mw=o.mw||W;
+ const X=x=>L+(x-o.x0)/(o.x1-o.x0)*(W-L-R),Y=y=>H-B-(y-o.y0)/(o.y1-o.y0)*(H-T-B);let s='';
+ for(const y of o.yt)s+=`<line x1="${L}" y1="${Y(y)}" x2="${W-R}" y2="${Y(y)}" stroke="currentColor" stroke-opacity=".16"/>`+TX(L-5,Y(y)+4,nf(y),'end');
+ for(const x of o.xt)s+=`<line x1="${X(x)}" y1="${T}" x2="${X(x)}" y2="${H-B}" stroke="currentColor" stroke-opacity=".16"/>`+TX(X(x),H-B+14,nf(x));
+ s+=`<path d="M${L} ${T}V${H-B}H${W-R}" fill="none" stroke="currentColor" stroke-width="1.8"/>`;
+ if(o.xl)s+=TX((L+W-R)/2,H-5,o.xl);
+ if(o.yl)s+=`<text transform="rotate(-90 12 ${(T+H-B)/2})" x="12" y="${(T+H-B)/2}" text-anchor="middle" fill="currentColor">${o.yl}</text>`;
+ for(const ln of(o.lines||[]))s+=`<polyline points="${ln.p.map(p=>X(p[0]).toFixed(1)+','+Y(p[1]).toFixed(1)).join(' ')}" fill="none" stroke="${ln.c||'var(--ac)'}" stroke-width="${ln.w||2.4}"${ln.d?' stroke-dasharray="6 4"':''} stroke-linejoin="round"/>`+(ln.dots?ln.p.map(p=>`<circle cx="${X(p[0])}" cy="${Y(p[1])}" r="3" fill="${ln.c||'var(--ac)'}"/>`).join(''):'');
+ if(o.ex)s+=o.ex(X,Y);return{svg:SV(W,H,s,mw),X,Y}}
+const MS=(tp,q,a,w,sol,svg,gc)=>{const seen=new Set([a]),ws=w.filter(x=>!seen.has(x[0])&&seen.add(x[0])).slice(0,3);return{tp,q,svg,a:[a],w:ws,sol,txt:1,nr:1,gc:gc?1:0}};
+const WR=(v,why)=>[v,why,'ผิดขั้นตอน'];
+const MM=(rows)=>rows;
+/* ---------- 1) กราฟมวลไข่ (ตัวเลือกเป็นกราฟ) ---------- */
+GS.push(()=>{const W=rnd([40,50,60,70,80]),d=rnd([10,15,20]),y1=Math.round(W*1.4),
+ g=(p,desc)=>gtok(plot({W:230,H:170,L:40,B:34,mw:260,x0:0,x1:4,y0:0,y1:y1,xt:[0,2,4],yt:[0,W/2,W],xl:'เวลา (วัน)',yl:'มวลไข่ (กรัม)',lines:[{p,dots:1}]}).svg,desc);
+ const a=g([[0,W],[2,W-d],[4,W]],'ลดลงแล้วเพิ่มกลับ (รูปตัว V)');
+ return MS('ออสโมซิสและเซลล์',`นำไข่ไก่ที่กำจัดเปลือกด้วยน้ำส้มสายชูแล้วมาชั่ง ได้มวล ${W} กรัม (วันที่ 0) แช่ในน้ำเชื่อมเข้มข้นเป็นเวลา 2 วัน แล้วชั่งอีกครั้ง (วันที่ 2) จากนั้นย้ายไปแช่ในน้ำเปล่าอีก 2 วัน แล้วชั่งครั้งที่สาม (วันที่ 4) ได้มวล ${W} กรัม กราฟใดแสดงมวลของไข่ตลอดการทดลองได้ถูกต้อง`,a,
+ [WR(g([[0,W],[2,W+d],[4,W]],'เพิ่มขึ้นแล้วลดลง (รูปตัว ∧)'),'สลับทิศทางของการออสโมซิส น้ำออกจากไข่เมื่ออยู่ในน้ำเชื่อมมวลจึงต้องลดลง'),
+  WR(g([[0,0],[2,W/2],[4,W]],'เส้นตรงเพิ่มขึ้นจากศูนย์'),'มวลเริ่มต้นของไข่ไม่ใช่ศูนย์'),
+  WR(g([[0,W],[2,W],[4,W+d]],'คงที่แล้วเพิ่มขึ้น'),'ช่วงแช่น้ำเชื่อมมวลไม่คงที่ เพราะน้ำออกจากไข่')],
+ `ในน้ำเชื่อม (ความเข้มข้นสูงกว่าในเซลล์) น้ำออกจากไข่ มวลลดลงเหลือ ${W-d} กรัม ในน้ำเปล่าน้ำเข้าไข่ มวลเพิ่มกลับเป็น ${W} กรัม กราฟจึงลดลงแล้วเพิ่มขึ้น`,'',1)});
+/* ---------- 2) กราฟระยะทาง–เวลา (ตัวเลือกเป็นกราฟ) ---------- */
+GS.push(()=>{const s=rnd([20,30,40]),t1=rnd([4,5,6]),t2=rnd([3,4]),t3=rnd([4,5,6]),T=t1+t2+t3,
+ g=(p,desc)=>gtok(plot({W:230,H:170,L:40,B:34,mw:260,x0:0,x1:T,y0:0,y1:s*1.25,xt:[0,t1,t1+t2,T],yt:[0,s],xl:'เวลา (วินาที)',yl:'ระยะทาง (ม.)',lines:[{p}]}).svg,desc);
+ const a=g([[0,0],[t1,s],[t1+t2,s],[T,0]],'ขึ้น หยุดนิ่ง แล้วลงกลับสู่ศูนย์');
+ return MS('กราฟการเคลื่อนที่',`นักวิ่งคนหนึ่งวิ่งออกจากจุดเริ่มต้นด้วยอัตราเร็วคงที่ไปไกล ${s} เมตร ใช้เวลา ${t1} วินาที จากนั้นหยุดพัก ${t2} วินาที แล้ววิ่งกลับมายังจุดเริ่มต้นด้วยอัตราเร็วคงที่ใช้เวลา ${t3} วินาที กราฟระยะทางจากจุดเริ่มต้น–เวลาใดถูกต้อง`,a,
+ [WR(g([[0,0],[t1,s],[t1+t2,s],[T,s*1.2]],'ขึ้น หยุดนิ่ง แล้วขึ้นต่อ'),'ช่วงสุดท้ายเป็นการวิ่งกลับ ระยะห่างจากจุดเริ่มต้นต้องลดลง'),
+  WR(g([[0,0],[t1,s],[T,0]],'ขึ้นแล้วลงทันที ไม่มีช่วงนิ่ง'),'ช่วงหยุดพักระยะทางต้องคงที่ (เส้นแนวนอน)'),
+  WR(g([[0,0],[t2,0],[t1+t2,s],[T,0]],'นิ่งก่อน แล้วขึ้น แล้วลง'),'โจทย์ให้วิ่งก่อนแล้วจึงหยุดพัก ลำดับช่วงเวลาผิด')],
+ 'ช่วงวิ่งออก ระยะเพิ่มสม่ำเสมอ ช่วงหยุดระยะคงที่ ช่วงวิ่งกลับระยะลดสม่ำเสมอจนเป็นศูนย์','',1)});
+/* ---------- 3) ความเร็วเฉลี่ย (ตัวเลือกเป็นแผนภาพลูกศร) ---------- */
+GS.push(()=>{const [a,b,ts]=rnd([[30,40,[20,25,10]],[9,12,[6,10,5]],[15,20,[10,25,5]],[24,32,[16,20,40]],[18,24,[12,20,30]]]),t=rnd(ts),r=Math.hypot(a,b),v=nf(r/t),vp=nf((a+b)/t);
+ const arrow=(dir,sp)=>{const x0=40,y0=120,x1=dir==='e'?190:160,y1=dir==='e'?120:50;return gtok(SV(240,160,`<defs><marker id="ah${GN}" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="var(--ac)"/></marker></defs>`+LN(x0,y0,x1,y1,'var(--ac)',3).replace('/>',` marker-end="url(#ah${GN})"/>`)+TX(x0-10,y0+14,'A')+TX(x1+6,y1-8,'B','start')+TX(120,150,sp+' เมตร/วินาที'),260),(dir==='e'?'ลูกศรชี้ไปทางตะวันออก ':'ลูกศรชี้ไปทางตะวันออกเฉียงเหนือ ')+sp+' เมตร/วินาที')};
+ const ans=arrow('d',v);
+ const route=SV(300,190,`<path d="M40 160V40H${40+b*3.2>260?260:40+b*3.2}" fill="none" stroke="currentColor" stroke-dasharray="5 4" stroke-width="1.6"/>`+TX(30,176,'A','end')+TX((40+Math.min(b*3.2,220))/2,30,b+' เมตร')+TX(28,100,a+' เมตร','end')+`<circle cx="${40+Math.min(b*3.2,220)}" cy="40" r="4" fill="var(--ac)"/>`+TX(40+Math.min(b*3.2,220)+8,36,'B','start')+TX(264,140,'↑ เหนือ','end')+TX(264,156,'→ ตะวันออก','end'),320);
+ return MS('ปริมาณเวกเตอร์',`นักเรียนคนหนึ่งขี่จักรยานจากจุด A ไปยังจุด B ตามเส้นทางดังรูป คือไปทางทิศเหนือ ${a} เมตร แล้วเลี้ยวไปทางทิศตะวันออกอีก ${b} เมตร ใช้เวลาทั้งหมด ${t} วินาที ข้อใดแสดงทิศทางและขนาดของความเร็วเฉลี่ยได้ถูกต้อง`,ans,
+ [WR(arrow('e',v),'ความเร็วเฉลี่ยมีทิศตามการกระจัด (จาก A ตรงไป B) ไม่ใช่ทิศตะวันออกอย่างเดียว'),
+  WR(arrow('d',vp),`ใช้ระยะทางรวม ${a+b} เมตรหารเวลา แต่ความเร็วเฉลี่ยใช้ขนาดการกระจัด`),
+  WR(arrow('e',vp),'ทั้งทิศทางและขนาดผิด')],
+ `การกระจัด = √(${a}² + ${b}²) = ${nf(r)} เมตร ทิศจาก A ไป B (ตะวันออกเฉียงเหนือ) ความเร็วเฉลี่ย = ${nf(r)} ÷ ${t} = ${v} เมตร/วินาที`,route,1)});
+/* ---------- 4) กราฟการละลายของสาร ---------- */
+GS.push(function t4(){const PR=[[10,24,45,68,92],[34,36,37,38,40],[70,50,36,24,15],[14,22,32,46,64],[5,12,26,48,75],[30,40,48,54,58]],TT=[0,20,40,60,80];
+ const ids=[0,1,2,3,4,5].sort(()=>Math.random()-.5).slice(0,3),vals=rnd([1,2,3]);
+ const C=['var(--ac)','#c0262d','#1b7a3e'],nm=['A','B','C'],cv=ids.map(i=>PR[i]);
+ const pl=plot({W:380,H:250,L:52,B:42,mw:480,x0:0,x1:80,y0:0,y1:100,xt:TT,yt:[0,20,40,60,80,100],xl:'อุณหภูมิ (°C)',yl:'ละลายได้ (กรัม/น้ำ 100 กรัม)',lines:cv.map((c,k)=>({p:TT.map((t,j)=>[t,c[j]]),c:C[k],w:2.6})),ex:(X,Y)=>cv.map((c,k)=>TX(X(80)-4,Y(c[4])-6,'สาร '+nm[k],'end',C[k])).join('')});
+ const v=vals;
+ if(v===1){const j=rnd([0,1,2,3,4]),vs=cv.map(c=>c[j]),mx=Math.max(...vs);if(vs.filter(x=>x===mx).length>1)return t4();const k=vs.indexOf(mx);
+  return MS('การละลายของสาร',`จากกราฟความสามารถในการละลายน้ำของสาร A, B และ C ที่อุณหภูมิ ${TT[j]} องศาเซลเซียส สารใดละลายในน้ำ 100 กรัมได้มากที่สุด`,'สาร '+nm[k],[...nm.filter((x,i)=>i!==k).map(x=>WR('สาร '+x,'อ่านค่าจากเส้นผิด ที่อุณหภูมินี้สารนี้ละลายได้น้อยกว่า')),WR('ละลายได้เท่ากัน','เส้นกราฟทั้งสามไม่ตัดกันที่อุณหภูมินี้')],`ที่ ${TT[j]}°C สาร A, B, C ละลายได้ ${vs.join(', ')} กรัม ตามลำดับ มากที่สุดคือสาร ${nm[k]}`,pl.svg)}
+ if(v===2){const k=rnd([0,1,2]),j=rnd([1,2,3]),x=cv[k][j];return MS('การละลายของสาร',`จากกราฟ ที่อุณหภูมิ ${TT[j]} องศาเซลเซียส สาร ${nm[k]} ละลายในน้ำ 200 กรัมจนอิ่มตัวได้สูงสุดกี่กรัม`,x*2+' กรัม',[WR(x+' กรัม','เป็นค่าของน้ำ 100 กรัม ยังไม่ได้คูณ 2'),WR(x*4+' กรัม','คูณเกิน'),WR(x/2+' กรัม','หารแทนที่จะคูณ')],`อ่านจากกราฟ น้ำ 100 กรัมละลายได้ ${x} กรัม น้ำ 200 กรัมละลายได้ ${x} × 2 = ${x*2} กรัม`,pl.svg)}
+ const k=cv.findIndex(c=>c[3]>c[1]+4);if(k<0)return t4();const j1=3,j2=1,a=cv[k][j1],b=cv[k][j2];
+ return MS('การละลายของสาร',`นำสารละลายอิ่มตัวของสาร ${nm[k]} ในน้ำ 100 กรัมที่ ${TT[j1]} องศาเซลเซียส มาลดอุณหภูมิลงเหลือ ${TT[j2]} องศาเซลเซียส จะมีผลึกของสาร ${nm[k]} แยกออกมากี่กรัม`,(a-b)+' กรัม',[WR(a+' กรัม','เป็นปริมาณที่ละลายที่อุณหภูมิสูง ไม่ใช่ปริมาณที่แยกออกมา'),WR(b+' กรัม','เป็นปริมาณที่ยังละลายอยู่ที่อุณหภูมิต่ำ'),WR((a+b)+' กรัม','นำค่าสองค่ามาบวกกัน')],`ที่ ${TT[j1]}°C ละลายได้ ${a} กรัม ที่ ${TT[j2]}°C ละลายได้ ${b} กรัม ส่วนต่าง ${a} − ${b} = ${a-b} กรัม จะตกผลึก`,pl.svg)}
+);
+/* ---------- 5) กราฟการเย็นตัวของสาร ---------- */
+GS.push(()=>{const Tf=rnd([0,30,45,54,63,80]),T0=Tf+rnd([30,40]),Te=Tf-rnd([10,15]),t1=rnd([4,5,6]),dd=rnd([6,8,10]),t2=t1+dd,t3=t2+rnd([4,5]);
+ const pl=plot({W:380,H:240,L:52,B:42,mw:480,x0:0,x1:t3,y0:Te-10,y1:T0+10,xt:[0,t1,t2,t3],yt:[Te,Tf,T0],xl:'เวลา (นาที)',yl:'อุณหภูมิ (°C)',lines:[{p:[[0,T0],[t1,Tf],[t2,Tf],[t3,Te]],dots:1}]});
+ const a=`${Tf} °C และหลังนาทีที่ ${t2}`;
+ return MS('การเปลี่ยนสถานะ',`ปล่อยให้ของเหลวร้อนชนิดหนึ่งเย็นตัวลงอย่างช้า ๆ แล้วบันทึกอุณหภูมิทุกนาที ได้กราฟดังรูป สารนี้มีจุดเยือกแข็งกี่องศาเซลเซียส และสารเป็นของแข็งทั้งหมดหลังนาทีที่เท่าใด`,a,
+ [WR(`${T0} °C และหลังนาทีที่ ${t1}`,'ใช้อุณหภูมิเริ่มต้นและเวลาเริ่มคงที่ ซึ่งยังเป็นของเหลวอยู่'),WR(`${Tf} °C และหลังนาทีที่ ${t1}`,`ช่วงนาทีที่ ${t1}–${t2} อุณหภูมิคงที่เพราะกำลังแข็งตัว ยังมีของเหลวปนอยู่`),WR(`${Te} °C และหลังนาทีที่ ${t2}`,'อุณหภูมิปลายกราฟไม่ใช่จุดเยือกแข็ง')],
+ `ช่วงที่อุณหภูมิคงที่ (${Tf}°C) คือช่วงที่สารกำลังแข็งตัว เริ่มนาทีที่ ${t1} สิ้นสุดนาทีที่ ${t2} หลังจากนั้นเป็นของแข็งทั้งหมด`,pl.svg)});
+/* ---------- 6) กราฟความเร็ว–เวลา ---------- */
+GS.push(()=>{const V=rnd([4,6,8,10]),t1=rnd([2,4]),t2=t1+rnd([4,6]),t3=t2+rnd([2,4]),d=V*t1/2+V*(t2-t1)+V*(t3-t2)/2;
+ const pl=plot({W:380,H:230,L:52,B:42,mw:480,x0:0,x1:t3,y0:0,y1:V*1.25,xt:[0,t1,t2,t3],yt:[0,V],xl:'เวลา (วินาที)',yl:'ความเร็ว (ม./วินาที)',lines:[{p:[[0,0],[t1,V],[t2,V],[t3,0]],dots:1}]});
+ return MS('กราฟการเคลื่อนที่',`รถของเล่นคันหนึ่งเคลื่อนที่ในแนวตรง ได้กราฟความเร็ว–เวลาดังรูป รถเคลื่อนที่ได้ระยะทางทั้งหมดกี่เมตร`,d+' เมตร',[WR(V*t3+' เมตร','คิดเป็นรูปสี่เหลี่ยมผืนผ้าตลอดช่วง ทั้งที่ช่วงเร่งและช่วงเบรกเป็นรูปสามเหลี่ยม'),WR(nf(V*t3/2)+' เมตร','ใช้ครึ่งหนึ่งของสี่เหลี่ยมผืนผ้าใหญ่ ไม่ตรงกับรูปทรงของกราฟ'),WR(V*(t2-t1)+' เมตร','นับเฉพาะช่วงความเร็วคงที่'),WR((d+V)+' เมตร','บวกพื้นที่เกินจริง'),WR((d+2*V)+' เมตร','คำนวณพื้นที่เกิน')],`ระยะทาง = พื้นที่ใต้กราฟ = ½×${V}×${t1} + ${V}×${t2-t1} + ½×${V}×${t3-t2} = ${d} เมตร`,pl.svg)});
+/* ---------- 7) กราฟแรง–การยืดของสปริง ---------- */
+GS.push(()=>{const k=rnd([0.5,1,2,2.5,4]),xs=[0,2,4,6,8,10],x=rnd([3,5,7,9]),W=k*x;
+ const pl=plot({W:380,H:230,L:52,B:42,mw:480,x0:0,x1:10,y0:0,y1:k*10*1.1,xt:xs,yt:[0,k*5,k*10],xl:'ระยะยืด (เซนติเมตร)',yl:'แรง (นิวตัน)',lines:[{p:xs.map(v=>[v,k*v]),dots:1}]});
+ return MS('แรงและสปริง',`ทดลองแขวนน้ำหนักกับสปริงเส้นหนึ่ง ได้กราฟความสัมพันธ์ระหว่างแรงกับระยะยืดของสปริงดังรูป ถ้าแขวนวัตถุหนัก ${nf(W)} นิวตัน สปริงจะยืดออกกี่เซนติเมตร`,x+' เซนติเมตร',[WR(nf(W*k)+' เซนติเมตร','คูณด้วยค่าคงที่สปริง ทั้งที่ต้องหาร'),WR((x+2)+' เซนติเมตร','อ่านค่าจากกราฟคลาดเคลื่อน'),WR(nf(W)+' เซนติเมตร','นำค่าแรงมาตอบเป็นระยะยืดโดยตรง'),WR((x+3)+' เซนติเมตร','อ่านค่าจากกราฟคลาดเคลื่อน'),WR((x*2)+' เซนติเมตร','คูณระยะเป็นสองเท่าโดยไม่มีเหตุผล'),WR((x+4)+' เซนติเมตร','อ่านค่าจากกราฟคลาดเคลื่อน'),WR((x+6)+' เซนติเมตร','อ่านค่าจากกราฟคลาดเคลื่อน')],`ค่าคงที่สปริง = แรง ÷ ระยะยืด = ${nf(k*10)} ÷ 10 = ${k} นิวตัน/เซนติเมตร ระยะยืด = ${nf(W)} ÷ ${k} = ${x} เซนติเมตร`,pl.svg)});
+/* ---------- 8) กราฟเอนไซม์–อุณหภูมิ (ตัวเลือกเป็นกราฟ) ---------- */
+GS.push(()=>{const [op,who]=rnd([[37,'ในร่างกายมนุษย์'],[55,'ของแบคทีเรียในบ่อน้ำพุร้อน'],[25,'ของปลาในน้ำเย็น']]),
+ g=(p,desc)=>gtok(plot({W:230,H:170,L:38,B:34,mw:260,x0:0,x1:80,y0:0,y1:100,xt:[0,op,80],yt:[],xl:'อุณหภูมิ (°C)',yl:'อัตราการทำงาน',lines:[{p}]}).svg,desc);
+ const bell=[[0,5],[op*0.5,35],[op,95],[op+6,50],[op+12,4],[80,0]].filter((p,i,a)=>p[0]<=80&&(i===0||p[0]>a[i-1][0]));
+ const a=g(bell,'สูงสุดที่อุณหภูมิเหมาะสม แล้วลดลงเร็วจนเป็นศูนย์');
+ return MS('เอนไซม์และการย่อย',`กราฟใดแสดงความสัมพันธ์ระหว่างอุณหภูมิกับอัตราการทำงานของเอนไซม์ ${who} (อุณหภูมิที่เหมาะสมประมาณ ${op} องศาเซลเซียส) ได้ถูกต้อง`,a,
+ [WR(g([[0,5],[80,95]],'เพิ่มขึ้นเรื่อย ๆ'),'อุณหภูมิสูงมากทำให้เอนไซม์เสียสภาพ อัตราจึงไม่เพิ่มต่อเนื่อง'),
+  WR(g([[0,5],[op*0.5,35],[op,95],[80,95]],'เพิ่มขึ้นแล้วคงที่'),'เมื่ออุณหภูมิสูงเกินช่วงเหมาะสมเอนไซม์เสียสภาพ อัตราต้องลดลง'),
+  WR(g([[0,95],[80,5]],'ลดลงเรื่อย ๆ'),'ที่อุณหภูมิต่ำมากเอนไซม์ทำงานช้า ไม่ได้ทำงานดีที่สุด')],
+ `เอนไซม์ทำงานดีที่สุดที่อุณหภูมิเหมาะสมประมาณ ${op}°C ต่ำกว่านั้นอัตราเพิ่มตามอุณหภูมิ สูงกว่านั้นเอนไซม์เสียสภาพ อัตราลดลงเร็ว`,'',1)});
+/* ---------- 9) กราฟความต่างศักย์–กระแส ---------- */
+GS.push(()=>{const Rs=rnd([[2,4,6],[1,3,5],[2,3,6],[4,5,10]]).map(x=>x),ord=[0,1,2].sort(()=>Math.random()-.5),R=ord.map(i=>Rs[i]),mx=Math.max(...R),I=2,C=['var(--ac)','#c0262d','#1b7a3e'],nm=['R₁','R₂','R₃'];
+ const pl=plot({W:380,H:250,L:52,B:42,mw:480,x0:0,x1:2,y0:0,y1:mx*2*1.1,xt:[0,0.5,1,1.5,2],yt:[0,mx,mx*2],xl:'กระแสไฟฟ้า (แอมแปร์)',yl:'ความต่างศักย์ (โวลต์)',lines:R.map((r,k)=>({p:[[0,0],[I,r*I]],c:C[k],w:2.6})),ex:(X,Y)=>R.map((r,k)=>TX(X(I)-4,Y(r*I)-6,nm[k],'end',C[k])).join('')});
+ if(Math.random()<.5){const k=R.indexOf(mx);return MS('กฎของโอห์ม',`จากกราฟความสัมพันธ์ระหว่างความต่างศักย์กับกระแสไฟฟ้าของตัวต้านทาน R₁, R₂ และ R₃ ตัวต้านทานใดมีความต้านทานมากที่สุด`,nm[k],[...nm.filter((x,i)=>i!==k).map(x=>WR(x,'เส้นกราฟของตัวนี้ชันน้อยกว่า จึงมีความต้านทานน้อยกว่า')),WR('เท่ากันทุกตัว','เส้นกราฟมีความชันต่างกัน')],'ความชันของกราฟ V–I เท่ากับค่าความต้านทาน เส้นที่ชันที่สุดมีความต้านทานมากที่สุด คือ '+nm[k]+' ('+mx+' โอห์ม)',pl.svg)}
+ const k=rnd([0,1,2]),r=R[k];return MS('กฎของโอห์ม',`จากกราฟ ตัวต้านทาน ${nm[k]} มีความต้านทานกี่โอห์ม`,r+' โอห์ม',[WR(r*2+' โอห์ม','นำค่า V ที่กระแส 2 A มาตอบโดยไม่ได้หารด้วยกระแส'),WR(nf(r/2)+' โอห์ม','นำกระแสหารด้วย V แทนที่จะนำ V หารด้วยกระแส'),WR((r+2)+' โอห์ม','บวกค่าแทนที่จะหาอัตราส่วน'),WR((r+5)+' โอห์ม','บวกค่าแทนที่จะหาอัตราส่วน'),WR((r*3)+' โอห์ม','คูณด้วยค่าผิด')],`R = V ÷ I ที่กระแส 2 แอมแปร์ ${nm[k]} มี V = ${r*2} โวลต์ จึง R = ${r*2} ÷ 2 = ${r} โอห์ม`,pl.svg)});
+/* ---------- 10) พลังงานในห่วงโซ่อาหาร (กราฟแท่ง) ---------- */
+GS.push(()=>{const [E,p]=rnd([[200000,10],[250000,20],[100000,10]]),L=[E,E*p/100,E*p*p/10000,E*p*p*p/1000000],lab=['ผู้ผลิต','ผู้บริโภค\nลำดับ 1','ผู้บริโภค\nลำดับ 2','ผู้บริโภค\nลำดับ 3'],mxh=130,W=380,H=250,bx=i=>70+i*72;
+ let s=LN(50,30,50,200)+LN(50,200,350,200);
+ [0,1,2].forEach(i=>{const h=Math.max(6,L[i]/E*150);s+=`<rect x="${bx(i)}" y="${200-h}" width="44" height="${h}" fill="var(--ac)" opacity="${i?0.85:1}"/>`+TX(bx(i)+22,200-h-5,L[i].toLocaleString('en-US'))});
+ s+=`<rect x="${bx(3)}" y="150" width="44" height="50" fill="none" stroke="currentColor" stroke-dasharray="4 3"/>`+TX(bx(3)+22,142,'?');
+ lab.forEach((t,i)=>{const[a,b]=t.split('\n');s+=TX(bx(i)+22,216,a)+(b?TX(bx(i)+22,229,b):'')});s+=TX(12,20,'พลังงาน (กิโลแคลอรี)','start');
+ const a3=L[3];return MS('พลังงานในห่วงโซ่อาหาร',`จากแผนภูมิแท่งแสดงพลังงานในห่วงโซ่อาหารสายหนึ่ง ถ้าพลังงานถูกถ่ายทอดจากลำดับขั้นหนึ่งไปยังอีกขั้นในอัตราเท่ากันทุกขั้น ผู้บริโภคลำดับที่ 3 จะได้รับพลังงานกี่กิโลแคลอรี`,a3.toLocaleString('en-US')+' กิโลแคลอรี',[WR(L[2].toLocaleString('en-US')+' กิโลแคลอรี','เป็นพลังงานของผู้บริโภคลำดับที่ 2'),WR(L[1].toLocaleString('en-US')+' กิโลแคลอรี','เป็นพลังงานของผู้บริโภคลำดับที่ 1'),WR(L[0].toLocaleString('en-US')+' กิโลแคลอรี','เป็นพลังงานของผู้ผลิต')],`อัตราถ่ายทอด = ${nf(L[1])} ÷ ${E.toLocaleString('en-US')} = ${p}% ผู้บริโภคลำดับ 2 ได้ ${L[2].toLocaleString('en-US')} ลำดับ 3 ได้ ${a3.toLocaleString('en-US')} กิโลแคลอรี`,SV(W,H,s,480))});
+/* ---------- 11) กราฟการเจริญของแบคทีเรีย ---------- */
+GS.push(()=>{const lt=['ก','ข','ค','ง'].sort(()=>Math.random()-.5),h0=rnd([2,3]),hmax=rnd([80,90,100]);
+ const pl=plot({W:400,H:240,L:46,B:44,mw:500,x0:0,x1:16,y0:0,y1:110,xt:[],yt:[],xl:'เวลา (ชั่วโมง)',yl:'จำนวนเซลล์',lines:[{p:[[0,h0],[4,h0+2],[5,h0+10],[8,hmax],[12,hmax],[13,hmax-15],[16,hmax-60]]}],ex:(X,Y)=>[0,4,8,12,16].map(x=>LN(X(x),Y(0),X(x),Y(0)+5)).join('')+[2,6,10,14].map((x,i)=>TX(X(x),Y(0)+16,'ช่วง '+lt[i])).join('')+[4,8,12].map(x=>`<line x1="${X(x)}" y1="${Y(0)}" x2="${X(x)}" y2="16" stroke="currentColor" stroke-dasharray="3 4" stroke-opacity=".5"/>`).join('')});
+ const Q=[['ช่วงใดที่แบคทีเรียมีจำนวนเพิ่มขึ้นเร็วที่สุด',1,'จำนวนเพิ่มชันที่สุดในช่วงเจริญแบบเอกซ์โพเนนเชียล'],['ช่วงใดที่จำนวนแบคทีเรียมีอัตราเกิดใกล้เคียงกับอัตราตาย (จำนวนคงที่ในระดับสูง)',2,'กราฟราบอยู่ระดับสูง'],['ช่วงใดที่แบคทีเรียกำลังปรับตัวต่อสภาพแวดล้อมใหม่ จำนวนเซลล์ยังเพิ่มช้ามาก',0,'กราฟแทบราบที่ระดับต่ำช่วงต้น'],['ช่วงใดที่จำนวนแบคทีเรียลดลงเนื่องจากอาหารหมดและของเสียสะสม',3,'กราฟลดลงในช่วงท้าย']],[q,idx,why]=rnd(Q);
+ const ans='ช่วง '+lt[idx];return MS('การเจริญของจุลินทรีย์',`กราฟแสดงการเจริญเติบโตของแบคทีเรียที่เลี้ยงในอาหารเหลวปริมาณจำกัด ${q}`,ans,lt.filter((x,i)=>i!==idx).map(x=>WR('ช่วง '+x,'ลักษณะเส้นกราฟในช่วงนี้ไม่ตรงกับเงื่อนไขของโจทย์')),'ดูลักษณะกราฟของแต่ละช่วง: '+why+' จึงตอบ '+ans,pl.svg)});
+/* ---------- 12) ตารางสมบัติธาตุ ---------- */
+GS.push(()=>{const T=[['โลหะ',['ของแข็ง','มันวาว','ได้ดี','เหนียว ตีเป็นแผ่นได้']],['อโลหะ',['ของแข็ง','ไม่มันวาว','ไม่ได้','เปราะ แตกหักง่าย']],['กึ่งโลหะ',['ของแข็ง','มันวาว','ได้บ้าง','เปราะ แตกหักง่าย']],['อโลหะ',['แก๊ส','ไม่มันวาว','ไม่ได้','—']]],ord=['ก','ข','ค','ง'],sh2=[0,1,2,3].sort(()=>Math.random()-.5),el=sh2.map(i=>T[i]);
+ const tb=`<table style="border-collapse:collapse;margin:8px auto;font-size:.92rem"><tr>${['ธาตุ','สถานะ','ความมันวาว','การนำไฟฟ้า','ลักษณะเมื่อถูกแรงกระทำ'].map(x=>`<th style="border:1.5px solid var(--bd);padding:4px 10px;background:var(--grid)">${x}</th>`).join('')}</tr>${el.map((e,i)=>`<tr><td style="border:1.5px solid var(--bd);padding:4px 10px;text-align:center"><b>${ord[i]}</b></td>${e[1].map(x=>`<td style="border:1.5px solid var(--bd);padding:4px 10px;text-align:center">${x}</td>`).join('')}</tr>`).join('')}</table>`;
+ const tg=rnd(['กึ่งโลหะ','โลหะ']),k=el.findIndex(e=>e[0]===tg);
+ return MS('สมบัติของธาตุ',`พิจารณาสมบัติของธาตุสมมติ ก ข ค และ ง ที่อุณหภูมิห้อง ดังตาราง ธาตุใดเป็น${tg}`,'ธาตุ '+ord[k],ord.filter((x,i)=>i!==k).map(x=>WR('ธาตุ '+x,'สมบัติในตารางไม่ตรงกับ'+tg)),tg==='กึ่งโลหะ'?'กึ่งโลหะมีความมันวาวและนำไฟฟ้าได้บ้าง แต่เปราะ แตกหักง่าย':'โลหะเป็นของแข็ง มันวาว นำไฟฟ้าได้ดี และเหนียวตีเป็นแผ่นได้',tb)});
+}
+
+/* ===== V37: รูปแบบหน้าข้อสอบสำหรับกราฟ + แอดมินส่งออก .md (ต้นฉบับ 1 + สำเนา 2) ===== */
+{
+const _show=show;
+show=function(){_show();const q=S.qs[S.i],ex=app.querySelector('.ex'),an=app.querySelector('.an');if(!ex||!an)return;
+ const L=(S.mode[S.i]==='c'?q.opts:S.mode[S.i]==='o'?q.oo:[])||[],gch=L.some(o=>typeof o.v==='string'&&/⟦g:\d+⟧/.test(o.v));
+ if(gch||q.svg){ex.classList.add('big');if(gch)an.classList.add('gc')}}
+}
+const COPIES=2;
+function mdText(h){return String(h==null?'':h).replace(/<span class="fr"><span>([^<]*)<\/span><span>([^<]*)<\/span><\/span>/g,'($1)/($2)').replace(/<li>/g,'\n- ').replace(/<\/(li|div|p)>/g,'\n').replace(/<svg[\s\S]*?<\/svg>/g,'[รูป/กราฟประกอบโจทย์]').replace(/<table[\s\S]*?<\/table>/g,m=>'\n'+m.replace(/<\/tr>/g,'\n').replace(/<\/t[hd]>/g,' | ').replace(/<[^>]+>/g,'')+'\n').replace(/<br\s*\/?>/g,'\n').replace(/<[^>]+>/g,'').replace(/&nbsp;/g,' ').trim()}
+function mdOpt(v){const m=typeof v==='string'&&v.match(/⟦g:\d+⟧/);return m?'[กราฟ] '+(GD[m[0]]||''):mdText(f(v))}
+function mdQ(q,tag){const L=['ก','ข','ค','ง'];let o;if(q.txt){const ch=[{v:q.a[0],c:1},...q.w.map(w=>({v:w[0],c:0,why:w[1]}))];o=ch}else o=[{v:q.a[0],c:1},...q.w.map(w=>({v:w[0],c:0,why:w[1]}))];
+ let s=`#### ${tag}\n\n${mdText(q.q)}\n\n`;if(q.svg)s+=`${mdText(q.svg)}\n\n`;
+ s+=o.map((x,i)=>`- ${L[i]||i+1}. ${mdOpt(x.v)}${x.c?'  ✔ **คำตอบที่ถูก**':''}`).join('\n')+'\n\n';
+ s+=`**วิธีคิด:** ${mdText(q.sol)}\n\n`;const bad=o.filter(x=>!x.c&&x.why);if(bad.length)s+='**เหตุผลของตัวเลือกหลอก**\n'+bad.map(x=>`- ${mdOpt(x.v)} — ${mdText(x.why)}`).join('\n')+'\n';return s+'\n'}
+function mdBank(name,BK){let s=`## ${name} (${BK.length} แม่แบบโจทย์)\n\n`;
+ BK.forEach((g,i)=>{const q0=g();s+=`### ข้อ ${i+1} · ${q0.tp}\n\n`;for(let c=0;c<=COPIES;c++){const q=c?g():q0;s+=mdQ(q,c?`สำเนาชุดที่ ${c}`:'ต้นฉบับ (แม่แบบ)')}});return s}
+function exportMD(which){const d=new Date().toLocaleString('th-TH');let s=`# คลังข้อสอบ O-NET ม.3\n\nส่งออกเมื่อ ${d}\n\nโครงสร้าง: แต่ละแม่แบบโจทย์มี **ต้นฉบับ 1 ชุด + สำเนา ${COPIES} ชุด** สำเนาคือโจทย์โครงเดียวกันที่สุ่มค่าตัวเลข/ข้อมูลใหม่ (โจทย์ที่เป็นข้อสอบจริงที่ตรึงค่าไว้ สำเนาจะเหมือนต้นฉบับ)\n\n`;
+ if(which!=='sci')s+=mdBank('คณิตศาสตร์',G);if(which!=='math')s+='\n'+mdBank('วิทยาศาสตร์',GS);
+ const b=new Blob([s],{type:'text/markdown;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='onet-m3-'+(which||'all')+'.md';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},600)}
+{
+const _ad=admin;admin=function(t){_ad(t);if(!ADM||atab!=='b')return;const p=app.querySelector('p.m');if(!p)return;
+ p.insertAdjacentHTML('beforebegin',`<div class="card" style="margin-bottom:14px"><b>ส่งออกคลังข้อสอบเป็นไฟล์ .md</b><p class="m" style="margin:4px 0 10px">ต้นฉบับ 1 ชุด + สำเนา ${COPIES} ชุดต่อแม่แบบ พร้อมคำตอบ วิธีคิด และเหตุผลของตัวเลือกหลอก (ข้อที่มีกราฟจะระบุเป็น [กราฟ] พร้อมคำอธิบายรูปร่างเส้น)</p><button class="p" style="margin:0 6px 6px 0" onclick="exportMD('math')">คณิตศาสตร์ (${G.length})</button><button class="p" style="margin:0 6px 6px 0" onclick="exportMD('sci')">วิทยาศาสตร์ (${GS.length})</button><button class="p l" style="margin:0 0 6px" onclick="exportMD('all')">ทั้งหมด</button></div>`)}}
+
+</script>
+<!-- ===== V37: บัญชีผู้ใช้ + หน้าต่างแอดมิน (Supabase) ===== -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<style>
+#v37-bar{position:fixed;top:calc(6px + env(safe-area-inset-top,0px));right:10px;z-index:50;display:flex;gap:6px}
+#v37-bar button{font:inherit;font-size:.8rem;font-weight:600;padding:4px 12px;border-radius:999px;border:1.5px solid var(--ac);background:var(--card);color:var(--ac);cursor:pointer;white-space:nowrap}
+#v37-bar #adm-btn{display:none;background:var(--ac);color:var(--acfg)}
+#v37-bar #acc-btn{max-width:120px;overflow:hidden;text-overflow:ellipsis}
+#app .hd,#app.nv .stp{padding-right:clamp(200px,24vw,260px)}
+@media (max-height:480px){.rail .c{min-height:150px}}
+.acc-bg{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:60;padding:16px}
+.acc-bg.on{display:flex}
+.acc-box{background:var(--card);color:var(--fg);border:2px solid var(--bd);border-radius:12px;padding:18px;width:min(480px,100%);max-height:90vh;overflow:auto}
+.acc-box input,.acc-box textarea,.acc-box select{width:100%;margin:0 0 8px;font:inherit;padding:8px 10px;border:2px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--fg)}
+.warn{color:var(--bad);font-size:.9rem;min-height:1.3em}
+#adm{position:fixed;inset:0;background:var(--bg);z-index:55;display:none;overflow:auto;padding:64px clamp(12px,3vw,32px) 32px}
+#adm.on{display:block}
+#adm table{width:100%;border-collapse:collapse;margin:8px 0 16px}
+#adm th,#adm td{border-bottom:1px solid var(--bd);padding:6px;text-align:left;font-size:.92rem}
+#adm .tabs{position:sticky;top:0;z-index:2;background:var(--bg);padding-bottom:8px}
+.hbar{display:flex;align-items:flex-end;gap:3px;height:140px;border-bottom:1px solid var(--bd);margin-top:8px}
+.hbar>div{flex:1;background:var(--ac);border-radius:3px 3px 0 0;min-height:2px;position:relative}
+.hbar>div b{position:absolute;top:-17px;left:-6px;right:-6px;text-align:center;font-size:.65rem;color:var(--mut);font-weight:400}
+.hlab{display:flex;gap:3px;font-size:.62rem;color:var(--mut)}.hlab>div{flex:1;text-align:center}
+</style>
+
+<div id="v37-bar"><button id="adm-btn">แอดมิน</button><button id="acc-btn">เข้าสู่ระบบ</button></div>
+
+<div class="acc-bg" id="acc"><div class="acc-box" id="acc-box"></div></div>
+
+<div id="adm">
+  <div class="chips tabs">
+    <button class="o" data-tab="stats">สถิติ</button>
+    <button class="o" data-tab="ann">ประกาศ / ข้อสอบ PDF</button>
+    <button class="o" data-tab="slips">สลิปการโอน</button>
+    <button class="o" data-tab="bans">ตั้งค่าชื่อต้องห้าม</button>
+    <button class="o" id="adm-x">ปิดหน้าแอดมิน</button>
+  </div>
+  <div id="adm-body"></div>
+</div>
+
+<script>
+(function(){
+const SB_URL = 'PUT_SUPABASE_URL', SB_KEY = 'PUT_SUPABASE_ANON_KEY';
+let sb = null;
+try { if (window.supabase && SB_URL.startsWith('https://')) sb = window.supabase.createClient(SB_URL, SB_KEY); } catch(e) { console.error(e); }
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+const WEAK = ['123456','111111','000000','123123','12345678','password','qwerty','abc123'];
+const CATS = ['ทั่วไป','หยาบคาย','การเมือง','ชื่อบุคคลสำคัญ','ชื่อไม่เหมาะสม','กำหนดเอง'];
+let ME = null, MODE = 'quick', weakOK = false;
+try { ME = JSON.parse(localStorage.getItem('onet_me') || 'null'); } catch(e) {}
+
+async function rpc(fn, args){
+  if(!sb) throw new Error('ยังไม่ได้เชื่อม Supabase (ใส่ URL และ anon key ในไฟล์)');
+  const {data, error} = await sb.rpc(fn, args); if(error) throw new Error(error.message); return data; }
+function save(d){ ME = d; try { d ? localStorage.setItem('onet_me', JSON.stringify(d)) : localStorage.removeItem('onet_me'); } catch(e) {} refresh(); }
+let pendAdm = false;
+function isAdm(){ let a = false; try { a = (typeof ADM !== 'undefined') && ADM; } catch(e) {} return a || !!(ME && ME.role === 'admin'); }
+function refresh(){ $('acc-btn').textContent = ME ? ME.username : 'เข้าสู่ระบบ'; $('adm-btn').style.display = isAdm() ? 'block' : 'none'; if(!isAdm()) $('adm').classList.remove('on'); }
+setInterval(refresh, 400);
+
+/* ---------- บัญชีผู้ใช้ ---------- */
+function openAcc(){ renderAcc(); $('acc').classList.add('on'); }
+function closeAcc(){ pendAdm = false; $('acc').classList.remove('on'); }
+$('acc').onclick = e => { if(e.target.id === 'acc') closeAcc(); };
+$('acc-btn').onclick = openAcc;
+$('adm-btn').onclick = () => { if(ME && ME.role === 'admin') openAdm(); else { pendAdm = true; MODE = 'login'; openAcc(); } };
+
+function renderAcc(){
+  const box = $('acc-box');
+  if(ME && !pendAdm){
+    box.innerHTML = `<h2>สวัสดี ${esc(ME.username)}</h2>
+      <p class="m">${ME.account_type === 'perm' ? 'สมัครถาวร' : 'สมัครรวดเร็ว'}${ME.role === 'admin' ? ' · แอดมิน' : ''}</p>
+      <div id="slip" style="display:none"><input type="file" id="slip-f" accept="image/*"><div class="chips"><button class="p" id="slip-go">ส่งสลิป</button></div></div>
+      <div class="warn" id="w"></div>
+      <div class="chips" style="margin-top:10px">
+        ${ME.role === 'admin' ? '<button class="o" id="go-adm">เปิดหน้าแอดมิน</button>' : ''}
+        <button class="o" id="b-slip">ส่งสลิปการโอน</button>
+        <button class="o" id="b-out">ออกจากระบบ</button>
+        <button class="o" id="b-x">ปิด</button>
+      </div>`;
+    if($('go-adm')) $('go-adm').onclick = () => { closeAcc(); openAdm(); };
+    $('b-slip').onclick = () => $('slip').style.display = 'block';
+    $('slip-go').onclick = sendSlip;
+    $('b-out').onclick = () => { save(null); closeAcc(); };
+    $('b-x').onclick = closeAcc;
+    return;
+  }
+  const hint = pendAdm ? '<p class="m" style="margin:0 0 8px">เข้าสู่ระบบด้วยบัญชีแอดมิน (ที่สร้างไว้ในฐานข้อมูล) เพื่อดูข้อมูลทั้งหมด</p>' : '';
+  const tab = (k, t) => `<button class="o${MODE === k ? ' s' : ''}" data-m="${k}">${t}</button>`;
+  box.innerHTML = hint + `<div class="chips" style="margin-bottom:12px">${tab('quick','สมัครรวดเร็ว')}${tab('perm','สมัครถาวร')}${tab('login','เข้าสู่ระบบ')}</div>
+    <input id="f-u" placeholder="ชื่อผู้ใช้" maxlength="30" autocomplete="username">
+    <input id="f-p" type="password" placeholder="รหัสผ่าน (อย่างน้อย 6 ตัว)" autocomplete="current-password" style="display:${MODE === 'quick' ? 'none' : 'block'}">
+    <div class="warn" id="w"></div>
+    <div class="chips"><button class="p" id="go">${MODE === 'login' ? 'เข้าสู่ระบบ' : 'สมัคร'}</button><button class="o" id="b-x">ปิด</button></div>`;
+  box.querySelectorAll('[data-m]').forEach(b => b.onclick = () => { MODE = b.dataset.m; weakOK = false; renderAcc(); });
+  $('go').onclick = submit;
+  $('f-p').oninput = () => { weakOK = false; $('w').textContent = ''; };
+  $('b-x').onclick = closeAcc;
+}
+
+async function submit(){
+  const u = $('f-u').value.trim(), p = $('f-p').value, w = $('w');
+  w.textContent = '';
+  try{
+    if(!u) throw new Error('กรุณาใส่ชื่อผู้ใช้');
+    if(MODE === 'perm'){
+      if(p.length < 6) throw new Error('รหัสผ่านต้องมีอย่างน้อย 6 ตัว');
+      if(WEAK.includes(p) && !weakOK){ weakOK = true; w.textContent = 'รหัสนี้เดาได้ง่ายมาก แนะนำให้เปลี่ยน ถ้าต้องการใช้รหัสนี้ กดสมัครอีกครั้ง'; return; }
+    }
+    const d = MODE === 'login'
+      ? await rpc('login_user', {p_username: u, p_password: p})
+      : await rpc('register_user', {p_username: u, p_password: MODE === 'perm' ? p : null, p_type: MODE === 'perm' ? 'perm' : 'quick'});
+    if(!d || !d.id) throw new Error('เซิร์ฟเวอร์ไม่ตอบกลับ ลองใหม่อีกครั้ง');
+    save(d);
+    const goAdm = pendAdm; closeAcc();
+    if(goAdm && ME && ME.role === 'admin') openAdm();
+  }catch(e){ w.textContent = e.message; }
+}
+
+async function sendSlip(){
+  const w = $('w'); w.textContent = '';
+  try{
+    const f = $('slip-f').files[0];
+    if(!sb) throw new Error('ยังไม่ได้เชื่อม Supabase');
+    if(!f) throw new Error('เลือกรูปสลิปก่อน');
+    if(f.size > 5e6) throw new Error('ไฟล์ใหญ่เกิน 5 MB');
+    const path = crypto.randomUUID() + '.' + (f.name.split('.').pop() || 'jpg');
+    const up = await sb.storage.from('slips').upload(path, f, {contentType: f.type});
+    if(up.error) throw new Error(up.error.message);
+    const url = sb.storage.from('slips').getPublicUrl(path).data.publicUrl;
+    await rpc('submit_slip', {p_user: ME.id, p_url: url});
+    w.textContent = 'ส่งสลิปแล้ว';
+  }catch(e){ w.textContent = e.message; }
+}
+
+/* ---------- หน้าต่างแอดมิน ---------- */
+function openAdm(){ if(!ME || ME.role !== 'admin') return; $('adm').classList.add('on'); tabTo('stats'); }
+$('adm-x').onclick = () => $('adm').classList.remove('on');
+document.querySelectorAll('#adm [data-tab]').forEach(b => b.onclick = () => tabTo(b.dataset.tab));
+function tabTo(t){ ({stats: loadStats, ann: loadAnn, slips: loadSlips, bans: loadBans})[t](); }
+
+async function loadStats(){
+  const b = $('adm-body'); b.innerHTML = 'กำลังโหลด...';
+  let S;
+  try{ S = await rpc('admin_stats', {p_admin: ME.id}); }catch(e){ b.textContent = e.message; return; }
+  const today = new Date(Date.now() + 7*3600e3).toISOString().slice(0, 10);
+  b.innerHTML = `<h2>จำนวนผู้เข้าใช้</h2>
+    <div class="chips" style="margin-bottom:8px">
+      <button class="o" data-r="day">รายวัน</button><button class="o" data-r="week">รายสัปดาห์</button>
+      <button class="o" data-r="month">รายเดือน</button><button class="o" data-r="year">รายปี</button>
+    </div>
+    <div id="rng"></div>
+    <h2 style="margin-top:18px">ผู้เข้าใช้รายชั่วโมง</h2>
+    <input type="date" id="hd" value="${today}" style="max-width:220px">
+    <div id="hbars"></div>
+    <h2 style="margin-top:18px">คะแนนเฉลี่ย แยกกลุ่ม</h2>
+    <table><tr><th>กลุ่ม</th><th>วิชา</th><th>จำนวนครั้ง</th><th>เฉลี่ย %</th></tr>
+      ${S.scores.map(s => `<tr><td>${esc(s.group)}</td><td>${esc(s.subject)}</td><td>${s.n}</td><td>${s.avg}</td></tr>`).join('') || '<tr><td colspan="4">ยังไม่มีข้อมูล</td></tr>'}
+    </table>
+    <p>รวมทั้งหมด ${S.score_total.n} ครั้ง · เฉลี่ย ${S.score_total.avg ?? '-'} %</p>`;
+  const showRange = k => {
+    const rows = S[k] || [];
+    $('rng').innerHTML = `<table><tr><th>ช่วงเวลา</th><th>จำนวนผู้เข้าใช้ (ครั้ง)</th></tr>
+      ${rows.map(r => `<tr><td>${esc(r.label)}</td><td>${r.count}</td></tr>`).join('') || '<tr><td colspan="2">ยังไม่มีข้อมูล</td></tr>'}</table>`;
+  };
+  b.querySelectorAll('[data-r]').forEach(x => x.onclick = () => showRange(x.dataset.r));
+  showRange('day');
+  const drawHour = async () => {
+    try{
+      const arr = await rpc('admin_hourly', {p_admin: ME.id, p_date: $('hd').value});
+      const mx = Math.max(1, ...arr);
+      $('hbars').innerHTML = `<div class="hbar">${arr.map((c, h) => `<div style="height:${c/mx*100}%" title="${h}:00 = ${c} ครั้ง"><b>${c || ''}</b></div>`).join('')}</div>
+        <div class="hlab">${arr.map((_, h) => `<div>${h}</div>`).join('')}</div>`;
+    }catch(e){ $('hbars').textContent = e.message; }
+  };
+  $('hd').onchange = drawHour;
+  drawHour();
+}
+
+async function loadAnn(){
+  const b = $('adm-body');
+  b.innerHTML = `<h2>ปล่อยประกาศ / ข้อสอบ PDF</h2>
+    <input id="an-t" placeholder="หัวข้อ"><textarea id="an-b" rows="3" placeholder="รายละเอียด"></textarea>
+    <input type="file" id="an-f" accept="application/pdf">
+    <div class="chips"><button class="p" id="an-go">ปล่อย</button></div>
+    <div class="warn" id="an-w"></div>
+    <h2 style="margin-top:16px">ประกาศที่ปล่อยแล้ว</h2><div id="an-list">กำลังโหลด...</div>`;
+  $('an-go').onclick = postAnn;
+  try{
+    const L = await rpc('list_announcements', {});
+    $('an-list').innerHTML = L.map(a => `<div class="card"><b>${esc(a.title)}</b>
+      <small class="m"> ${new Date(a.created_at).toLocaleString('th-TH')}</small>
+      <p>${esc(a.body)}</p>${a.file_url ? `<a href="${esc(a.file_url)}" target="_blank" rel="noopener">ดาวน์โหลด PDF</a>` : ''}</div>`).join('') || 'ยังไม่มี';
+  }catch(e){ $('an-list').textContent = e.message; }
+}
+
+async function postAnn(){
+  const w = $('an-w'); w.textContent = '';
+  try{
+    const t = $('an-t').value.trim();
+    if(!t) throw new Error('ใส่หัวข้อก่อน');
+    if(!sb) throw new Error('ยังไม่ได้เชื่อม Supabase');
+    let url = null;
+    const f = $('an-f').files[0];
+    if(f){
+      const path = crypto.randomUUID() + '.pdf';
+      const up = await sb.storage.from('exam-files').upload(path, f, {contentType: 'application/pdf'});
+      if(up.error) throw new Error(up.error.message);
+      url = sb.storage.from('exam-files').getPublicUrl(path).data.publicUrl;
+    }
+    await rpc('admin_post_announcement', {p_admin: ME.id, p_title: t, p_body: $('an-b').value, p_file_url: url});
+    loadAnn();
+  }catch(e){ w.textContent = e.message; }
+}
+
+async function loadSlips(){
+  const b = $('adm-body'); b.innerHTML = 'กำลังโหลด...';
+  try{
+    const L = await rpc('admin_list_slips', {p_admin: ME.id});
+    b.innerHTML = '<h2>สลิปการโอนที่ส่งเข้ามา</h2>' + (L.map(s => `<div class="card"><b>${esc(s.user)}</b>
+      <small class="m"> ${new Date(s.at).toLocaleString('th-TH')}</small><br>
+      <a href="${esc(s.url)}" target="_blank" rel="noopener"><img src="${esc(s.url)}" style="max-width:220px;border-radius:8px;margin-top:6px"></a></div>`).join('') || 'ยังไม่มีสลิป');
+  }catch(e){ b.textContent = e.message; }
+}
+
+async function loadBans(){
+  const b = $('adm-body'); b.innerHTML = 'กำลังโหลด...';
+  try{
+    const L = await rpc('admin_list_bans', {p_admin: ME.id});
+    b.innerHTML = `<h2>ตั้งค่าชื่อต้องห้าม</h2>
+      <p class="m">เพิ่มได้ทีละหลายชื่อ โดยขึ้นบรรทัดใหม่ทุกชื่อ</p>
+      <textarea id="bn-t" rows="4" placeholder="เช่น ฮิตเลอร์ (ขึ้นบรรทัดใหม่แต่ละชื่อ)"></textarea>
+      <select id="bn-m"><option value="contains">ห้ามเมื่อมีคำนี้อยู่ในชื่อ</option><option value="exact">ห้ามเฉพาะชื่อที่ตรงเป๊ะ</option></select>
+      <input list="cats" id="bn-c" value="ทั่วไป" placeholder="หมวด">
+      <datalist id="cats">${CATS.map(c => `<option value="${c}">`).join('')}</datalist>
+      <div class="chips"><button class="p" id="bn-go">เพิ่มชื่อ</button></div>
+      <div class="warn" id="bn-w"></div>
+      <table><tr><th>ชื่อ</th><th>แบบ</th><th>หมวด</th><th>สถานะ</th></tr>
+        ${L.map(x => `<tr><td>${esc(x.pattern)}</td><td>${x.match_type === 'exact' ? 'ตรงเป๊ะ' : 'มีคำนี้'}</td><td>${esc(x.category)}</td>
+        <td><button class="o" data-id="${x.id}" data-on="${x.enabled}">${x.enabled ? 'เปิดอยู่ (กดเพื่อปิด)' : 'ปิดอยู่ (กดเพื่อเปิด)'}</button></td></tr>`).join('')}
+      </table>`;
+    $('bn-go').onclick = addBans;
+    b.querySelectorAll('[data-id]').forEach(x => x.onclick = async () => {
+      try{ await rpc('admin_toggle_ban', {p_admin: ME.id, p_id: +x.dataset.id, p_enabled: x.dataset.on !== 'true'}); loadBans(); }
+      catch(e){ $('bn-w').textContent = e.message; }
+    });
+  }catch(e){ b.textContent = e.message; }
+}
+
+async function addBans(){
+  const w = $('bn-w'); w.textContent = '';
+  try{
+    const items = $('bn-t').value.split('\n').map(s => s.trim()).filter(Boolean);
+    if(!items.length) throw new Error('ใส่ชื่ออย่างน้อย 1 ชื่อ');
+    for(const p of items)
+      await rpc('admin_add_ban', {p_admin: ME.id, p_pattern: p, p_match: $('bn-m').value, p_category: $('bn-c').value.trim() || 'กำหนดเอง'});
+    loadBans();
+  }catch(e){ w.textContent = e.message; }
+}
+
+/* ---------- ให้หน้าข้อสอบเรียกบันทึกคะแนน ----------
+   ตัวอย่าง: recordScore('math', 'ครูสมชาย', คะแนนที่ได้, คะแนนเต็ม) */
+window.recordScore = (subject, group, score, total) =>
+  ME && rpc('record_score', {p_user: ME.id, p_subject: subject, p_group: group, p_score: score, p_total: total}).catch(() => {});
+/* ครอบฟังก์ชัน result() เดิม: เมื่อจบข้อสอบ บันทึกคะแนนของผู้ที่ล็อกอิน (กลุ่ม = อาจารย์/นักเรียน ตามที่เลือกตอนเข้าเมนู) */
+if(typeof window.result === 'function'){
+  const _res = window.result;
+  window.result = function(){
+    _res.apply(this, arguments);
+    try{
+      if(!ME || !S || !S.qs) return;
+      const sc = S.qs.filter((q, i) => judge(q, S.ans[i]).ok).length;
+      window.recordScore(NAV.sn || 'ทั่วไป', NAV.role === 'teacher' ? 'อาจารย์' : 'นักเรียน', sc, S.qs.length);
+    }catch(e){ console.error(e); }
+  };
+}
+
+/* ---------- เริ่มต้น ---------- */
+refresh();
+rpc('log_visit', {p_user: ME ? ME.id : null}).catch(() => {});
+})();
+</script>
+
+</body>
+</html>
